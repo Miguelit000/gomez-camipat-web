@@ -1,14 +1,19 @@
 import { useState } from 'react';
 import api from '../api/axiosConfig';
 
-export default function ImageUploadModal({ tradeId, existingImages = [], onClose, onUploadSuccess }) {
+export default function ImageUploadModal({ tradeId, existingImages, onClose, onUploadSuccess }) {
   const [file, setFile] = useState(null);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState('');
 
+  // 🛡️ PROTECCIÓN ANTI-CRASH: Garantizamos que siempre sea una lista, incluso si llega 'null' o 'undefined'
+  const safeImages = Array.isArray(existingImages) ? existingImages : [];
+
   const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-    setError('');
+    if (e.target.files && e.target.files.length > 0) {
+      setFile(e.target.files[0]);
+      setError('');
+    }
   };
 
   const handleUpload = async (e) => {
@@ -28,8 +33,8 @@ export default function ImageUploadModal({ tradeId, existingImages = [], onClose
       await api.post(`/trades/${tradeId}/image`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
-      setFile(null); // Limpiamos el input
-      onUploadSuccess(); // Esto recargará los trades y actualizará la galería mágicamente
+      setFile(null); 
+      onUploadSuccess(); 
     } catch (err) {
       setError('Error al subir la imagen. Intenta de nuevo.');
     } finally {
@@ -47,17 +52,17 @@ export default function ImageUploadModal({ tradeId, existingImages = [], onClose
           <button onClick={onClose} style={{ background: '#f1f5f9', border: 'none', cursor: 'pointer', fontSize: '1.2em', color: '#64748b', borderRadius: '50%', width: '35px', height: '35px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>✖</button>
         </div>
 
-        {/* SECCIÓN 1: La Cuadrícula de Imágenes Guardadas */}
+        {/* SECCIÓN 1: La Cuadrícula Segura */}
         <div style={{ marginBottom: '30px' }}>
-          <h4 style={{ margin: '0 0 10px 0', color: '#475569' }}>Capturas Guardadas ({existingImages.length})</h4>
+          <h4 style={{ margin: '0 0 10px 0', color: '#475569' }}>Capturas Guardadas ({safeImages.length})</h4>
           
-          {existingImages.length === 0 ? (
+          {safeImages.length === 0 ? (
             <p style={{ color: '#94a3b8', fontSize: '0.9em', fontStyle: 'italic', background: '#f8fafc', padding: '15px', borderRadius: '8px', textAlign: 'center' }}>
               No hay imágenes guardadas para esta operación.
             </p>
           ) : (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '15px' }}>
-              {existingImages.map((imgName, index) => (
+              {safeImages.map((imgName, index) => (
                 <div key={index} style={{ border: '1px solid #e2e8f0', borderRadius: '8px', overflow: 'hidden', background: '#f8fafc', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
                   <a href={`http://localhost:8080/api/v1/trades/images/${imgName}`} target="_blank" rel="noreferrer">
                     <img 
@@ -66,16 +71,13 @@ export default function ImageUploadModal({ tradeId, existingImages = [], onClose
                       style={{ width: '100%', height: '120px', objectFit: 'cover', display: 'block' }} 
                     />
                   </a>
-                  <div style={{ padding: '8px', textAlign: 'center', fontSize: '0.8em', color: '#3b82f6', fontWeight: 'bold', background: 'white' }}>
-                    Ampliar ↗
-                  </div>
                 </div>
               ))}
             </div>
           )}
         </div>
 
-        {/* SECCIÓN 2: El Formulario de Subida */}
+        {/* SECCIÓN 2: El Formulario */}
         <form onSubmit={handleUpload} style={{ background: '#f0fdf4', padding: '20px', borderRadius: '8px', border: '1px dashed #22c55e' }}>
           <h4 style={{ margin: '0 0 10px 0', color: '#166534' }}>➕ Añadir Nueva Captura</h4>
           <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>

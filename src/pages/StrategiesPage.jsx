@@ -1,9 +1,10 @@
 import { useState, useEffect, useContext } from 'react';
-import api from '../api/axiosConfig'; // NUEVO: Importamos nuestro mensajero
-import { AuthContext } from '../context/AuthContext'; // NUEVO: Importamos el cerebro para sacar el ID
+import api from '../api/axiosConfig'; 
+import { AuthContext } from '../context/AuthContext'; 
 
 export default function StrategiesPage() {
-  const { accountId } = useContext(AuthContext);
+  // <-- CAMBIO 1: Ahora usamos portfolioId
+  const { portfolioId } = useContext(AuthContext);
 
   const [strategies, setStrategies] = useState([]);
   const [cargando, setCargando] = useState(true);
@@ -15,12 +16,13 @@ export default function StrategiesPage() {
   const [rules, setRules] = useState('');
   const [guardando, setGuardando] = useState(false);
 
-  // NUEVO: Función real que va a PostgreSQL a buscar tus estrategias
   const fetchStrategies = async () => {
-    if (!accountId) return;
+    // <-- CAMBIO 2: Validamos portfolioId
+    if (!portfolioId) return;
     setCargando(true);
     try {
-      const response = await api.get(`/strategies/account/${accountId}`);
+      // <-- CAMBIO 3: Nueva ruta apuntando a /portfolio/
+      const response = await api.get(`/strategies/portfolio/${portfolioId}`);
       // Ordenamos para que las más nuevas salgan arriba
       const ordenadas = response.data.sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0));
       setStrategies(ordenadas);
@@ -36,16 +38,17 @@ export default function StrategiesPage() {
   // Se ejecuta al entrar a la pantalla
   useEffect(() => {
     fetchStrategies();
-  }, [accountId]);
+  // <-- CAMBIO 4: Reactionamos a cambios en el portfolioId
+  }, [portfolioId]);
 
-  // NUEVO: Función real que envía la estrategia a Spring Boot
   const handleGuardar = async (e) => {
     e.preventDefault();
     setGuardando(true);
 
     try {
       await api.post('/strategies', {
-        accountId: accountId,
+        // <-- CAMBIO 5: Enviamos portfolioId a Spring Boot
+        portfolioId: portfolioId,
         name: name,
         description: description,
         rules: rules

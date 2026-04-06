@@ -127,7 +127,7 @@ export default function DashboardPage() {
         tradeId={tradeForImage}
         existingImages={trades.find(t => t.id === tradeForImage)?.images || []}
         onClose={() => setTradeForImage(null)}
-        onUploadSuccess={fetchtrades}
+        onUploadSuccess={fetchTrades}
         />
       )}
 

@@ -1,21 +1,18 @@
 import axios from 'axios';
 
-// 1. Creamos una instancia base apuntando a tu Spring Boot
+// 1. Creamos una instancia base apuntando a tu variable de entorno o a localhost como respaldo
 const api = axios.create({
-    baseURL: 'http://localhost:8080/api/v1',
+    // VITE_API_URL será la dirección de Railway. Si no existe, usa localhost para desarrollo.
+    baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8080/api/v1',
     headers: {
         'Content-Type': 'application/json'
     }
 });
 
 // 2. INTERCEPTOR DE SALIDA (Request)
-// Antes de que cualquier petición salga hacia Java, este código la intercepta
 api.interceptors.request.use(
     (config) => {
-        // Buscamos el token en la caja fuerte
-        const token = localStorage.getItem('jwt_token');
-        
-        // Si hay token, se lo pegamos a la cabecera automáticamente
+        const token = localStorage.getItem('token');
         if (token) {
             config.headers.Authorization = `Bearer ${token}`;
         }
@@ -27,16 +24,13 @@ api.interceptors.request.use(
 );
 
 // 3. INTERCEPTOR DE ENTRADA (Response)
-// Evalúa las respuestas de Java ANTES de que lleguen a tus pantallas
 api.interceptors.response.use(
     (response) => response,
     (error) => {
-        // Si Java responde 401 (No Autorizado) o 403 (Prohibido), el token expiró o es inválido
         if (error.response && (error.response.status === 401 || error.response.status === 403)) {
             console.warn("Sesión expirada o inválida. Limpiando credenciales...");
-            localStorage.removeItem('jwt_token');
-            localStorage.removeItem('account_id');
-            // Redirigimos silenciosamente al login
+            localStorage.removeItem('token');
+            localStorage.removeItem('portfolioId');
             window.location.href = '/'; 
         }
         return Promise.reject(error);

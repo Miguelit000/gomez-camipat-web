@@ -1,11 +1,9 @@
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState } from 'react';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('token'));
-  
-  // <-- CAMBIO CLAVE: Ahora guardamos el portfolioId
   const [portfolioId, setPortfolioId] = useState(localStorage.getItem('portfolioId'));
 
   const login = (newToken, newPortfolioId) => {
@@ -23,7 +21,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ token, portfolioId, login, logout }}>
+    // <-- CAMBIO: Añadimos setPortfolioId para que los demás componentes puedan cambiar la cuenta activa
+    <AuthContext.Provider value={{ token, portfolioId, setPortfolioId, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

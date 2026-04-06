@@ -3,7 +3,9 @@ import api from '../api/axiosConfig';
 import { AuthContext } from '../context/AuthContext';
 
 export default function DashboardMetrics({ refreshTrigger }) {
-  const { accountId } = useContext(AuthContext);
+  // <-- CAMBIO 1: Extraemos portfolioId del Contexto
+  const { portfolioId } = useContext(AuthContext);
+  
   const [metrics, setMetrics] = useState({
     totalTrades: 0,
     winningTrades: 0,
@@ -16,11 +18,12 @@ export default function DashboardMetrics({ refreshTrigger }) {
 
   useEffect(() => {
     const fetchMetrics = async () => {
-      if (!accountId) return;
+      // <-- CAMBIO 2: Verificamos portfolioId
+      if (!portfolioId) return;
       
       try {
-        // Apuntamos al AnalyticsController de tu Spring Boot
-        const response = await api.get(`/analytics/account/${accountId}`);
+        // <-- CAMBIO 3: Apuntamos a la nueva ruta /portfolio/
+        const response = await api.get(`/analytics/portfolio/${portfolioId}`);
         setMetrics(response.data);
       } catch (error) {
         console.error("Error al cargar las métricas:", error);
@@ -30,10 +33,10 @@ export default function DashboardMetrics({ refreshTrigger }) {
     };
 
     fetchMetrics();
-  // El useEffect se volverá a ejecutar si accountId cambia, o si refreshTrigger cambia
-  }, [accountId, refreshTrigger]);
+  // <-- CAMBIO 4: Actualizamos las dependencias del useEffect
+  }, [portfolioId, refreshTrigger]);
 
-  if (loading) return <div style={{ marginBottom: '20px', color: '#64748b' }}>Calculando estadísticas financieras...</div>;
+  if (loading) return <div style={{ marginBottom: '20px', color: '#64748b', fontWeight: 'bold' }}>Calculando estadísticas financieras...</div>;
 
   // Función auxiliar para dar color verde o rojo según las ganancias
   const colorPnL = metrics.totalPnl > 0 ? '#10b981' : (metrics.totalPnl < 0 ? '#ef4444' : '#1e293b');
