@@ -3,13 +3,12 @@ import ProtectedRoute from './routes/ProtectedRoute';
 
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
-import StrategiesPage from './pages/StrategiesPage'; // <-- NUEVA PÁGINA
-import Navbar from './components/Navbar'; // <-- NUEVO MENÚ
+import StrategiesPage from './pages/StrategiesPage'; 
+import Navbar from './components/Navbar'; 
 
 function App() {
   return (
     <BrowserRouter>
-      {/* El Navbar va aquí para que esté disponible en toda la app */}
       <Navbar /> 
       
       <Routes>
@@ -24,9 +23,9 @@ function App() {
           } 
         />
         
-        {/* <-- NUEVA RUTA PROTEGIDA --> */}
+        {/* CORRECCIÓN: Cambiamos /estrategias por /strategies para coincidir con el Navbar */}
         <Route 
-          path="/estrategias" 
+          path="/strategies" 
           element={
             <ProtectedRoute>
               <StrategiesPage />

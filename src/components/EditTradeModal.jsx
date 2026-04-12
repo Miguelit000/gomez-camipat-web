@@ -1,9 +1,9 @@
 import { useState, useContext, useEffect } from 'react';
 import api from '../api/axiosConfig';
 import { AuthContext } from '../context/AuthContext';
+import BlockEditor from './BlockEditor'; // <-- NUEVA IMPORTACIÓN
 
 export default function EditTradeModal({ trade, onClose, onGuardado }) {
-  // <-- CAMBIO 1: Usamos portfolioId
   const { portfolioId } = useContext(AuthContext);
   const [strategies, setStrategies] = useState([]);
   
@@ -26,7 +26,6 @@ export default function EditTradeModal({ trade, onClose, onGuardado }) {
   useEffect(() => {
     const fetchStrategies = async () => {
       try {
-        // <-- CAMBIO 2: Nueva ruta de estrategias
         const response = await api.get(`/strategies/portfolio/${portfolioId}`);
         setStrategies(response.data);
       } catch (err) {
@@ -76,7 +75,7 @@ export default function EditTradeModal({ trade, onClose, onGuardado }) {
 
   return (
     <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(15, 23, 42, 0.7)', backdropFilter: 'blur(5px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 2000, padding: '20px', overflowY: 'auto' }}>
-      <div style={{ background: 'white', padding: '30px', borderRadius: '12px', width: '100%', maxWidth: '600px', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}>
+      <div style={{ background: 'white', padding: '30px', borderRadius: '12px', width: '100%', maxWidth: '800px', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', maxHeight: '90vh', overflowY: 'auto' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', borderBottom: '1px solid #e2e8f0', paddingBottom: '15px' }}>
           <h3 style={{ margin: 0, color: '#0f172a', fontSize: '1.4em' }}>✏️ Editar Operación</h3>
           <button onClick={onClose} style={{ background: '#f1f5f9', border: 'none', cursor: 'pointer', fontSize: '1.2em', color: '#64748b', borderRadius: '50%', width: '35px', height: '35px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>✖</button>
@@ -136,9 +135,13 @@ export default function EditTradeModal({ trade, onClose, onGuardado }) {
             </div>
           )}
 
+          {/* <-- NUEVA BITÁCORA TIPO NOTION --> */}
           <div style={{ gridColumn: 'span 2' }}>
-            <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Notas</label>
-            <textarea name="notes" value={formData.notes} onChange={handleChange} rows="2" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc', boxSizing: 'border-box' }}></textarea>
+            <label style={{ display: 'block', fontSize: '1em', fontWeight: 'bold', color: '#475569', marginBottom: '8px' }}>📝 Bitácora del Trade</label>
+            <BlockEditor 
+              initialContent={formData.notes} 
+              onChange={(content) => setFormData({ ...formData, notes: content })} 
+            />
           </div>
 
           <div style={{ gridColumn: 'span 2', display: 'flex', justifyContent: 'flex-end', gap: '15px', marginTop: '10px' }}>

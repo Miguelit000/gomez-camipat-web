@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext, useCallback } from 'react';
+import { useEffect, useState, useContext, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../api/axiosConfig';
 import { AuthContext } from '../context/AuthContext';
@@ -6,8 +6,8 @@ import TradeForm from '../components/TradeForm';
 import CloseTradeModal from '../components/CloseTradeModal';
 import EditTradeModal from '../components/EditTradeModal';
 import DashboardMetrics from '../components/DashboardMetrics';
-import ImageUploadModal from '../components/ImageUploadModal';
 import PerformanceChart from '../components/PerformanceChart';
+import CalendarWidget from '../components/CalendarWidget';
 
 export default function DashboardPage() {
   const [trades, setTrades] = useState([]);
@@ -17,7 +17,6 @@ export default function DashboardPage() {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
   const [tradeToClose, setTradeToClose] = useState(null);
   const [tradeToEdit, setTradeToEdit] = useState(null);
-  const [tradeForImage, setTradeForImage] = useState(null);
   const [refreshCount, setRefreshCount] = useState(0); 
   const [strategyDictionary, setStrategyDictionary] = useState({});
 
@@ -25,15 +24,16 @@ export default function DashboardPage() {
   const [filtroEstado, setFiltroEstado] = useState('ALL'); 
   const [filtroResultado, setFiltroResultado] = useState('ALL'); 
 
+  // <-- NUEVO ESTADO PARA IMPORTACIÓN -->
+  const [isImporting, setIsImporting] = useState(false);
+  const fileInputRef = useRef(null);
+
   const navigate = useNavigate();
-  
-  // <-- CAMBIO: Extraemos portfolioId del Contexto
   const { portfolioId, logout } = useContext(AuthContext);
 
   const fetchTrades = useCallback(async () => {
     setCargando(true);
     try {
-      // <-- CAMBIO: Nuevas rutas REST apuntando a portfolio
       const [tradesResponse, strategiesResponse] = await Promise.all([
         api.get(`/trades/portfolio/${portfolioId}`),
         api.get(`/strategies/portfolio/${portfolioId}`)
@@ -67,7 +67,6 @@ export default function DashboardPage() {
 
   const handleExportCSV = async () => {
     try {
-      // <-- CAMBIO: Nueva ruta de exportación CSV
       const response = await api.get(`/trades/portfolio/${portfolioId}/export/csv`, {
         responseType: 'blob', 
       });
@@ -82,6 +81,30 @@ export default function DashboardPage() {
     } catch (err) {
       alert('Error al exportar los datos. Verifica tu conexión.');
       console.error(err);
+    }
+  };
+
+  // <-- NUEVO MÉTODO PARA ENVIAR EL CSV A JAVA -->
+  const handleImportCSV = async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    setIsImporting(true);
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+      const response = await api.post(`/trades/portfolio/${portfolioId}/import/csv`, formData, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
+      alert(response.data.message); // Muestra el mensaje de éxito (ej. "Se importaron 45 operaciones")
+      fetchTrades(); // Recarga la tabla y las métricas mágicamente
+    } catch (err) {
+      alert(err.response?.data?.error || 'Error al importar el archivo CSV.');
+      console.error(err);
+    } finally {
+      setIsImporting(false);
+      event.target.value = null; // Resetea el input para que puedas volver a subir el mismo archivo si quieres
     }
   };
 
@@ -100,7 +123,6 @@ export default function DashboardPage() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid #eee', paddingBottom: '20px', marginBottom: '30px' }}>
         <div>
           <h1 style={{ margin: 0, color: '#0f172a' }}>🏦 Centro de Mando</h1>
-          {/* Escondemos el ID feo por un alias limpio */}
           <p style={{ margin: 0, color: 'gray' }}>Portafolio Principal</p>
         </div>
         
@@ -117,19 +139,15 @@ export default function DashboardPage() {
       </div>
 
       <DashboardMetrics refreshTrigger={refreshCount} />
-      <PerformanceChart trades={trades} />
+      <CalendarWidget refreshTrigger={refreshCount} />
+
+      <div style={{ marginBottom: '30px' }}>
+        <PerformanceChart trades={trades} />
+      </div>
 
       {mostrarFormulario && <TradeForm onCerrar={() => setMostrarFormulario(false)} onGuardado={fetchTrades} />}
       {tradeToClose && <CloseTradeModal trade={tradeToClose} onClose={() => setTradeToClose(null)} onGuardado={fetchTrades} />}
       {tradeToEdit && <EditTradeModal trade={tradeToEdit} onClose={() => setTradeToEdit(null)} onGuardado={fetchTrades} />}
-      {tradeForImage && (
-        <ImageUploadModal
-        tradeId={tradeForImage}
-        existingImages={trades.find(t => t.id === tradeForImage)?.images || []}
-        onClose={() => setTradeForImage(null)}
-        onUploadSuccess={fetchTrades}
-        />
-      )}
 
       <div style={{ padding: '25px', background: '#ffffff', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0' }}>
         
@@ -140,6 +158,24 @@ export default function DashboardPage() {
             <span style={{ fontSize: '0.9em', color: '#64748b', fontWeight: 'bold' }}>
               Mostrando {filteredTrades.length} de {trades.length} operaciones
             </span>
+            
+            {/* <-- INPUT INVISIBLE PARA ARCHIVOS --> */}
+            <input 
+              type="file" 
+              accept=".csv" 
+              style={{ display: 'none' }} 
+              ref={fileInputRef} 
+              onChange={handleImportCSV} 
+            />
+
+            {/* <-- NUEVO BOTÓN DE IMPORTAR --> */}
+            <button 
+              onClick={() => fileInputRef.current.click()} 
+              disabled={isImporting}
+              style={{ padding: '8px 15px', background: isImporting ? '#94a3b8' : '#3b82f6', color: 'white', border: 'none', borderRadius: '6px', cursor: isImporting ? 'not-allowed' : 'pointer', fontWeight: 'bold', fontSize: '0.85em', display: 'flex', alignItems: 'center', gap: '5px' }}>
+              {isImporting ? '⏳ Importando...' : '⬆️ Importar MT5'}
+            </button>
+
             <button onClick={handleExportCSV} style={{ padding: '8px 15px', background: '#10b981', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', fontSize: '0.85em', display: 'flex', alignItems: 'center', gap: '5px' }}>
               📥 Exportar CSV
             </button>
@@ -201,7 +237,6 @@ export default function DashboardPage() {
                   <th style={{ padding: '12px' }}>Lotes</th>
                   <th style={{ padding: '12px' }}>Estado</th>
                   <th style={{ padding: '12px' }}>PnL Neto</th>
-                  <th style={{ padding: '12px', textAlign: 'center' }}>Galería</th>
                   <th style={{ padding: '12px', textAlign: 'center' }}>Acciones</th> 
                 </tr>
               </thead>
@@ -225,20 +260,6 @@ export default function DashboardPage() {
                       ${trade.pnlNet !== null ? trade.pnlNet : '0.00'}
                     </td>
                     
-                    {/* <-- NUEVO: Sistema de Galería Multimedia --> */}
-                    <td style={{ padding: '12px', textAlign: 'center' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-                        {trade.images && trade.images.length > 0 && (
-                          <span style={{ fontSize: '0.9em', color: '#64748b', fontWeight: 'bold', background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px' }}>
-                            {trade.images.length} 🖼️
-                          </span>
-                        )}
-                        <button onClick={() => setTradeForImage(trade.id)} style={{ background: '#f8fafc', border: '1px dashed #cbd5e1', borderRadius: '4px', padding: '4px 8px', cursor: 'pointer', fontSize: '0.85em' }} title="Añadir a Galería">
-                          + 📷
-                        </button>
-                      </div>
-                    </td>
-
                     <td style={{ padding: '12px', textAlign: 'center', display: 'flex', justifyContent: 'center', gap: '8px' }}>
                       <button onClick={() => setTradeToEdit(trade)} style={{ padding: '6px', background: '#f1f5f9', color: '#475569', border: '1px solid #cbd5e1', borderRadius: '4px', cursor: 'pointer', fontSize: '0.9em' }} title="Editar Operación">
                         ✏️
