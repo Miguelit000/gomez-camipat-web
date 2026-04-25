@@ -96,6 +96,7 @@ export default function Navbar() {
       <div style={{ display: 'flex', gap: '20px' }}>
         <Link to="/dashboard" style={{ color: '#f8fafc', textDecoration: 'none', fontWeight: 'bold' }}>Dashboard</Link>
         <Link to="/strategies" style={{ color: '#94a3b8', textDecoration: 'none', fontWeight: 'bold' }}>Estrategias</Link>
+        <Link to="/statistics" style={{ color: location.pathname === '/statistics' ? '#f8fafc' : '#94a3b8', textDecoration: 'none', fontWeight: 'bold' }}>Estadísticas</Link>
       </div>
 
       {showModal && (

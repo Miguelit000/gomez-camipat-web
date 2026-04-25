@@ -3,7 +3,8 @@ import ProtectedRoute from './routes/ProtectedRoute';
 
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
-import StrategiesPage from './pages/StrategiesPage'; 
+import StrategiesPage from './pages/StrategiesPage';
+import StatisticsPage from './pages/StatisticsPage'; 
 import Navbar from './components/Navbar'; 
 
 function App() {
@@ -23,12 +24,20 @@ function App() {
           } 
         />
         
-        {/* CORRECCIÓN: Cambiamos /estrategias por /strategies para coincidir con el Navbar */}
         <Route 
           path="/strategies" 
           element={
             <ProtectedRoute>
               <StrategiesPage />
+            </ProtectedRoute>
+          } 
+        />
+
+        <Route 
+          path="/statistics" 
+          element={
+            <ProtectedRoute>
+              <StatisticsPage />
             </ProtectedRoute>
           } 
         />
