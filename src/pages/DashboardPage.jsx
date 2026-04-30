@@ -29,24 +29,29 @@ export default function DashboardPage() {
   const [isImporting, setIsImporting] = useState(false);
   const fileInputRef = useRef(null);
 
-  // <-- NUEVOS ESTADOS PARA STRIPE -->
+  // ESTADOS PARA STRIPE
   const [searchParams, setSearchParams] = useSearchParams();
   const [paymentMessage, setPaymentMessage] = useState(null);
 
   const navigate = useNavigate();
-  const { portfolioId, logout } = useContext(AuthContext);
+  
+  // <-- EXTRAEMOS EL ROL REAL Y LA FUNCIÓN DE ACTUALIZACIÓN DEL CONTEXTO -->
+  const { portfolioId, userRole, fetchUserRole, logout } = useContext(AuthContext);
 
   // <-- EFECTO PARA DETECTAR CUANDO REGRESAN DE PAGO EN STRIPE -->
   useEffect(() => {
     if (searchParams.get('session_id')) {
       setPaymentMessage({ type: 'success', text: '¡Suscripción PRO activada con éxito! Disfruta de tu Trading Journal sin límites.' });
       setSearchParams({}); 
+      
+      // ¡AQUÍ ESTÁ LA MAGIA! Le decimos a Java que revise si ya somos PRO
+      fetchUserRole(); 
     }
     if (searchParams.get('payment') === 'cancelled') {
       setPaymentMessage({ type: 'error', text: 'El proceso de pago fue cancelado.' });
       setSearchParams({});
     }
-  }, [searchParams, setSearchParams]);
+  }, [searchParams, setSearchParams, fetchUserRole]);
 
   const fetchTrades = useCallback(async () => {
     setCargando(true);
@@ -124,7 +129,6 @@ export default function DashboardPage() {
     }
   };
 
-  // <-- NUEVA FUNCIÓN QUE LLAMA AL CAJERO DE STRIPE -->
   const handleUpgradePro = async () => {
     try {
       const response = await api.post('/checkout/create-session');
@@ -135,11 +139,9 @@ export default function DashboardPage() {
     }
   };
 
-  // <-- NUEVA FUNCIÓN PARA EL PORTAL DE STRIPE -->
   const handleManageSubscription = async () => {
     try {
       const response = await api.post('/checkout/portal');
-      // Redirigimos al usuario al Portal de Stripe
       window.location.href = response.data.url; 
     } catch (error) {
       console.error("Error al abrir el portal", error);
@@ -180,27 +182,44 @@ export default function DashboardPage() {
         
         <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
           
-          {/* <-- BOTÓN DORADO DE STRIPE --> */}
-          <button 
-            onClick={handleUpgradePro}
-            style={{ 
-              padding: '10px 20px', background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)', 
-              color: '#fff', border: 'none', borderRadius: '6px', fontWeight: 'bold', 
-              cursor: 'pointer', boxShadow: '0 4px 6px rgba(245, 158, 11, 0.2)'
-            }}>
-            ⭐ Mejorar a PRO
-          </button>
+          {/* <-- LA MAGIA VISUAL EMPIEZA AQUÍ --> */}
+          
+          {/* SI EL USUARIO ES FREE, MOSTRAMOS EL BOTÓN DORADO */}
+          {userRole !== 'ROLE_PRO' && (
+            <button 
+              onClick={handleUpgradePro}
+              style={{ 
+                padding: '10px 20px', background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)', 
+                color: '#fff', border: 'none', borderRadius: '6px', fontWeight: 'bold', 
+                cursor: 'pointer', boxShadow: '0 4px 6px rgba(245, 158, 11, 0.2)'
+              }}>
+              ⭐ Mejorar a PRO
+            </button>
+          )}
 
-          {/* <-- BOTÓN PARA GESTIONAR SUSCRIPCIÓN --> */}
-          <button 
-            onClick={handleManageSubscription}
-            style={{ 
-              padding: '10px 20px', background: '#e2e8f0', 
-              color: '#475569', border: 'none', borderRadius: '6px', fontWeight: 'bold', 
-              cursor: 'pointer', transition: 'all 0.2s'
-            }}>
-            ⚙️ Gestionar Suscripción
-          </button>
+          {/* SI EL USUARIO ES PRO, MOSTRAMOS LA INSIGNIA VERDE Y EL PORTAL */}
+          {userRole === 'ROLE_PRO' && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ 
+                padding: '8px 12px', background: '#dcfce7', color: '#166534', 
+                borderRadius: '20px', fontWeight: 'bold', fontSize: '13px',
+                border: '1px solid #bbf7d0', display: 'flex', alignItems: 'center', gap: '5px'
+              }}>
+                ✅ PRO
+              </span>
+              
+              <button 
+                onClick={handleManageSubscription}
+                style={{ 
+                  padding: '10px 20px', background: '#e2e8f0', 
+                  color: '#475569', border: 'none', borderRadius: '6px', fontWeight: 'bold', 
+                  cursor: 'pointer', transition: 'all 0.2s'
+                }}>
+                ⚙️ Gestionar Suscripción
+              </button>
+            </div>
+          )}
+          {/* <-- FIN DE LA MAGIA VISUAL --> */}
 
           {!mostrarFormulario && (
             <button onClick={() => setMostrarFormulario(true)} style={{ padding: '10px 20px', background: '#3b82f6', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>
