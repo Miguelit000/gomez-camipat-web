@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext, useCallback, useRef } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import api from '../api/axiosConfig';
 import { AuthContext } from '../context/AuthContext';
@@ -24,12 +25,28 @@ export default function DashboardPage() {
   const [filtroEstado, setFiltroEstado] = useState('ALL'); 
   const [filtroResultado, setFiltroResultado] = useState('ALL'); 
 
-  // <-- NUEVO ESTADO PARA IMPORTACIÓN -->
+  // ESTADO PARA IMPORTACIÓN
   const [isImporting, setIsImporting] = useState(false);
   const fileInputRef = useRef(null);
 
+  // <-- NUEVOS ESTADOS PARA STRIPE -->
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [paymentMessage, setPaymentMessage] = useState(null);
+
   const navigate = useNavigate();
   const { portfolioId, logout } = useContext(AuthContext);
+
+  // <-- EFECTO PARA DETECTAR CUANDO REGRESAN DE PAGO EN STRIPE -->
+  useEffect(() => {
+    if (searchParams.get('session_id')) {
+      setPaymentMessage({ type: 'success', text: '¡Suscripción PRO activada con éxito! Disfruta de tu Trading Journal sin límites.' });
+      setSearchParams({}); 
+    }
+    if (searchParams.get('payment') === 'cancelled') {
+      setPaymentMessage({ type: 'error', text: 'El proceso de pago fue cancelado.' });
+      setSearchParams({});
+    }
+  }, [searchParams, setSearchParams]);
 
   const fetchTrades = useCallback(async () => {
     setCargando(true);
@@ -84,7 +101,6 @@ export default function DashboardPage() {
     }
   };
 
-  // <-- NUEVO MÉTODO PARA ENVIAR EL CSV A JAVA -->
   const handleImportCSV = async (event) => {
     const file = event.target.files[0];
     if (!file) return;
@@ -97,14 +113,37 @@ export default function DashboardPage() {
       const response = await api.post(`/trades/portfolio/${portfolioId}/import/csv`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
-      alert(response.data.message); // Muestra el mensaje de éxito (ej. "Se importaron 45 operaciones")
-      fetchTrades(); // Recarga la tabla y las métricas mágicamente
+      alert(response.data.message); 
+      fetchTrades(); 
     } catch (err) {
       alert(err.response?.data?.error || 'Error al importar el archivo CSV.');
       console.error(err);
     } finally {
       setIsImporting(false);
-      event.target.value = null; // Resetea el input para que puedas volver a subir el mismo archivo si quieres
+      event.target.value = null; 
+    }
+  };
+
+  // <-- NUEVA FUNCIÓN QUE LLAMA AL CAJERO DE STRIPE -->
+  const handleUpgradePro = async () => {
+    try {
+      const response = await api.post('/checkout/create-session');
+      window.location.href = response.data.url; 
+    } catch (error) {
+      console.error("Error al iniciar el pago", error);
+      alert("Hubo un error al conectar con el servidor de pagos.");
+    }
+  };
+
+  // <-- NUEVA FUNCIÓN PARA EL PORTAL DE STRIPE -->
+  const handleManageSubscription = async () => {
+    try {
+      const response = await api.post('/checkout/portal');
+      // Redirigimos al usuario al Portal de Stripe
+      window.location.href = response.data.url; 
+    } catch (error) {
+      console.error("Error al abrir el portal", error);
+      alert("Hubo un error al intentar abrir tu configuración de facturación.");
     }
   };
 
@@ -120,13 +159,49 @@ export default function DashboardPage() {
   return (
     <div style={{ padding: '40px', fontFamily: 'sans-serif', maxWidth: '1100px', margin: '0 auto' }}>
       
+      {/* <-- ALERTA DE PAGO STRIPE --> */}
+      {paymentMessage && (
+        <div style={{ 
+          padding: '15px', marginBottom: '20px', borderRadius: '8px', fontWeight: 'bold',
+          backgroundColor: paymentMessage.type === 'success' ? '#dcfce7' : '#fee2e2',
+          color: paymentMessage.type === 'success' ? '#166534' : '#991b1b',
+          border: `1px solid ${paymentMessage.type === 'success' ? '#bbf7d0' : '#fecaca'}`
+        }}>
+          {paymentMessage.type === 'success' ? '🎉 ' : '❌ '} {paymentMessage.text}
+          <button onClick={() => setPaymentMessage(null)} style={{ float: 'right', background: 'none', border: 'none', cursor: 'pointer', color: 'inherit' }}>✖</button>
+        </div>
+      )}
+
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid #eee', paddingBottom: '20px', marginBottom: '30px' }}>
         <div>
           <h1 style={{ margin: 0, color: '#0f172a' }}>🏦 Centro de Mando</h1>
           <p style={{ margin: 0, color: 'gray' }}>Portafolio Principal</p>
         </div>
         
-        <div style={{ display: 'flex', gap: '15px' }}>
+        <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
+          
+          {/* <-- BOTÓN DORADO DE STRIPE --> */}
+          <button 
+            onClick={handleUpgradePro}
+            style={{ 
+              padding: '10px 20px', background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)', 
+              color: '#fff', border: 'none', borderRadius: '6px', fontWeight: 'bold', 
+              cursor: 'pointer', boxShadow: '0 4px 6px rgba(245, 158, 11, 0.2)'
+            }}>
+            ⭐ Mejorar a PRO
+          </button>
+
+          {/* <-- BOTÓN PARA GESTIONAR SUSCRIPCIÓN --> */}
+          <button 
+            onClick={handleManageSubscription}
+            style={{ 
+              padding: '10px 20px', background: '#e2e8f0', 
+              color: '#475569', border: 'none', borderRadius: '6px', fontWeight: 'bold', 
+              cursor: 'pointer', transition: 'all 0.2s'
+            }}>
+            ⚙️ Gestionar Suscripción
+          </button>
+
           {!mostrarFormulario && (
             <button onClick={() => setMostrarFormulario(true)} style={{ padding: '10px 20px', background: '#3b82f6', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>
               + Nueva Operación
@@ -159,7 +234,6 @@ export default function DashboardPage() {
               Mostrando {filteredTrades.length} de {trades.length} operaciones
             </span>
             
-            {/* <-- INPUT INVISIBLE PARA ARCHIVOS --> */}
             <input 
               type="file" 
               accept=".csv" 
@@ -168,7 +242,6 @@ export default function DashboardPage() {
               onChange={handleImportCSV} 
             />
 
-            {/* <-- NUEVO BOTÓN DE IMPORTAR --> */}
             <button 
               onClick={() => fileInputRef.current.click()} 
               disabled={isImporting}

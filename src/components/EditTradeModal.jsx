@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
 import api from '../api/axiosConfig';
 import { AuthContext } from '../context/AuthContext';
-import BlockEditor from './BlockEditor'; // <-- NUEVA IMPORTACIÓN
+import BlockEditor from './BlockEditor';
 
 export default function EditTradeModal({ trade, onClose, onGuardado }) {
   const { portfolioId } = useContext(AuthContext);
@@ -17,6 +17,8 @@ export default function EditTradeModal({ trade, onClose, onGuardado }) {
     stopLoss: trade.stopLoss || '',
     exitPrice: trade.exitPrice || '',
     pnlNet: trade.pnlNet !== null ? trade.pnlNet : '',
+    maePrice: trade.maePrice || '', // <-- NUEVO ESTADO
+    mfePrice: trade.mfePrice || '', // <-- NUEVO ESTADO
     notes: trade.notes || ''
   });
   
@@ -37,7 +39,8 @@ export default function EditTradeModal({ trade, onClose, onGuardado }) {
 
   const handleChange = (e) => {
     let { name, value } = e.target;
-    if (['entryPrice', 'positionSize', 'takeProfit', 'stopLoss', 'exitPrice', 'pnlNet'].includes(name)) {
+    // Agregamos maePrice y mfePrice a los campos que aceptan decimales
+    if (['entryPrice', 'positionSize', 'takeProfit', 'stopLoss', 'exitPrice', 'pnlNet', 'maePrice', 'mfePrice'].includes(name)) {
       value = value.replace(',', '.');
       value = value.replace(/[^0-9.-]/g, ''); 
     }
@@ -60,6 +63,8 @@ export default function EditTradeModal({ trade, onClose, onGuardado }) {
         stopLoss: formData.stopLoss ? parseFloat(formData.stopLoss) : null,
         exitPrice: formData.exitPrice ? parseFloat(formData.exitPrice) : null,
         pnlNet: formData.pnlNet !== '' ? parseFloat(formData.pnlNet) : null,
+        maePrice: formData.maePrice ? parseFloat(formData.maePrice) : null, // <-- ENVIAMOS A JAVA
+        mfePrice: formData.mfePrice ? parseFloat(formData.mfePrice) : null, // <-- ENVIAMOS A JAVA
         notes: formData.notes
       };
 
@@ -122,6 +127,18 @@ export default function EditTradeModal({ trade, onClose, onGuardado }) {
             <input type="text" inputMode="decimal" name="takeProfit" value={formData.takeProfit} onChange={handleChange} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc', boxSizing: 'border-box' }} />
           </div>
 
+          {/* <-- BLOQUE DE EXCURSIONES (MAE / MFE) --> */}
+          <div style={{ gridColumn: 'span 2', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', padding: '15px', background: '#fef2f2', borderRadius: '8px', border: '1px solid #fecdd3' }}>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#9f1239', marginBottom: '5px' }}>🔻 Precio MAE (Pico Negativo)</label>
+              <input type="text" inputMode="decimal" name="maePrice" placeholder="Ej. 4705.000" value={formData.maePrice} onChange={handleChange} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #fecaca', boxSizing: 'border-box' }} />
+            </div>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#166534', marginBottom: '5px' }}>🔺 Precio MFE (Pico Positivo)</label>
+              <input type="text" inputMode="decimal" name="mfePrice" placeholder="Ej. 4690.000" value={formData.mfePrice} onChange={handleChange} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #bbf7d0', boxSizing: 'border-box' }} />
+            </div>
+          </div>
+
           {trade.status === 'CLOSED' && (
             <div style={{ gridColumn: 'span 2', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', padding: '15px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
               <div>
@@ -135,7 +152,6 @@ export default function EditTradeModal({ trade, onClose, onGuardado }) {
             </div>
           )}
 
-          {/* <-- NUEVA BITÁCORA TIPO NOTION --> */}
           <div style={{ gridColumn: 'span 2' }}>
             <label style={{ display: 'block', fontSize: '1em', fontWeight: 'bold', color: '#475569', marginBottom: '8px' }}>📝 Bitácora del Trade</label>
             <BlockEditor 
