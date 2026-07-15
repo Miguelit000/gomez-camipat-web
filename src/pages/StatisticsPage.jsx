@@ -2,12 +2,25 @@ import { useEffect, useState, useContext } from 'react';
 import api from '../api/axiosConfig';
 import { AuthContext } from '../context/AuthContext';
 import AnnualHeatmap from '../components/AnnualHeatmap';
+import PremiumBanner from '../components/PremiumBanner'; // Importamos el banner
 
 export default function StatisticsPage() {
-  const { portfolioId } = useContext(AuthContext);
+  const { portfolioId, userRole } = useContext(AuthContext); // Extraemos userRole
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+
+  // BLOQUEO VISUAL: Si no es PRO, detenemos todo aquí y mostramos el diseño limpio
+  if (userRole !== 'ROLE_PRO') {
+    return (
+      <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
+        <PremiumBanner 
+          title="Analítica Avanzada Institucional" 
+          description="Descubre métricas profundas como la Esperanza Matemática, el factor SQN, la Excursión Adversa (MAE) y tu Mapa de Calor Anual." 
+        />
+      </div>
+    );
+  }
 
   useEffect(() => {
     const fetchAnalytics = async () => {

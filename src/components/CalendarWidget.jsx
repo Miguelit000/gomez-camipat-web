@@ -53,70 +53,90 @@ export default function CalendarWidget({ refreshTrigger }) {
     <div style={{ background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0', marginBottom: '30px' }}>
       
       {/* Cabecera del Calendario */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
         <h3 style={{ margin: 0, color: '#1e293b' }}>Rendimiento Diario</h3>
-        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-          <button onClick={handlePrevMonth} style={{ cursor: 'pointer', background: '#f8fafc', border: '1px solid #e2e8f0', padding: '5px 10px', borderRadius: '6px' }}>&larr;</button>
-          <span style={{ fontWeight: 'bold', minWidth: '120px', textAlign: 'center' }}>{monthNames[month - 1]} {year}</span>
-          <button onClick={handleNextMonth} style={{ cursor: 'pointer', background: '#f8fafc', border: '1px solid #e2e8f0', padding: '5px 10px', borderRadius: '6px' }}>&rarr;</button>
+        <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flex: '1 1 auto', justifyContent: 'flex-end' }}>
+          <button onClick={handlePrevMonth} style={{ cursor: 'pointer', background: '#f8fafc', border: '1px solid #e2e8f0', padding: '5px 15px', borderRadius: '6px', fontWeight: 'bold' }}>&larr;</button>
+          <span style={{ fontWeight: 'bold', minWidth: '120px', textAlign: 'center', fontSize: '0.95em' }}>{monthNames[month - 1]} {year}</span>
+          <button onClick={handleNextMonth} style={{ cursor: 'pointer', background: '#f8fafc', border: '1px solid #e2e8f0', padding: '5px 15px', borderRadius: '6px', fontWeight: 'bold' }}>&rarr;</button>
         </div>
       </div>
 
       {loading ? (
         <div style={{ color: '#64748b', textAlign: 'center', padding: '20px' }}>Cargando datos del mes...</div>
       ) : (
-        <>
-          {/* Grilla: Días de la semana */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '5px', textAlign: 'center', fontWeight: 'bold', color: '#64748b', marginBottom: '10px', fontSize: '0.85em' }}>
-            <div>Dom</div><div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div>
-          </div>
-
-          {/* Grilla: Casillas numéricas */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '8px' }}>
-            {blanks.map((_, i) => (
-              <div key={`blank-${i}`} style={{ padding: '10px', borderRadius: '8px', background: '#f8fafc' }}></div>
-            ))}
+        <div style={{ width: '100%', overflowX: 'auto', paddingBottom: '10px' }}>
+          {/* El minWidth asegura que el calendario no se aplaste más de lo legible */}
+          <div style={{ minWidth: '320px' }}>
             
-            {days.map(day => {
-              const dayData = getDataForDay(day);
-              let bgColor = '#f1f5f9'; // Gris (Sin operaciones)
-              let fontColor = '#64748b';
-              let borderColor = 'transparent';
+            {/* Grilla: Días de la semana */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '4px', textAlign: 'center', fontWeight: 'bold', color: '#64748b', marginBottom: '10px', fontSize: '0.75em', textTransform: 'uppercase' }}>
+              <div>Dom</div><div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div>
+            </div>
 
-              if (dayData) {
-                if (dayData.isProfitable) {
-                  bgColor = '#dcfce7'; // Verde claro
-                  fontColor = '#166534';
-                  borderColor = '#bbf7d0';
-                } else {
-                  bgColor = '#fee2e2'; // Rojo claro
-                  fontColor = '#991b1b';
-                  borderColor = '#fecaca';
+            {/* Grilla: Casillas numéricas */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '4px' }}>
+              {blanks.map((_, i) => (
+                <div key={`blank-${i}`} style={{ padding: '5px', borderRadius: '6px', background: '#f8fafc' }}></div>
+              ))}
+              
+              {days.map(day => {
+                const dayData = getDataForDay(day);
+                let bgColor = '#f1f5f9'; // Gris (Sin operaciones)
+                let fontColor = '#64748b';
+                let borderColor = 'transparent';
+
+                if (dayData) {
+                  if (dayData.isProfitable) {
+                    bgColor = '#dcfce7'; // Verde claro
+                    fontColor = '#166534';
+                    borderColor = '#bbf7d0';
+                  } else {
+                    bgColor = '#fee2e2'; // Rojo claro
+                    fontColor = '#991b1b';
+                    borderColor = '#fecaca';
+                  }
                 }
-              }
 
-              return (
-                <div key={day} style={{ 
-                  background: bgColor, 
-                  border: `1px solid ${borderColor}`,
-                  padding: '10px', 
-                  borderRadius: '8px', 
-                  display: 'flex', 
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  minHeight: '60px'
-                }}>
-                  <span style={{ fontWeight: 'bold', color: fontColor, fontSize: '1.1em' }}>{day}</span>
-                  {dayData && (
-                    <span style={{ fontSize: '0.8em', color: fontColor, marginTop: 'auto', fontWeight: '600' }}>
-                      {dayData.netPnl > 0 ? '+' : ''}${dayData.netPnl}
-                    </span>
-                  )}
-                </div>
-              );
-            })}
+                return (
+                  <div key={day} style={{ 
+                    background: bgColor, 
+                    border: `1px solid ${borderColor}`,
+                    padding: '5px', 
+                    borderRadius: '6px', 
+                    display: 'flex', 
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    minHeight: '55px',
+                    boxSizing: 'border-box',
+                    overflow: 'hidden'
+                  }}>
+                    {/* Usamos clamp() para que el número del día sea responsivo */}
+                    <span style={{ fontWeight: 'bold', color: fontColor, fontSize: 'clamp(0.9em, 2.5vw, 1.1em)' }}>{day}</span>
+                    
+                    {dayData && (
+                      <span style={{ 
+                        fontSize: 'clamp(0.6em, 2vw, 0.75em)', 
+                        color: fontColor, 
+                        marginTop: 'auto', 
+                        fontWeight: '800',
+                        whiteSpace: 'nowrap',
+                        textOverflow: 'ellipsis',
+                        overflow: 'hidden',
+                        width: '100%',
+                        textAlign: 'center'
+                      }}>
+                        {dayData.netPnl > 0 ? '+' : ''}${dayData.netPnl}
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
           </div>
-        </>
+        </div>
       )}
     </div>
   );

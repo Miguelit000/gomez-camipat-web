@@ -94,18 +94,24 @@ export default function TradeForm({ onCerrar, onGuardado }) {
   };
 
   return (
-    <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(15, 23, 42, 0.7)', backdropFilter: 'blur(5px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 2000, padding: '20px', overflowY: 'auto' }}>
-      <div style={{ background: 'white', padding: '30px', borderRadius: '12px', width: '100%', maxWidth: '800px', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', maxHeight: '90vh', overflowY: 'auto' }}>
+    <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(15, 23, 42, 0.7)', backdropFilter: 'blur(5px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 2000, padding: '15px', overflowY: 'auto' }}>
+      
+      {/* Redujimos el padding a 20px para que ocupe menos espacio inútil en celular */}
+      <div style={{ background: 'white', padding: '20px', borderRadius: '12px', width: '100%', maxWidth: '800px', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', maxHeight: '90vh', overflowY: 'auto', boxSizing: 'border-box' }}>
+        
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', borderBottom: '1px solid #e2e8f0', paddingBottom: '15px' }}>
-          <h3 style={{ margin: 0, color: '#0f172a', fontSize: '1.4em' }}>⚡ Registrar Operación</h3>
-          <button onClick={onCerrar} style={{ background: '#f1f5f9', border: 'none', cursor: 'pointer', fontSize: '1.2em', color: '#64748b', borderRadius: '50%', width: '35px', height: '35px', display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'background 0.2s' }}>✖</button>
+          <h3 style={{ margin: 0, color: '#0f172a', fontSize: '1.2em' }}>⚡ Registrar Operación</h3>
+          <button onClick={onCerrar} style={{ background: '#f1f5f9', border: 'none', cursor: 'pointer', fontSize: '1.2em', color: '#64748b', borderRadius: '50%', width: '35px', height: '35px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>✖</button>
         </div>
 
-        <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+        {/* Cambiamos a auto-fit minmax(250px) para que colapse a 1 columna automáticamente */}
+        <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '15px' }}>
+          
           <div>
             <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Activo (Ticker)</label>
             <input type="text" name="asset" value={formData.asset} onChange={handleChange} required placeholder="Ej. XAUUSD" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }} />
           </div>
+          
           <div>
             <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Dirección</label>
             <select name="direction" value={formData.direction} onChange={handleChange} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }}>
@@ -114,7 +120,8 @@ export default function TradeForm({ onCerrar, onGuardado }) {
             </select>
           </div>
 
-          <div style={{ gridColumn: 'span 2' }}>
+          {/* Cambiamos "span 2" por "1 / -1" para que ocupe todo el ancho de forma segura */}
+          <div style={{ gridColumn: '1 / -1' }}>
             <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#3b82f6', marginBottom: '5px' }}>🧠 Playbook / Estrategia</label>
             <select name="strategyId" value={formData.strategyId} onChange={handleChange} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '2px solid #bfdbfe', background: '#eff6ff', boxSizing: 'border-box', fontWeight: 'bold', color: '#1e293b' }}>
               <option value="">-- Operación Libre --</option>
@@ -124,13 +131,13 @@ export default function TradeForm({ onCerrar, onGuardado }) {
             </select>
           </div>
 
-          <div style={{ gridColumn: 'span 2', background: '#f0fdf4', padding: '15px', borderRadius: '8px', border: '1px solid #bbf7d0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <label style={{ fontWeight: 'bold', color: '#166534', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
+          <div style={{ gridColumn: '1 / -1', background: '#f0fdf4', padding: '15px', borderRadius: '8px', border: '1px solid #bbf7d0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <label style={{ fontWeight: 'bold', color: '#166534', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '0.9em' }}>
               <input type="checkbox" checked={useCalculator} onChange={(e) => setUseCalculator(e.target.checked)} />
               🧮 Calculadora de Riesgo Automática
             </label>
             {useCalculator && (
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '10px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: '15px', marginTop: '10px' }}>
                 <div>
                   <label style={{ display: 'block', fontSize: '0.85em', fontWeight: 'bold', color: '#166534', marginBottom: '5px' }}>Capital ($)</label>
                   <input type="number" value={accountBalance} onChange={(e) => setAccountBalance(e.target.value)} style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #bbf7d0', boxSizing: 'border-box' }} />
@@ -147,6 +154,7 @@ export default function TradeForm({ onCerrar, onGuardado }) {
             <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Precio de Entrada</label>
             <input type="text" inputMode="decimal" name="entryPrice" value={formData.entryPrice} onChange={handleChange} required placeholder="Ej. 2045,50" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc', boxSizing: 'border-box' }} />
           </div>
+          
           <div>
             <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>
               Tamaño (Lotes) {useCalculator && <span style={{ color: '#166534', fontSize: '0.8em' }}>(Auto)</span>}
@@ -158,13 +166,13 @@ export default function TradeForm({ onCerrar, onGuardado }) {
             <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Stop Loss (Opcional)</label>
             <input type="text" inputMode="decimal" name="stopLoss" value={formData.stopLoss} onChange={handleChange} required={useCalculator} placeholder="Ej. 2040,00" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc', boxSizing: 'border-box' }} />
           </div>
+          
           <div>
             <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Take Profit (Opcional)</label>
             <input type="text" inputMode="decimal" name="takeProfit" value={formData.takeProfit} onChange={handleChange} placeholder="Ej. 2060,00" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc', boxSizing: 'border-box' }} />
           </div>
 
-          {/* <-- NUEVA BITÁCORA TIPO NOTION --> */}
-          <div style={{ gridColumn: 'span 2' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <label style={{ display: 'block', fontSize: '1em', fontWeight: 'bold', color: '#475569', marginBottom: '8px' }}>📝 Bitácora del Trade</label>
             <BlockEditor 
               initialContent={formData.notes} 
@@ -172,14 +180,15 @@ export default function TradeForm({ onCerrar, onGuardado }) {
             />
           </div>
 
-          <div style={{ gridColumn: 'span 2', display: 'flex', justifyContent: 'flex-end', gap: '15px', marginTop: '10px' }}>
-            <button type="button" onClick={onCerrar} style={{ padding: '12px 20px', background: '#f1f5f9', color: '#475569', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>Cancelar</button>
-            <button type="submit" disabled={loading} style={{ padding: '12px 20px', background: '#3b82f6', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>
+          {/* Botones flex-wrap para que se estiren bien en celular */}
+          <div style={{ gridColumn: '1 / -1', display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-end', gap: '15px', marginTop: '10px' }}>
+            <button type="button" onClick={onCerrar} style={{ flex: '1 1 auto', padding: '12px 20px', background: '#f1f5f9', color: '#475569', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', textAlign: 'center' }}>Cancelar</button>
+            <button type="submit" disabled={loading} style={{ flex: '1 1 auto', padding: '12px 20px', background: '#3b82f6', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', textAlign: 'center' }}>
               {loading ? 'Guardando...' : 'Confirmar Operación'}
             </button>
           </div>
 
-          {error && <div style={{ gridColumn: 'span 2', color: '#ef4444', fontWeight: 'bold', fontSize: '0.9em' }}>❌ {error}</div>}
+          {error && <div style={{ gridColumn: '1 / -1', color: '#ef4444', fontWeight: 'bold', fontSize: '0.9em' }}>❌ {error}</div>}
         </form>
       </div>
     </div>

@@ -174,7 +174,7 @@ export default function DashboardPage() {
         </div>
       )}
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid #eee', paddingBottom: '20px', marginBottom: '30px' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid #eee', paddingBottom: '20px', marginBottom: '30px' }}>
         <div>
           <h1 style={{ margin: 0, color: '#0f172a' }}>🏦 Centro de Mando</h1>
           <p style={{ margin: 0, color: 'gray' }}>Portafolio Principal</p>
@@ -221,14 +221,18 @@ export default function DashboardPage() {
           )}
           {/* <-- FIN DE LA MAGIA VISUAL --> */}
 
+          {/* BOTÓN NUEVA OPERACIÓN CON LÍMITE */}
           {!mostrarFormulario && (
-            <button onClick={() => setMostrarFormulario(true)} style={{ padding: '10px 20px', background: '#3b82f6', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>
-              + Nueva Operación
-            </button>
+            userRole !== 'ROLE_PRO' && trades.length >= 50 ? (
+              <button onClick={handleUpgradePro} style={{ padding: '10px 20px', background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', boxShadow: '0 4px 6px rgba(245, 158, 11, 0.2)' }}>
+                🔒 Límite Alcanzado (50/50)
+              </button>
+            ) : (
+              <button onClick={() => setMostrarFormulario(true)} style={{ padding: '10px 20px', background: '#3b82f6', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>
+                + Nueva Operación
+              </button>
+            )
           )}
-          <button onClick={handleLogout} style={{ padding: '10px 20px', background: '#0f172a', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>
-            Salir de Bóveda
-          </button>
         </div>
       </div>
 
@@ -245,12 +249,13 @@ export default function DashboardPage() {
 
       <div style={{ padding: '25px', background: '#ffffff', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0' }}>
         
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-          <h3 style={{ margin: 0, color: '#1e293b' }}>Registro de Operaciones (Trades)</h3>
+        {/* CABECERA RESPONSIVA */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+          <h3 style={{ margin: 0, color: '#1e293b' }}>Registro de Operaciones</h3>
           
-          <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '10px' }}>
             <span style={{ fontSize: '0.9em', color: '#64748b', fontWeight: 'bold' }}>
-              Mostrando {filteredTrades.length} de {trades.length} operaciones
+              {filteredTrades.length} de {trades.length}
             </span>
             
             <input 
@@ -261,46 +266,52 @@ export default function DashboardPage() {
               onChange={handleImportCSV} 
             />
 
-            <button 
-              onClick={() => fileInputRef.current.click()} 
-              disabled={isImporting}
-              style={{ padding: '8px 15px', background: isImporting ? '#94a3b8' : '#3b82f6', color: 'white', border: 'none', borderRadius: '6px', cursor: isImporting ? 'not-allowed' : 'pointer', fontWeight: 'bold', fontSize: '0.85em', display: 'flex', alignItems: 'center', gap: '5px' }}>
-              {isImporting ? '⏳ Importando...' : '⬆️ Importar MT5'}
-            </button>
-
-            <button onClick={handleExportCSV} style={{ padding: '8px 15px', background: '#10b981', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', fontSize: '0.85em', display: 'flex', alignItems: 'center', gap: '5px' }}>
-              📥 Exportar CSV
-            </button>
+            {/* BOTÓN IMPORTAR MT5 CON BLOQUEO */}
+            {userRole === 'ROLE_PRO' ? (
+              <button 
+                onClick={() => fileInputRef.current.click()} 
+                disabled={isImporting}
+                style={{ padding: '8px 15px', background: isImporting ? '#94a3b8' : '#3b82f6', color: 'white', border: 'none', borderRadius: '6px', cursor: isImporting ? 'not-allowed' : 'pointer', fontWeight: 'bold', fontSize: '0.85em', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                {isImporting ? '⏳ Importando...' : '⬆️ Importar MT5'}
+              </button>
+            ) : (
+              <button 
+                onClick={handleUpgradePro} 
+                style={{ padding: '8px 15px', background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', fontSize: '0.85em', display: 'flex', alignItems: 'center', gap: '5px', boxShadow: '0 2px 4px rgba(245, 158, 11, 0.2)' }}>
+                🔒 Importar MT5
+              </button>
+            )}
           </div>
         </div>
 
-        <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', padding: '15px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-          <div style={{ flex: 1 }}>
-            <label style={{ display: 'block', fontSize: '0.8em', fontWeight: 'bold', color: '#64748b', marginBottom: '5px' }}>🔍 Buscar por Activo</label>
+        {/* FILTROS RESPONSIVOS (con base base min-width) */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '20px', padding: '15px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+          <div style={{ flex: '1 1 150px' }}>
+            <label style={{ display: 'block', fontSize: '0.8em', fontWeight: 'bold', color: '#64748b', marginBottom: '5px' }}>🔍 Activo</label>
             <input type="text" placeholder="Ej. BTC, AAPL..." value={filtroActivo} onChange={(e) => setFiltroActivo(e.target.value)} style={{ width: '100%', padding: '8px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }} />
           </div>
           
-          <div style={{ flex: 1 }}>
+          <div style={{ flex: '1 1 150px' }}>
             <label style={{ display: 'block', fontSize: '0.8em', fontWeight: 'bold', color: '#64748b', marginBottom: '5px' }}>📌 Estado</label>
             <select value={filtroEstado} onChange={(e) => setFiltroEstado(e.target.value)} style={{ width: '100%', padding: '8px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }}>
-              <option value="ALL">Todas las operaciones</option>
-              <option value="OPEN">🟢 Solo Abiertas</option>
-              <option value="CLOSED">🔒 Solo Cerradas</option>
+              <option value="ALL">Todas</option>
+              <option value="OPEN">🟢 Abiertas</option>
+              <option value="CLOSED">🔒 Cerradas</option>
             </select>
           </div>
 
-          <div style={{ flex: 1 }}>
-            <label style={{ display: 'block', fontSize: '0.8em', fontWeight: 'bold', color: '#64748b', marginBottom: '5px' }}>💰 Resultado Neto</label>
+          <div style={{ flex: '1 1 150px' }}>
+            <label style={{ display: 'block', fontSize: '0.8em', fontWeight: 'bold', color: '#64748b', marginBottom: '5px' }}>💰 Resultado</label>
             <select value={filtroResultado} onChange={(e) => setFiltroResultado(e.target.value)} style={{ width: '100%', padding: '8px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }}>
-              <option value="ALL">Todos los resultados</option>
-              <option value="WIN">📈 Solo Ganadoras</option>
-              <option value="LOSS">📉 Solo Perdedoras</option>
+              <option value="ALL">Todos</option>
+              <option value="WIN">📈 Ganadoras</option>
+              <option value="LOSS">📉 Perdedoras</option>
             </select>
           </div>
           
           {(filtroActivo !== '' || filtroEstado !== 'ALL' || filtroResultado !== 'ALL') && (
-            <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-              <button onClick={() => { setFiltroActivo(''); setFiltroEstado('ALL'); setFiltroResultado('ALL'); }} style={{ padding: '8px 12px', background: '#ef4444', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', fontSize: '0.85em' }}>
+            <div style={{ display: 'flex', alignItems: 'flex-end', flex: '1 1 100px' }}>
+              <button onClick={() => { setFiltroActivo(''); setFiltroEstado('ALL'); setFiltroResultado('ALL'); }} style={{ width: '100%', padding: '8px 12px', background: '#ef4444', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', fontSize: '0.85em' }}>
                 ✖ Limpiar
               </button>
             </div>
@@ -317,8 +328,9 @@ export default function DashboardPage() {
         )}
 
         {!cargando && !error && filteredTrades.length > 0 && (
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', textAlign: 'left', borderCollapse: 'collapse', marginTop: '10px' }}>
+          <div style={{ width: '100%', overflowX: 'auto', paddingBottom: '10px' }}>
+            {/* Agregamos minWidth a la tabla para forzar el scroll en móviles */}
+            <table style={{ width: '100%', minWidth: '850px', textAlign: 'left', borderCollapse: 'collapse', marginTop: '10px' }}>
               <thead>
                 <tr style={{ borderBottom: '2px solid #cbd5e1', color: '#475569', fontSize: '0.9em' }}>
                   <th style={{ padding: '12px' }}>Fecha</th>

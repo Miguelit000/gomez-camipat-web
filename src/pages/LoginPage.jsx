@@ -24,7 +24,7 @@ export default function LoginPage() {
     try {
       // Le enviamos el token seguro de Google a nuestro backend en Java
       const res = await api.post('/auth/google', { token: credentialResponse.credential });
-      // Guardamos el JWT de Gomez Capital y el ID del portafolio
+      // Guardamos el JWT de AstroTrade y el ID del portafolio
       login(res.data.token, res.data.portfolioId);
       navigate('/dashboard');
     } catch (err) {
@@ -60,7 +60,7 @@ export default function LoginPage() {
             {isRegister ? 'Crear Cuenta' : 'Bienvenido de nuevo'}
           </h2>
           <p style={{ textAlign: 'center', color: '#64748b', marginBottom: '30px' }}>
-            Gómez Capital Trading Journal
+            AstroTrade
           </p>
 
           {/* <-- BOTÓN OFICIAL DE GOOGLE --> */}

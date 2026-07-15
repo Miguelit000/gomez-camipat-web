@@ -35,8 +35,8 @@ export default function AnnualHeatmap({ data }) {
   return (
     <div style={{ background: 'white', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0' }}>
       
-      {/* CABECERA CON EL SELECTOR DE AÑO */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+      {/* CABECERA CON EL SELECTOR DE AÑO (RESPONSIVA) */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
         <h3 style={{ margin: 0, color: '#1e293b' }}>📅 Mapa de Calor Operativo</h3>
         
         <select 
@@ -96,10 +96,26 @@ export default function AnnualHeatmap({ data }) {
         })}
       </div>
 
-      <div style={{ display: 'flex', gap: '20px', marginTop: '25px', fontSize: '0.85em', color: '#64748b', justifyContent: 'flex-end', fontWeight: 'bold' }}>
-         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><div style={{ width: '14px', height: '14px', background: '#22c55e', borderRadius: '3px' }}></div> Día Ganador</div>
-         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><div style={{ width: '14px', height: '14px', background: '#ef4444', borderRadius: '3px' }}></div> Día Perdedor</div>
-         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><div style={{ width: '14px', height: '14px', background: '#e2e8f0', borderRadius: '3px' }}></div> Sin Operar</div>
+      {/* LEYENDA RESPONSIVA */}
+      <div style={{ 
+        display: 'flex', 
+        flexWrap: 'wrap', 
+        gap: '15px', 
+        marginTop: '25px', 
+        fontSize: '0.85em', 
+        color: '#64748b', 
+        justifyContent: 'center', 
+        fontWeight: 'bold' 
+      }}>
+         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+           <div style={{ width: '14px', height: '14px', background: '#22c55e', borderRadius: '3px' }}></div> Día Ganador
+         </div>
+         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+           <div style={{ width: '14px', height: '14px', background: '#ef4444', borderRadius: '3px' }}></div> Día Perdedor
+         </div>
+         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+           <div style={{ width: '14px', height: '14px', background: '#e2e8f0', borderRadius: '3px' }}></div> Sin Operar
+         </div>
       </div>
     </div>
   );
