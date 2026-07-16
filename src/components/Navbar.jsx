@@ -7,7 +7,7 @@ export default function Navbar() {
   const { portfolioId, setPortfolioId, token, userRole } = useContext(AuthContext);
   const [portfolios, setPortfolios] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false); // <-- Estado para nuestro nuevo menú
+  const [dropdownOpen, setDropdownOpen] = useState(false); 
   
   const [newPortData, setNewPortData] = useState({ 
     name: '', 
@@ -38,7 +38,6 @@ export default function Navbar() {
     if (token && location.pathname !== '/') fetchPortfolios();
   }, [token, location.pathname, portfolioId, setPortfolioId]);
 
-  // Cierra el menú si tocas fuera de él
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -52,15 +51,10 @@ export default function Navbar() {
   const handleSelectPortfolio = (newId) => {
     setDropdownOpen(false);
     
-    // DEBUG: Verifiquemos qué rol tiene realmente el usuario en este momento
-    console.log("Rol actual del usuario:", userRole);
-    console.log("Total de portafolios:", portfolios.length);
-
     if (newId === "NEW") {
-        // Bloqueo estricto: Si no es PRO y ya tiene al menos 1 portafolio, prohibir
-        if (userRole !== 'ROLE_PRO' && portfolios.length >= 1) {
+        if (userRole !== 'ROLE_PRO' && userRole !== 'ROLE_ADMIN' && portfolios.length >= 1) {
             alert("Límite alcanzado: Las cuentas gratuitas solo pueden tener 1 portafolio. ¡Mejora a PRO para crear cuentas ilimitadas!");
-            return; // Detenemos la ejecución aquí
+            return; 
         }
         
         setShowModal(true);
@@ -101,7 +95,6 @@ export default function Navbar() {
           ⚡ AstroTrade
         </Link>
         
-        {/* NUEVO MENÚ DESPLEGABLE PERSONALIZADO */}
         <div ref={dropdownRef} style={{ position: 'relative', background: '#1e293b', padding: '6px 12px', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '8px', flex: '1 1 auto', maxWidth: 'fit-content' }}>
           <span style={{ fontSize: '0.8em', color: '#94a3b8', fontWeight: 'bold' }}>CUENTA:</span>
           
@@ -139,6 +132,16 @@ export default function Navbar() {
 
       {/* SECCIÓN DERECHA: Enlaces tipo Pestaña */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', alignItems: 'center', flex: '1 1 auto', justifyContent: 'flex-end' }}>
+        
+        {/* BOTÓN SECRETO DE ADMINISTRADOR */}
+        {userRole === 'ROLE_ADMIN' && (
+            <button 
+              onClick={() => navigate('/admin')} 
+              style={{ padding: '8px 15px', background: '#0f172a', color: '#22c55e', border: '1px solid #22c55e', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>
+              🛡️ Modo Admin
+            </button>
+        )}
+
         <Link to="/dashboard" style={{ color: location.pathname === '/dashboard' ? '#ffffff' : '#94a3b8', background: location.pathname === '/dashboard' ? '#1e293b' : 'transparent', textDecoration: 'none', fontWeight: 'bold', padding: '8px 12px', borderRadius: '6px', fontSize: '0.9em', transition: 'background 0.2s' }}>
           Dashboard
         </Link>

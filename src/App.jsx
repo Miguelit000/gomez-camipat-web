@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
 import StrategiesPage from './pages/StrategiesPage';
 import StatisticsPage from './pages/StatisticsPage'; 
+import AdminDashboard from './pages/AdminDashboard';
 import Navbar from './components/Navbar'; 
 
 function App() {
@@ -20,6 +21,15 @@ function App() {
           element={
             <ProtectedRoute>
               <DashboardPage />
+            </ProtectedRoute>
+          } 
+        />
+
+        <Route 
+          path="/admin" 
+          element={
+            <ProtectedRoute>
+              <AdminDashboard />
             </ProtectedRoute>
           } 
         />

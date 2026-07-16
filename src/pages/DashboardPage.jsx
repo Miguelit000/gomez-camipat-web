@@ -185,7 +185,7 @@ export default function DashboardPage() {
           {/* <-- LA MAGIA VISUAL EMPIEZA AQUÍ --> */}
           
           {/* SI EL USUARIO ES FREE, MOSTRAMOS EL BOTÓN DORADO */}
-          {userRole !== 'ROLE_PRO' && (
+          {userRole !== 'ROLE_PRO' && userRole !== 'ROLE_ADMIN' && (
             <button 
               onClick={handleUpgradePro}
               style={{ 
@@ -197,33 +197,37 @@ export default function DashboardPage() {
             </button>
           )}
 
-          {/* SI EL USUARIO ES PRO, MOSTRAMOS LA INSIGNIA VERDE Y EL PORTAL */}
-          {userRole === 'ROLE_PRO' && (
+          {/* SI EL USUARIO ES PRO O ADMIN, MOSTRAMOS LA INSIGNIA */}
+          {(userRole === 'ROLE_PRO' || userRole === 'ROLE_ADMIN') && (
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <span style={{ 
-                padding: '8px 12px', background: '#dcfce7', color: '#166534', 
+                padding: '8px 12px', background: userRole === 'ROLE_ADMIN' ? '#0f172a' : '#dcfce7', 
+                color: userRole === 'ROLE_ADMIN' ? '#22c55e' : '#166534', 
                 borderRadius: '20px', fontWeight: 'bold', fontSize: '13px',
-                border: '1px solid #bbf7d0', display: 'flex', alignItems: 'center', gap: '5px'
+                border: `1px solid ${userRole === 'ROLE_ADMIN' ? '#22c55e' : '#bbf7d0'}`, 
+                display: 'flex', alignItems: 'center', gap: '5px'
               }}>
-                ✅ PRO
+                {userRole === 'ROLE_ADMIN' ? '🛡️ ADMIN' : '✅ PRO'}
               </span>
               
-              <button 
-                onClick={handleManageSubscription}
-                style={{ 
-                  padding: '10px 20px', background: '#e2e8f0', 
-                  color: '#475569', border: 'none', borderRadius: '6px', fontWeight: 'bold', 
-                  cursor: 'pointer', transition: 'all 0.2s'
-                }}>
-                ⚙️ Gestionar Suscripción
-              </button>
+              {userRole === 'ROLE_PRO' && (
+                <button 
+                  onClick={handleManageSubscription}
+                  style={{ 
+                    padding: '10px 20px', background: '#e2e8f0', 
+                    color: '#475569', border: 'none', borderRadius: '6px', fontWeight: 'bold', 
+                    cursor: 'pointer', transition: 'all 0.2s'
+                  }}>
+                  ⚙️ Gestionar Suscripción
+                </button>
+              )}
             </div>
           )}
           {/* <-- FIN DE LA MAGIA VISUAL --> */}
 
           {/* BOTÓN NUEVA OPERACIÓN CON LÍMITE */}
           {!mostrarFormulario && (
-            userRole !== 'ROLE_PRO' && trades.length >= 50 ? (
+            userRole !== 'ROLE_PRO' && userRole !== 'ROLE_ADMIN' && trades.length >= 50 ? (
               <button onClick={handleUpgradePro} style={{ padding: '10px 20px', background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', boxShadow: '0 4px 6px rgba(245, 158, 11, 0.2)' }}>
                 🔒 Límite Alcanzado (50/50)
               </button>
@@ -267,7 +271,7 @@ export default function DashboardPage() {
             />
 
             {/* BOTÓN IMPORTAR MT5 CON BLOQUEO */}
-            {userRole === 'ROLE_PRO' ? (
+            {(userRole === 'ROLE_PRO' || userRole === 'ROLE_ADMIN') ? (
               <button 
                 onClick={() => fileInputRef.current.click()} 
                 disabled={isImporting}

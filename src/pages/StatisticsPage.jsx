@@ -11,7 +11,7 @@ export default function StatisticsPage() {
   const [error, setError] = useState('');
 
   // BLOQUEO VISUAL: Si no es PRO, detenemos todo aquí y mostramos el diseño limpio
-  if (userRole !== 'ROLE_PRO') {
+  if (userRole !== 'ROLE_PRO' && userRole !== 'ROLE_ADMIN') {
     return (
       <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
         <PremiumBanner 
