@@ -9,7 +9,7 @@ export default function ProtectedRoute({ children }) {
   // Si NO hay token (es decir, es nulo o no está autenticado), lo mandamos al Login
   if (!token) {
     // "replace" borra el historial para que el usuario no pueda volver atrás
-    return <Navigate to="/" replace />;
+    return <Navigate to="/login" replace />;
   }
 
   // Si hay token, todo está en orden, renderiza la pantalla que quería ver

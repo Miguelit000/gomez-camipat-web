@@ -85,6 +85,1124 @@ vite.config.js
 <files>
 This section contains the contents of the repository's files.
 
+<file path="public/favicon.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="46" fill="none" viewBox="0 0 48 46"><path fill="#863bff" d="M25.946 44.938c-.664.845-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.287c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.497 0-3.578-1.842-3.578H1.237c-.92 0-1.456-1.04-.92-1.788L10.013.474c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.579 1.842 3.579h11.377c.943 0 1.473 1.088.89 1.83L25.947 44.94z" style="fill:#863bff;fill:color(display-p3 .5252 .23 1);fill-opacity:1"/><mask id="a" width="48" height="46" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M25.842 44.938c-.664.844-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.183c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.498 0-3.579-1.842-3.579H1.133c-.92 0-1.456-1.04-.92-1.787L9.91.473c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.578 1.842 3.578h11.377c.943 0 1.473 1.088.89 1.832L25.843 44.94z" style="fill:#000;fill-opacity:1"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#ede6ff" rx="5.508" ry="14.704" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -4.47 31.516)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#ede6ff" rx="10.399" ry="29.851" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -39.328 7.883)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#7e14ff" rx="5.508" ry="30.487" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -25.913 -14.639)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -32.644 -3.334)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -34.34 30.47)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#ede6ff" rx="14.072" ry="22.078" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="rotate(93.35 24.506 48.493)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx=".387" cy="8.972" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(39.51 .387 8.972)"/></g><g filter="url(#k)"><ellipse cx="47.523" cy="-6.092" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 47.523 -6.092)"/></g><g filter="url(#l)"><ellipse cx="41.412" cy="6.333" fill="#47bfff" rx="5.971" ry="9.665" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 41.412 6.333)"/></g><g filter="url(#m)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#n)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#o)"><ellipse cx="35.651" cy="29.907" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 35.651 29.907)"/></g><g filter="url(#p)"><ellipse cx="38.418" cy="32.4" fill="#47bfff" rx="5.971" ry="15.297" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 38.418 32.4)"/></g></g><defs><filter id="b" width="60.045" height="41.654" x="-19.77" y="16.149" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-54.613" y="-7.533" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-49.64" y="2.03" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-45.045" y="20.029" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-43.513" y="21.178" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="15.756" y="-17.901" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-27.636" y="-22.853" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="20.116" y="-38.415" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="24.641" y="-11.323" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="8.244" y="-2.416" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="18.713" y="10.588" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="public/icons.svg">
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="bluesky-icon" viewBox="0 0 16 17">
+    <g clip-path="url(#bluesky-clip)"><path fill="#08060d" d="M7.75 7.735c-.693-1.348-2.58-3.86-4.334-5.097-1.68-1.187-2.32-.981-2.74-.79C.188 2.065.1 2.812.1 3.251s.241 3.602.398 4.13c.52 1.744 2.367 2.333 4.07 2.145-2.495.37-4.71 1.278-1.805 4.512 3.196 3.309 4.38-.71 4.987-2.746.608 2.036 1.307 5.91 4.93 2.746 2.72-2.746.747-4.143-1.747-4.512 1.702.189 3.55-.4 4.07-2.145.156-.528.397-3.691.397-4.13s-.088-1.186-.575-1.406c-.42-.19-1.06-.395-2.741.79-1.755 1.24-3.64 3.752-4.334 5.099"/></g>
+    <defs><clipPath id="bluesky-clip"><path fill="#fff" d="M.1.85h15.3v15.3H.1z"/></clipPath></defs>
+  </symbol>
+  <symbol id="discord-icon" viewBox="0 0 20 19">
+    <path fill="#08060d" d="M16.224 3.768a14.5 14.5 0 0 0-3.67-1.153c-.158.286-.343.67-.47.976a13.5 13.5 0 0 0-4.067 0c-.128-.306-.317-.69-.476-.976A14.4 14.4 0 0 0 3.868 3.77C1.546 7.28.916 10.703 1.231 14.077a14.7 14.7 0 0 0 4.5 2.306q.545-.748.965-1.587a9.5 9.5 0 0 1-1.518-.74q.191-.14.372-.293c2.927 1.369 6.107 1.369 8.999 0q.183.152.372.294-.723.437-1.52.74.418.838.963 1.588a14.6 14.6 0 0 0 4.504-2.308c.37-3.911-.63-7.302-2.644-10.309m-9.13 8.234c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.894 0 1.614.82 1.599 1.82.001 1-.705 1.82-1.6 1.82m5.91 0c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.893 0 1.614.82 1.599 1.82 0 1-.706 1.82-1.6 1.82"/>
+  </symbol>
+  <symbol id="documentation-icon" viewBox="0 0 21 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="m15.5 13.333 1.533 1.322c.645.555.967.833.967 1.178s-.322.623-.967 1.179L15.5 18.333m-3.333-5-1.534 1.322c-.644.555-.966.833-.966 1.178s.322.623.966 1.179l1.534 1.321"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M17.167 10.836v-4.32c0-1.41 0-2.117-.224-2.68-.359-.906-1.118-1.621-2.08-1.96-.599-.21-1.349-.21-2.848-.21-2.623 0-3.935 0-4.983.369-1.684.591-3.013 1.842-3.641 3.428C3 6.449 3 7.684 3 10.154v2.122c0 2.558 0 3.838.706 4.726q.306.383.713.671c.76.536 1.79.64 3.581.66"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M3 10a2.78 2.78 0 0 1 2.778-2.778c.555 0 1.209.097 1.748-.047.48-.129.854-.503.982-.982.145-.54.048-1.194.048-1.749a2.78 2.78 0 0 1 2.777-2.777"/>
+  </symbol>
+  <symbol id="github-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M9.356 1.85C5.05 1.85 1.57 5.356 1.57 9.694a7.84 7.84 0 0 0 5.324 7.44c.387.079.528-.168.528-.376 0-.182-.013-.805-.013-1.454-2.165.467-2.616-.935-2.616-.935-.349-.91-.864-1.143-.864-1.143-.71-.48.051-.48.051-.48.787.051 1.2.805 1.2.805.695 1.194 1.817.857 2.268.649.064-.507.27-.857.49-1.052-1.728-.182-3.545-.857-3.545-3.87 0-.857.31-1.558.8-2.104-.078-.195-.349-1 .077-2.078 0 0 .657-.208 2.14.805a7.5 7.5 0 0 1 1.946-.26c.657 0 1.328.092 1.946.26 1.483-1.013 2.14-.805 2.14-.805.426 1.078.155 1.883.078 2.078.502.546.799 1.247.799 2.104 0 3.013-1.818 3.675-3.558 3.87.284.247.528.714.528 1.454 0 1.052-.012 1.896-.012 2.156 0 .208.142.455.528.377a7.84 7.84 0 0 0 5.324-7.441c.013-4.338-3.48-7.844-7.773-7.844" clip-rule="evenodd"/>
+  </symbol>
+  <symbol id="social-icon" viewBox="0 0 20 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M12.5 6.667a4.167 4.167 0 1 0-8.334 0 4.167 4.167 0 0 0 8.334 0"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M2.5 16.667a5.833 5.833 0 0 1 8.75-5.053m3.837.474.513 1.035c.07.144.257.282.414.309l.93.155c.596.1.736.536.307.965l-.723.73a.64.64 0 0 0-.152.531l.207.903c.164.715-.213.991-.84.618l-.872-.52a.63.63 0 0 0-.577 0l-.872.52c-.624.373-1.003.094-.84-.618l.207-.903a.64.64 0 0 0-.152-.532l-.723-.729c-.426-.43-.289-.864.306-.964l.93-.156a.64.64 0 0 0 .412-.31l.513-1.034c.28-.562.735-.562 1.012 0"/>
+  </symbol>
+  <symbol id="x-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M1.893 1.98c.052.072 1.245 1.769 2.653 3.77l2.892 4.114c.183.261.333.48.333.486s-.068.089-.152.183l-.522.593-.765.867-3.597 4.087c-.375.426-.734.834-.798.905a1 1 0 0 0-.118.148c0 .01.236.017.664.017h.663l.729-.83c.4-.457.796-.906.879-.999a692 692 0 0 0 1.794-2.038c.034-.037.301-.34.594-.675l.551-.624.345-.392a7 7 0 0 1 .34-.374c.006 0 .93 1.306 2.052 2.903l2.084 2.965.045.063h2.275c1.87 0 2.273-.003 2.266-.021-.008-.02-1.098-1.572-3.894-5.547-2.013-2.862-2.28-3.246-2.273-3.266.008-.019.282-.332 2.085-2.38l2-2.274 1.567-1.782c.022-.028-.016-.03-.65-.03h-.674l-.3.342a871 871 0 0 1-1.782 2.025c-.067.075-.405.458-.75.852a100 100 0 0 1-.803.91c-.148.172-.299.344-.99 1.127-.304.343-.32.358-.345.327-.015-.019-.904-1.282-1.976-2.808L6.365 1.85H1.8zm1.782.91 8.078 11.294c.772 1.08 1.413 1.973 1.425 1.984.016.017.241.02 1.05.017l1.03-.004-2.694-3.766L7.796 5.75 5.722 2.852l-1.039-.004-1.039-.004z" clip-rule="evenodd"/>
+  </symbol>
+</svg>
+</file>
+
+<file path="src/assets/react.svg">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="35.93" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 228"><path fill="#00D8FF" d="M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621c6.238-30.281 2.16-54.676-11.769-62.708c-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848a155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233C50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165a167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266c13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923a168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586c13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488c29.348-9.723 48.443-25.443 48.443-41.52c0-15.417-17.868-30.326-45.517-39.844Zm-6.365 70.984c-1.4.463-2.836.91-4.3 1.345c-3.24-10.257-7.612-21.163-12.963-32.432c5.106-11 9.31-21.767 12.459-31.957c2.619.758 5.16 1.557 7.61 2.4c23.69 8.156 38.14 20.213 38.14 29.504c0 9.896-15.606 22.743-40.946 31.14Zm-10.514 20.834c2.562 12.94 2.927 24.64 1.23 33.787c-1.524 8.219-4.59 13.698-8.382 15.893c-8.067 4.67-25.32-1.4-43.927-17.412a156.726 156.726 0 0 1-6.437-5.87c7.214-7.889 14.423-17.06 21.459-27.246c12.376-1.098 24.068-2.894 34.671-5.345a134.17 134.17 0 0 1 1.386 6.193ZM87.276 214.515c-7.882 2.783-14.16 2.863-17.955.675c-8.075-4.657-11.432-22.636-6.853-46.752a156.923 156.923 0 0 1 1.869-8.499c10.486 2.32 22.093 3.988 34.498 4.994c7.084 9.967 14.501 19.128 21.976 27.15a134.668 134.668 0 0 1-4.877 4.492c-9.933 8.682-19.886 14.842-28.658 17.94ZM50.35 144.747c-12.483-4.267-22.792-9.812-29.858-15.863c-6.35-5.437-9.555-10.836-9.555-15.216c0-9.322 13.897-21.212 37.076-29.293c2.813-.98 5.757-1.905 8.812-2.773c3.204 10.42 7.406 21.315 12.477 32.332c-5.137 11.18-9.399 22.249-12.634 32.792a134.718 134.718 0 0 1-6.318-1.979Zm12.378-84.26c-4.811-24.587-1.616-43.134 6.425-47.789c8.564-4.958 27.502 2.111 47.463 19.835a144.318 144.318 0 0 1 3.841 3.545c-7.438 7.987-14.787 17.08-21.808 26.988c-12.04 1.116-23.565 2.908-34.161 5.309a160.342 160.342 0 0 1-1.76-7.887Zm110.427 27.268a347.8 347.8 0 0 0-7.785-12.803c8.168 1.033 15.994 2.404 23.343 4.08c-2.206 7.072-4.956 14.465-8.193 22.045a381.151 381.151 0 0 0-7.365-13.322Zm-45.032-43.861c5.044 5.465 10.096 11.566 15.065 18.186a322.04 322.04 0 0 0-30.257-.006c4.974-6.559 10.069-12.652 15.192-18.18ZM82.802 87.83a323.167 323.167 0 0 0-7.227 13.238c-3.184-7.553-5.909-14.98-8.134-22.152c7.304-1.634 15.093-2.97 23.209-3.984a321.524 321.524 0 0 0-7.848 12.897Zm8.081 65.352c-8.385-.936-16.291-2.203-23.593-3.793c2.26-7.3 5.045-14.885 8.298-22.6a321.187 321.187 0 0 0 7.257 13.246c2.594 4.48 5.28 8.868 8.038 13.147Zm37.542 31.03c-5.184-5.592-10.354-11.779-15.403-18.433c4.902.192 9.899.29 14.978.29c5.218 0 10.376-.117 15.453-.343c-4.985 6.774-10.018 12.97-15.028 18.486Zm52.198-57.817c3.422 7.8 6.306 15.345 8.596 22.52c-7.422 1.694-15.436 3.058-23.88 4.071a382.417 382.417 0 0 0 7.859-13.026a347.403 347.403 0 0 0 7.425-13.565Zm-16.898 8.101a358.557 358.557 0 0 1-12.281 19.815a329.4 329.4 0 0 1-23.444.823c-7.967 0-15.716-.248-23.178-.732a310.202 310.202 0 0 1-12.513-19.846h.001a307.41 307.41 0 0 1-10.923-20.627a310.278 310.278 0 0 1 10.89-20.637l-.001.001a307.318 307.318 0 0 1 12.413-19.761c7.613-.576 15.42-.876 23.31-.876H128c7.926 0 15.743.303 23.354.883a329.357 329.357 0 0 1 12.335 19.695a358.489 358.489 0 0 1 11.036 20.54a329.472 329.472 0 0 1-11 20.722Zm22.56-122.124c8.572 4.944 11.906 24.881 6.52 51.026c-.344 1.668-.73 3.367-1.15 5.09c-10.622-2.452-22.155-4.275-34.23-5.408c-7.034-10.017-14.323-19.124-21.64-27.008a160.789 160.789 0 0 1 5.888-5.4c18.9-16.447 36.564-22.941 44.612-18.3ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86Z"></path></svg>
+</file>
+
+<file path="src/assets/vite.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="77" height="47" fill="none" aria-labelledby="vite-logo-title" viewBox="0 0 77 47"><title id="vite-logo-title">Vite</title><style>.parenthesis{fill:#000}@media (prefers-color-scheme:dark){.parenthesis{fill:#fff}}</style><path fill="#9135ff" d="M40.151 45.71c-.663.844-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.493c-.92 0-1.457-1.04-.92-1.788l7.479-10.471c1.07-1.498 0-3.578-1.842-3.578H15.443c-.92 0-1.456-1.04-.92-1.788l9.696-13.576c.213-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.472c-1.07 1.497 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.087.89 1.83L40.153 45.712z"/><mask id="a" width="48" height="47" x="14" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M40.047 45.71c-.663.843-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.389c-.92 0-1.457-1.04-.92-1.788l7.479-10.472c1.07-1.497 0-3.578-1.842-3.578H15.34c-.92 0-1.456-1.04-.92-1.788l9.696-13.575c.213-.297.556-.474.92-.474H53.93c.92 0 1.456 1.04.92 1.788L47.37 13.03c-1.07 1.498 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.088.89 1.831L40.049 45.712z"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#eee6ff" rx="5.508" ry="14.704" transform="rotate(269.814 20.96 11.29)scale(-1 1)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#eee6ff" rx="10.399" ry="29.851" transform="rotate(89.814 -16.902 -8.275)scale(1 -1)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#8900ff" rx="5.508" ry="30.487" transform="rotate(89.814 -19.197 -7.127)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.928 4.177)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.738 5.52)scale(1 -1)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#eee6ff" rx="14.072" ry="22.078" transform="rotate(93.35 31.245 55.578)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx="14.592" cy="9.743" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(39.51 14.592 9.743)"/></g><g filter="url(#k)"><ellipse cx="61.728" cy="-5.321" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 61.728 -5.32)"/></g><g filter="url(#l)"><ellipse cx="55.618" cy="7.104" fill="#00c2ff" rx="5.971" ry="9.665" transform="rotate(37.892 55.618 7.104)"/></g><g filter="url(#m)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#n)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#o)"><ellipse cx="49.857" cy="30.678" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 49.857 30.678)"/></g><g filter="url(#p)"><ellipse cx="52.623" cy="33.171" fill="#00c2ff" rx="5.971" ry="15.297" transform="rotate(37.892 52.623 33.17)"/></g></g><path d="M6.919 0c-9.198 13.166-9.252 33.575 0 46.789h6.215c-9.25-13.214-9.196-33.623 0-46.789zm62.424 0h-6.215c9.198 13.166 9.252 33.575 0 46.789h6.215c9.25-13.214 9.196-33.623 0-46.789" class="parenthesis"/><defs><filter id="b" width="60.045" height="41.654" x="-5.564" y="16.92" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-40.407" y="-6.762" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-35.435" y="2.801" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-30.84" y="20.8" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-29.307" y="21.949" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="29.961" y="-17.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-13.43" y="-22.082" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="34.321" y="-37.644" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="38.847" y="-10.552" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="22.45" y="-1.645" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="32.919" y="11.36" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="src/components/BlockEditor.jsx">
+import { useEffect, useRef } from 'react';
+import EditorJS from '@editorjs/editorjs';
+import Header from '@editorjs/header';
+import List from '@editorjs/list';
+import ImageTool from '@editorjs/image';
+
+export default function BlockEditor({ initialContent, onChange }) {
+  const editorInstance = useRef(null);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (!editorInstance.current && containerRef.current) {
+      let parsedData = {};
+      
+      if (initialContent) {
+        try {
+          parsedData = JSON.parse(initialContent);
+        } catch (e) {
+          parsedData = {
+            blocks: [
+              {
+                type: "paragraph",
+                data: { text: initialContent }
+              }
+            ]
+          };
+        }
+      }
+
+      const editor = new EditorJS({
+        holder: containerRef.current,
+        data: parsedData,
+        placeholder: 'Escribe tu análisis, confluencias institucionales o pega capturas de pantalla aquí...',
+        tools: {
+          header: {
+            class: Header,
+            config: { levels: [2, 3, 4], defaultLevel: 2 }
+          },
+          list: {
+            class: List,
+            inlineToolbar: true
+          },
+          image: {
+            class: ImageTool,
+            config: {
+              endpoints: {
+                byFile: 'http://localhost:8080/api/v1/trades/editor/image',
+              },
+              // <-- SOLUCIÓN: Le decimos al editor que Java espera que el campo se llame "file"
+              field: 'file', 
+              additionalRequestHeaders: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+              }
+            }
+          }
+        },
+        onChange: async () => {
+          const content = await editor.saver.save();
+          onChange(JSON.stringify(content));
+        }
+      });
+
+      editorInstance.current = editor;
+    }
+
+    return () => {
+      if (editorInstance.current && typeof editorInstance.current.destroy === 'function') {
+        editorInstance.current.destroy();
+        editorInstance.current = null;
+      }
+    };
+  }, []); 
+
+  return (
+    <div 
+      ref={containerRef} 
+      style={{ 
+        background: '#ffffff', 
+        borderRadius: '6px', 
+        border: '1px solid #cbd5e1', 
+        padding: '15px', 
+        minHeight: '200px',
+        color: '#1e293b',
+        boxSizing: 'border-box'
+      }}
+    />
+  );
+}
+</file>
+
+<file path="src/components/CloseTradeModal.jsx">
+import { useState } from 'react';
+import api from '../api/axiosConfig';
+
+export default function CloseTradeModal({ trade, onClose, onGuardado }) {
+  const [formData, setFormData] = useState({
+    exitPrice: '',
+    pnlNet: '' // <-- NUEVO: Campo para la ganancia/pérdida
+  });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  // <-- El famoso interceptor de comas adaptado -->
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+    
+    if (['exitPrice', 'pnlNet'].includes(name)) {
+      value = value.replace(',', '.');
+      // Permitimos números, puntos y el signo menos (para registrar pérdidas)
+      value = value.replace(/[^0-9.-]/g, ''); 
+    }
+    
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+
+    try {
+      await api.patch(`/trades/${trade.id}/close`, {
+        exitPrice: parseFloat(formData.exitPrice),
+        exitDate: new Date().toISOString(),
+        pnlNet: parseFloat(formData.pnlNet) // Enviamos el dinero real
+      });
+      onGuardado();
+      onClose();
+    } catch (err) {
+      setError('Error al cerrar la operación. Revisa tu conexión.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div style={{
+      position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+      backgroundColor: 'rgba(15, 23, 42, 0.7)', backdropFilter: 'blur(5px)',
+      display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 2000,
+      padding: '20px'
+    }}>
+      
+      <div style={{ background: 'white', padding: '30px', borderRadius: '12px', width: '100%', maxWidth: '400px', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', borderBottom: '1px solid #e2e8f0', paddingBottom: '15px' }}>
+          <h3 style={{ margin: 0, color: '#0f172a', fontSize: '1.4em' }}>🔒 Cerrar Operación</h3>
+          <button onClick={onClose} style={{ background: '#f1f5f9', border: 'none', cursor: 'pointer', fontSize: '1.2em', color: '#64748b', borderRadius: '50%', width: '35px', height: '35px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>✖</button>
+        </div>
+
+        <div style={{ marginBottom: '20px', padding: '15px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+          <p style={{ margin: '0 0 5px 0', color: '#64748b', fontSize: '0.9em' }}>Activo: <strong style={{ color: '#0f172a' }}>{trade.asset}</strong></p>
+          <p style={{ margin: '0 0 5px 0', color: '#64748b', fontSize: '0.9em' }}>Dirección: <strong style={{ color: trade.direction === 'LONG' ? '#10b981' : '#ef4444' }}>{trade.direction}</strong></p>
+          <p style={{ margin: 0, color: '#64748b', fontSize: '0.9em' }}>Precio Entrada: <strong style={{ color: '#0f172a' }}>{trade.entryPrice}</strong></p>
+        </div>
+
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+          
+          <div>
+            <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Precio de Salida Exacto</label>
+            <input 
+              type="text" 
+              inputMode="decimal"
+              name="exitPrice" 
+              value={formData.exitPrice} 
+              onChange={handleChange} 
+              required 
+              placeholder="Ej. 64500,50"
+              style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box', fontSize: '1.05em' }} 
+            />
+          </div>
+
+          <div>
+            <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Ganancia / Pérdida Neta (USD)</label>
+            <p style={{ margin: '0 0 8px 0', fontSize: '0.8em', color: '#94a3b8' }}>Ingresa el resultado final incluyendo swaps y comisiones. Usa el signo menos (-) para pérdidas.</p>
+            <input 
+              type="text" 
+              inputMode="decimal"
+              name="pnlNet" 
+              value={formData.pnlNet} 
+              onChange={handleChange} 
+              required 
+              placeholder="Ej. 150,00 o -45,50"
+              style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box', fontSize: '1.05em', fontWeight: 'bold', color: formData.pnlNet.startsWith('-') ? '#ef4444' : '#10b981' }} 
+            />
+          </div>
+
+          <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px', marginTop: '15px' }}>
+            <button type="button" onClick={onClose} style={{ padding: '12px 20px', background: '#f1f5f9', color: '#475569', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>Cancelar</button>
+            <button type="submit" disabled={loading} style={{ padding: '12px 20px', background: '#f87171', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>
+              {loading ? 'Procesando...' : 'Finalizar Trade'}
+            </button>
+          </div>
+
+          {error && <div style={{ color: '#ef4444', fontWeight: 'bold', fontSize: '0.9em', marginTop: '10px' }}>❌ {error}</div>}
+        </form>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/PerformanceChart.jsx">
+import { useMemo } from 'react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+
+export default function PerformanceChart({ trades }) {
+  // useMemo hace que este cálculo matemático solo se repita si la lista de trades cambia (Optimización Enterprise)
+  const data = useMemo(() => {
+    if (!trades || trades.length === 0) return [];
+
+    // 1. Filtramos solo los cerrados y los ordenamos del más viejo al más nuevo cronológicamente
+    const closedTrades = trades
+      .filter(t => t.status === 'CLOSED')
+      .sort((a, b) => new Date(a.exitDate || a.entryDate) - new Date(b.exitDate || b.entryDate));
+
+    let cumulativePnL = 0;
+    
+    // 2. Mapeamos los datos para la librería Recharts
+    const chartData = closedTrades.map(trade => {
+      cumulativePnL += trade.pnlNet;
+      return {
+        name: new Date(trade.exitDate || trade.entryDate).toLocaleDateString(), // Fecha para el eje X
+        PnL: cumulativePnL, // Valor para el eje Y
+        tradeAsset: trade.asset, // Info extra para el recuadro flotante
+        tradePnL: trade.pnlNet
+      };
+    });
+
+    // 3. Agregamos un punto de inicio en $0 para que la gráfica nazca desde cero
+    return [{ name: 'Inicio', PnL: 0, tradeAsset: '-', tradePnL: 0 }, ...chartData];
+  }, [trades]);
+
+  // Diseño de la ventanita negra flotante cuando pasas el mouse por encima de la línea
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      const pointData = payload[0].payload;
+      return (
+        <div style={{ background: '#0f172a', padding: '12px', borderRadius: '8px', color: 'white', boxShadow: '0 4px 6px rgba(0,0,0,0.3)' }}>
+          <p style={{ margin: 0, fontWeight: 'bold', fontSize: '0.9em', color: '#94a3b8' }}>{pointData.name}</p>
+          <p style={{ margin: '5px 0 0 0', fontSize: '1.1em', fontWeight: 'bold', color: pointData.PnL >= 0 ? '#10b981' : '#ef4444' }}>
+            Neto Acumulado: ${pointData.PnL.toFixed(2)}
+          </p>
+          {pointData.tradeAsset !== '-' && (
+            <p style={{ margin: '5px 0 0 0', fontSize: '0.85em', color: '#cbd5e1' }}>
+              Última op: {pointData.tradeAsset} (${pointData.tradePnL})
+            </p>
+          )}
+        </div>
+      );
+    }
+    return null;
+  };
+
+  // Si no hay operaciones cerradas, mostramos un mensaje bonito en lugar de un gráfico vacío
+  if (data.length <= 1) {
+    return (
+      <div style={{ height: '300px', display: 'flex', justifyContent: 'center', alignItems: 'center', background: 'white', borderRadius: '12px', border: '1px solid #e2e8f0', marginBottom: '30px' }}>
+        <p style={{ color: '#64748b' }}>Cierra al menos una operación para ver tu curva de rendimiento.</p>
+      </div>
+    );
+  }
+
+  return (
+    <div style={{ background: 'white', padding: '25px', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', marginBottom: '30px' }}>
+      <h3 style={{ marginTop: 0, color: '#1e293b', marginBottom: '20px' }}>Curva de Rendimiento (Equity Curve)</h3>
+      <div style={{ width: '100%', height: 300 }}>
+        <ResponsiveContainer>
+          <LineChart data={data} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
+            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+            <XAxis dataKey="name" tick={{ fontSize: 12, fill: '#64748b' }} tickLine={false} axisLine={false} />
+            <YAxis tick={{ fontSize: 12, fill: '#64748b' }} tickLine={false} axisLine={false} tickFormatter={(val) => `$${val}`} />
+            <Tooltip content={<CustomTooltip />} />
+            <Line 
+              type="monotone" 
+              dataKey="PnL" 
+              stroke="#3b82f6" 
+              strokeWidth={3} 
+              dot={{ r: 4, strokeWidth: 2, fill: 'white', stroke: '#3b82f6' }} 
+              activeDot={{ r: 6, stroke: '#3b82f6', strokeWidth: 2, fill: 'white' }} 
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/PremiumBanner.jsx">
+import { useState } from 'react';
+import api from '../api/axiosConfig';
+
+export default function PremiumBanner({ title, description }) {
+  const [loading, setLoading] = useState(false);
+
+  const handleUpgrade = async () => {
+    setLoading(true);
+    try {
+      const response = await api.post('/checkout/create-session');
+      window.location.href = response.data.url;
+    } catch (error) {
+      alert("Error al conectar con la pasarela de pago segura.");
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div style={{ 
+      padding: '60px 30px', textAlign: 'center', maxWidth: '550px', 
+      margin: '60px auto', background: 'white', borderRadius: '12px', 
+      border: '1px solid #e2e8f0', boxShadow: '0 10px 25px rgba(0,0,0,0.03)' 
+    }}>
+      <div style={{ fontSize: '3.5em', marginBottom: '20px' }}>🔒</div>
+      <h2 style={{ color: '#0f172a', margin: '0 0 15px 0', fontSize: '1.8em' }}>{title}</h2>
+      <p style={{ color: '#64748b', lineHeight: '1.6', fontSize: '1.05em', marginBottom: '35px' }}>
+        {description}
+      </p>
+      
+      <button 
+        onClick={handleUpgrade}
+        disabled={loading}
+        style={{ 
+          padding: '14px 35px', background: '#0f172a', color: 'white', 
+          border: 'none', borderRadius: '6px', fontWeight: 'bold', 
+          fontSize: '1em', cursor: loading ? 'not-allowed' : 'pointer',
+          transition: 'transform 0.2s', width: '100%'
+        }}>
+        {loading ? 'Generando pasarela segura...' : 'Mejorar a PRO'}
+      </button>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/AdminDashboard.jsx">
+import { useState, useEffect, useContext } from 'react';
+import api from '../api/axiosConfig';
+import { AuthContext } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
+
+export default function AdminDashboard() {
+  const { userRole } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const [activeTab, setActiveTab] = useState('logs'); // 'logs' o 'blocked'
+  const [metrics, setMetrics] = useState({ totalUsers: 0, proUsers: 0, freeUsers: 0 });
+  const [logs, setLogs] = useState([]);
+  const [blockedIps, setBlockedIps] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Escudo visual: Expulsar a cualquiera que no sea ADMIN
+  useEffect(() => {
+    if (userRole && userRole !== 'ROLE_ADMIN') {
+      navigate('/dashboard');
+    }
+  }, [userRole, navigate]);
+
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const [metricsRes, logsRes, blockedRes] = await Promise.all([
+        api.get('/admin/metrics'),
+        api.get('/admin/security/logs'),
+        api.get('/admin/security/blocked-ips')
+      ]);
+      setMetrics(metricsRes.data);
+      setLogs(logsRes.data);
+      setBlockedIps(blockedRes.data);
+    } catch (error) {
+      console.error("Error al cargar datos del SOC:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (userRole === 'ROLE_ADMIN') {
+      fetchData();
+    }
+  }, [userRole]);
+
+  const handleBlockIp = async (ipAddress) => {
+    if (!window.confirm(`¿Estás seguro de que deseas BLOQUEAR la IP ${ipAddress}? Perderán el acceso inmediatamente.`)) return;
+    try {
+      await api.post('/admin/security/block-ip', { ipAddress, reason: 'Bloqueo manual por administrador' });
+      fetchData(); 
+    } catch (error) {
+      alert('Error al bloquear la IP');
+    }
+  };
+
+  const handleUnblockIp = async (ipAddress) => {
+    if (!window.confirm(`¿Deseas DESBLOQUEAR la IP ${ipAddress}?`)) return;
+    try {
+      await api.delete(`/admin/security/unblock-ip/${ipAddress}`);
+      fetchData(); 
+    } catch (error) {
+      alert('Error al desbloquear la IP');
+    }
+  };
+
+  const getSeverityStyle = (severity) => {
+    switch(severity) {
+      case 'CRITICAL': return { background: '#ef4444', color: 'white' }; 
+      case 'WARNING': return { background: '#f59e0b', color: 'white' }; 
+      default: return { background: '#3b82f6', color: 'white' }; 
+    }
+  };
+
+  if (loading) return <div style={{ color: '#94a3b8', textAlign: 'center', padding: '50px', backgroundColor: '#0f172a', minHeight: '100vh' }}>Iniciando conexión segura con el SOC...</div>;
+
+  return (
+    <div style={{ minHeight: '100vh', background: '#0f172a', color: '#f8fafc', padding: '40px 20px', fontFamily: 'monospace' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        
+        {/* Cabecera */}
+        <div style={{ borderBottom: '1px solid #334155', paddingBottom: '20px', marginBottom: '30px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div>
+            <h1 style={{ margin: 0, fontSize: '2em', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              🛡️ AstroTrade SOC <span style={{ fontSize: '0.4em', background: '#22c55e', padding: '4px 8px', borderRadius: '4px' }}>ONLINE</span>
+            </h1>
+            <p style={{ color: '#94a3b8', margin: '5px 0 0 0' }}>Centro de Operaciones de Seguridad y Métricas</p>
+          </div>
+          <button onClick={() => navigate('/dashboard')} style={{ padding: '8px 16px', background: '#334155', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer' }}>
+            Volver al Dashboard
+          </button>
+        </div>
+
+        {/* Tarjetas de KPIs */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', marginBottom: '40px' }}>
+          <div style={{ background: '#1e293b', padding: '20px', borderRadius: '8px', borderLeft: '4px solid #3b82f6' }}>
+            <h3 style={{ color: '#94a3b8', margin: '0 0 10px 0', fontSize: '0.9em' }}>USUARIOS TOTALES</h3>
+            <p style={{ margin: 0, fontSize: '2.5em', fontWeight: 'bold' }}>{metrics.totalUsers}</p>
+          </div>
+          <div style={{ background: '#1e293b', padding: '20px', borderRadius: '8px', borderLeft: '4px solid #22c55e' }}>
+            <h3 style={{ color: '#94a3b8', margin: '0 0 10px 0', fontSize: '0.9em' }}>SUSCRIPCIONES PRO</h3>
+            <p style={{ margin: 0, fontSize: '2.5em', fontWeight: 'bold' }}>{metrics.proUsers}</p>
+          </div>
+          <div style={{ background: '#1e293b', padding: '20px', borderRadius: '8px', borderLeft: '4px solid #f59e0b' }}>
+            <h3 style={{ color: '#94a3b8', margin: '0 0 10px 0', fontSize: '0.9em' }}>CUENTAS FREE</h3>
+            <p style={{ margin: 0, fontSize: '2.5em', fontWeight: 'bold' }}>{metrics.freeUsers}</p>
+          </div>
+          <div style={{ background: '#1e293b', padding: '20px', borderRadius: '8px', borderLeft: '4px solid #ef4444' }}>
+            <h3 style={{ color: '#94a3b8', margin: '0 0 10px 0', fontSize: '0.9em' }}>AMENAZAS MITIGADAS</h3>
+            <p style={{ margin: 0, fontSize: '2.5em', fontWeight: 'bold' }}>{blockedIps.length}</p>
+          </div>
+        </div>
+
+        {/* Pestañas de Navegación */}
+        <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+          <button 
+            onClick={() => setActiveTab('logs')}
+            style={{ padding: '10px 20px', background: activeTab === 'logs' ? '#3b82f6' : '#1e293b', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>
+            📡 Monitor de Eventos
+          </button>
+          <button 
+            onClick={() => setActiveTab('blocked')}
+            style={{ padding: '10px 20px', background: activeTab === 'blocked' ? '#ef4444' : '#1e293b', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>
+            🚫 Lista Negra ({blockedIps.length})
+          </button>
+        </div>
+
+        {/* Tabla de Datos */}
+        <div style={{ background: '#1e293b', borderRadius: '8px', overflowX: 'auto', border: '1px solid #334155' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+            <thead>
+              <tr style={{ background: '#0f172a', borderBottom: '1px solid #334155' }}>
+                <th style={{ padding: '15px', color: '#94a3b8' }}>{activeTab === 'logs' ? 'Fecha' : 'Fecha de Bloqueo'}</th>
+                <th style={{ padding: '15px', color: '#94a3b8' }}>Dirección IP</th>
+                <th style={{ padding: '15px', color: '#94a3b8' }}>{activeTab === 'logs' ? 'Evento' : 'Motivo'}</th>
+                {activeTab === 'logs' && <th style={{ padding: '15px', color: '#94a3b8' }}>Usuario Afectado</th>}
+                <th style={{ padding: '15px', color: '#94a3b8', textAlign: 'right' }}>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              {activeTab === 'logs' ? (
+                logs.map(log => (
+                  <tr key={log.id} style={{ borderBottom: '1px solid #334155' }}>
+                    <td style={{ padding: '15px', fontSize: '0.9em' }}>{new Date(log.timestamp).toLocaleString()}</td>
+                    <td style={{ padding: '15px', fontWeight: 'bold' }}>{log.ipAddress}</td>
+                    <td style={{ padding: '15px' }}>
+                      <span style={{ ...getSeverityStyle(log.severity), padding: '4px 8px', borderRadius: '4px', fontSize: '0.85em' }}>
+                        {log.eventType}
+                      </span>
+                    </td>
+                    <td style={{ padding: '15px', color: '#94a3b8', fontSize: '0.9em' }}>{log.userEmail || '-'}</td>
+                    <td style={{ padding: '15px', textAlign: 'right' }}>
+                      <button onClick={() => handleBlockIp(log.ipAddress)} style={{ background: '#ef4444', color: 'white', border: 'none', padding: '6px 12px', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold', fontSize: '0.85em' }}>
+                        Bloquear IP
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                blockedIps.map(ip => (
+                  <tr key={ip.id} style={{ borderBottom: '1px solid #334155' }}>
+                    <td style={{ padding: '15px', fontSize: '0.9em' }}>{new Date(ip.blockedAt).toLocaleString()}</td>
+                    <td style={{ padding: '15px', fontWeight: 'bold', color: '#ef4444' }}>{ip.ipAddress}</td>
+                    <td style={{ padding: '15px', color: '#cbd5e1' }}>{ip.reason}</td>
+                    <td style={{ padding: '15px', textAlign: 'right' }}>
+                      <button onClick={() => handleUnblockIp(ip.ipAddress)} style={{ background: '#22c55e', color: 'white', border: 'none', padding: '6px 12px', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold', fontSize: '0.85em' }}>
+                        Desbloquear
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+          {(activeTab === 'logs' ? logs : blockedIps).length === 0 && (
+            <div style={{ padding: '40px', textAlign: 'center', color: '#64748b' }}>
+              No hay registros para mostrar en esta sección.
+            </div>
+          )}
+        </div>
+        
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="eslint.config.js">
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import { defineConfig, globalIgnores } from 'eslint/config'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{js,jsx}'],
+    extends: [
+      js.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        ecmaFeatures: { jsx: true },
+        sourceType: 'module',
+      },
+    },
+    rules: {
+      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+    },
+  },
+])
+</file>
+
+<file path="README.md">
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+</file>
+
+<file path="vite.config.js">
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+})
+</file>
+
+<file path="src/api/axiosConfig.js">
+import axios from 'axios';
+
+// 1. Creamos una instancia base apuntando a tu variable de entorno o a localhost como respaldo
+const api = axios.create({
+    // VITE_API_URL será la dirección de Railway. Si no existe, usa localhost para desarrollo.
+    baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8080/api/v1',
+    headers: {
+        'Content-Type': 'application/json'
+    }
+});
+
+// 2. INTERCEPTOR DE SALIDA (Request)
+api.interceptors.request.use(
+    (config) => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
+        }
+        return config;
+    },
+    (error) => {
+        return Promise.reject(error);
+    }
+);
+
+// 3. INTERCEPTOR DE ENTRADA (Response)
+api.interceptors.response.use(
+    (response) => response,
+    (error) => {
+        if (error.response && (error.response.status === 401 || error.response.status === 403)) {
+            console.warn("Sesión expirada o inválida. Limpiando credenciales...");
+            localStorage.removeItem('token');
+            localStorage.removeItem('portfolioId');
+            window.location.href = '/'; 
+        }
+        return Promise.reject(error);
+    }
+);
+
+export default api;
+</file>
+
+<file path="src/components/AnnualHeatmap.jsx">
+import React, { useState, useMemo } from 'react';
+
+export default function AnnualHeatmap({ data }) {
+  // 1. Extraemos dinámicamente todos los años en los que hay operaciones
+  const availableYears = useMemo(() => {
+    if (!data || data.length === 0) return [new Date().getFullYear()];
+    const years = new Set(data.map(day => parseInt(day.date.split('-')[0], 10)));
+    return Array.from(years).sort((a, b) => b - a); // Ordenamos de más reciente a más antiguo
+  }, [data]);
+
+  // 2. Estado para controlar qué año estamos viendo (por defecto, el más reciente)
+  const [selectedYear, setSelectedYear] = useState(availableYears[0]);
+
+  const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+  // Convertimos el arreglo en Diccionario para velocidad
+  const dataMap = useMemo(() => {
+    const map = {};
+    if (data && data.length > 0) {
+      data.forEach(day => {
+        map[day.date] = day;
+      });
+    }
+    return map;
+  }, [data]);
+
+  const getDaysInMonth = (monthIndex, year) => new Date(year, monthIndex + 1, 0).getDate();
+
+  const getSquareColor = (dateStr) => {
+    const dayData = dataMap[dateStr];
+    if (!dayData) return '#e2e8f0'; 
+    return dayData.isProfitable ? '#22c55e' : '#ef4444'; 
+  };
+
+  return (
+    <div style={{ background: 'white', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0' }}>
+      
+      {/* CABECERA CON EL SELECTOR DE AÑO (RESPONSIVA) */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+        <h3 style={{ margin: 0, color: '#1e293b' }}>📅 Mapa de Calor Operativo</h3>
+        
+        <select 
+          value={selectedYear} 
+          onChange={(e) => setSelectedYear(parseInt(e.target.value, 10))}
+          style={{ padding: '8px 12px', borderRadius: '6px', border: '1px solid #cbd5e1', fontWeight: 'bold', color: '#0f172a', cursor: 'pointer', background: '#f8fafc', fontSize: '1em' }}
+        >
+          {availableYears.map(year => (
+            <option key={year} value={year}>Año {year}</option>
+          ))}
+        </select>
+      </div>
+
+      {/* REJILLA DE LOS 12 MESES */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
+        {months.map((monthName, monthIndex) => {
+          // Usamos 'selectedYear' en lugar del año actual
+          const daysInMonth = getDaysInMonth(monthIndex, selectedYear);
+          const daysArray = Array.from({ length: daysInMonth }, (_, i) => i + 1);
+
+          return (
+            <div key={monthName} style={{ background: '#f8fafc', padding: '15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+              <h4 style={{ margin: '0 0 10px 0', color: '#64748b', fontSize: '0.85em', textTransform: 'uppercase' }}>{monthName}</h4>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+                {daysArray.map(day => {
+                  const monthStr = String(monthIndex + 1).padStart(2, '0');
+                  const dayStr = String(day).padStart(2, '0');
+                  const dateStr = `${selectedYear}-${monthStr}-${dayStr}`;
+
+                  const color = getSquareColor(dateStr);
+                  const dayData = dataMap[dateStr];
+                  
+                  const tooltip = dayData
+                    ? `${dateStr} | ${dayData.tradeCount} Operaciones | PnL: $${dayData.netPnl}`
+                    : `${dateStr} | Sin operaciones`;
+
+                  return (
+                    <div
+                      key={day}
+                      title={tooltip}
+                      style={{
+                        width: '14px',
+                        height: '14px',
+                        backgroundColor: color,
+                        borderRadius: '3px',
+                        cursor: 'pointer',
+                        transition: 'transform 0.1s ease-in-out'
+                      }}
+                      onMouseEnter={(e) => e.target.style.transform = 'scale(1.3)'}
+                      onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* LEYENDA RESPONSIVA */}
+      <div style={{ 
+        display: 'flex', 
+        flexWrap: 'wrap', 
+        gap: '15px', 
+        marginTop: '25px', 
+        fontSize: '0.85em', 
+        color: '#64748b', 
+        justifyContent: 'center', 
+        fontWeight: 'bold' 
+      }}>
+         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+           <div style={{ width: '14px', height: '14px', background: '#22c55e', borderRadius: '3px' }}></div> Día Ganador
+         </div>
+         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+           <div style={{ width: '14px', height: '14px', background: '#ef4444', borderRadius: '3px' }}></div> Día Perdedor
+         </div>
+         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+           <div style={{ width: '14px', height: '14px', background: '#e2e8f0', borderRadius: '3px' }}></div> Sin Operar
+         </div>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/CalendarWidget.jsx">
+import { useState, useEffect, useContext } from 'react';
+import api from '../api/axiosConfig';
+import { AuthContext } from '../context/AuthContext';
+
+export default function CalendarWidget({ refreshTrigger }) {
+  const { portfolioId } = useContext(AuthContext);
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [calendarData, setCalendarData] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth() + 1; // JS los meses van de 0 a 11
+
+  useEffect(() => {
+    const fetchCalendar = async () => {
+      if (!portfolioId) return;
+      setLoading(true);
+      try {
+        const response = await api.get(`/trades/portfolio/${portfolioId}/calendar`, {
+          params: { year, month }
+        });
+        setCalendarData(response.data);
+      } catch (error) {
+        console.error("Error al cargar el calendario:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCalendar();
+  }, [portfolioId, year, month, refreshTrigger]);
+
+  const handlePrevMonth = () => setCurrentDate(new Date(year, currentDate.getMonth() - 1, 1));
+  const handleNextMonth = () => setCurrentDate(new Date(year, currentDate.getMonth() + 1, 1));
+
+  // Matemáticas del calendario
+  const daysInMonth = new Date(year, month, 0).getDate();
+  const firstDayOfMonth = new Date(year, month - 1, 1).getDay(); // 0 (Dom) a 6 (Sab)
+  
+  const blanks = Array(firstDayOfMonth).fill(null);
+  const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
+  const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+  // Helper para cruzar el día pintado con el JSON del backend
+  const getDataForDay = (day) => {
+    const formattedMonth = String(month).padStart(2, '0');
+    const formattedDay = String(day).padStart(2, '0');
+    const dateStr = `${year}-${formattedMonth}-${formattedDay}`;
+    return calendarData.find(d => d.date === dateStr);
+  };
+
+  return (
+    <div style={{ background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0', marginBottom: '30px' }}>
+      
+      {/* Cabecera del Calendario */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+        <h3 style={{ margin: 0, color: '#1e293b' }}>Rendimiento Diario</h3>
+        <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flex: '1 1 auto', justifyContent: 'flex-end' }}>
+          <button onClick={handlePrevMonth} style={{ cursor: 'pointer', background: '#f8fafc', border: '1px solid #e2e8f0', padding: '5px 15px', borderRadius: '6px', fontWeight: 'bold' }}>&larr;</button>
+          <span style={{ fontWeight: 'bold', minWidth: '120px', textAlign: 'center', fontSize: '0.95em' }}>{monthNames[month - 1]} {year}</span>
+          <button onClick={handleNextMonth} style={{ cursor: 'pointer', background: '#f8fafc', border: '1px solid #e2e8f0', padding: '5px 15px', borderRadius: '6px', fontWeight: 'bold' }}>&rarr;</button>
+        </div>
+      </div>
+
+      {loading ? (
+        <div style={{ color: '#64748b', textAlign: 'center', padding: '20px' }}>Cargando datos del mes...</div>
+      ) : (
+        <div style={{ width: '100%', overflowX: 'auto', paddingBottom: '10px' }}>
+          {/* El minWidth asegura que el calendario no se aplaste más de lo legible */}
+          <div style={{ minWidth: '320px' }}>
+            
+            {/* Grilla: Días de la semana */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '4px', textAlign: 'center', fontWeight: 'bold', color: '#64748b', marginBottom: '10px', fontSize: '0.75em', textTransform: 'uppercase' }}>
+              <div>Dom</div><div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div>
+            </div>
+
+            {/* Grilla: Casillas numéricas */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '4px' }}>
+              {blanks.map((_, i) => (
+                <div key={`blank-${i}`} style={{ padding: '5px', borderRadius: '6px', background: '#f8fafc' }}></div>
+              ))}
+              
+              {days.map(day => {
+                const dayData = getDataForDay(day);
+                let bgColor = '#f1f5f9'; // Gris (Sin operaciones)
+                let fontColor = '#64748b';
+                let borderColor = 'transparent';
+
+                if (dayData) {
+                  if (dayData.isProfitable) {
+                    bgColor = '#dcfce7'; // Verde claro
+                    fontColor = '#166534';
+                    borderColor = '#bbf7d0';
+                  } else {
+                    bgColor = '#fee2e2'; // Rojo claro
+                    fontColor = '#991b1b';
+                    borderColor = '#fecaca';
+                  }
+                }
+
+                return (
+                  <div key={day} style={{ 
+                    background: bgColor, 
+                    border: `1px solid ${borderColor}`,
+                    padding: '5px', 
+                    borderRadius: '6px', 
+                    display: 'flex', 
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    minHeight: '55px',
+                    boxSizing: 'border-box',
+                    overflow: 'hidden'
+                  }}>
+                    {/* Usamos clamp() para que el número del día sea responsivo */}
+                    <span style={{ fontWeight: 'bold', color: fontColor, fontSize: 'clamp(0.9em, 2.5vw, 1.1em)' }}>{day}</span>
+                    
+                    {dayData && (
+                      <span style={{ 
+                        fontSize: 'clamp(0.6em, 2vw, 0.75em)', 
+                        color: fontColor, 
+                        marginTop: 'auto', 
+                        fontWeight: '800',
+                        whiteSpace: 'nowrap',
+                        textOverflow: 'ellipsis',
+                        overflow: 'hidden',
+                        width: '100%',
+                        textAlign: 'center'
+                      }}>
+                        {dayData.netPnl > 0 ? '+' : ''}${dayData.netPnl}
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+</file>
+
+<file path="src/routes/ProtectedRoute.jsx">
+import { useContext } from 'react';
+import { Navigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
+
+export default function ProtectedRoute({ children }) {
+  // Extraemos directamente el 'token' de nuestro cerebro central
+  const { token } = useContext(AuthContext);
+
+  // Si NO hay token (es decir, es nulo o no está autenticado), lo mandamos al Login
+  if (!token) {
+    // "replace" borra el historial para que el usuario no pueda volver atrás
+    return <Navigate to="/" replace />;
+  }
+
+  // Si hay token, todo está en orden, renderiza la pantalla que quería ver
+  return children;
+}
+</file>
+
+<file path="src/main.jsx">
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
+import { GoogleOAuthProvider } from '@react-oauth/google'
+
+// Reemplaza esto con el Client ID que generaste en Google Cloud
+const GOOGLE_CLIENT_ID = "62700038720-n3ght1f3hn93o39n9870undo3h3004dc.apps.googleusercontent.com";
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    {/* Envolvemos toda la app con el proveedor de Google */}
+    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </GoogleOAuthProvider>
+  </React.StrictMode>,
+)
+</file>
+
+<file path=".gitignore">
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+# Dependencias (¡Esto pesa muchísimo, NUNCA se sube!)
+node_modules/
+
+# Archivos de compilación de Producción
+dist/
+dist-ssr/
+build/
+
+# 🚨 VARIABLES DE ENTORNO (¡AQUÍ ESTÁN LOS SECRETOS!) 🚨
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Archivos de Log y errores
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Archivos del Sistema Operativo
+.DS_Store
+Thumbs.db
+</file>
+
+<file path="fronted.xml">
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+public/
+  favicon.svg
+  icons.svg
+src/
+  api/
+    axiosConfig.js
+  assets/
+    hero.png
+    react.svg
+    vite.svg
+  components/
+    AnnualHeatmap.jsx
+    BlockEditor.jsx
+    CalendarWidget.jsx
+    CloseTradeModal.jsx
+    DashboardMetrics.jsx
+    EditTradeModal.jsx
+    Navbar.jsx
+    PerformanceChart.jsx
+    PremiumBanner.jsx
+    TradeForm.jsx
+  context/
+    AuthContext.jsx
+  pages/
+    AdminDashboard.jsx
+    DashboardPage.jsx
+    LoginPage.jsx
+    StatisticsPage.jsx
+    StrategiesPage.jsx
+  routes/
+    ProtectedRoute.jsx
+  App.jsx
+  main.jsx
+.gitignore
+eslint.config.js
+fronted.xml
+index.html
+package.json
+README.md
+vite.config.js
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
 <file path="src/pages/AdminDashboard.jsx">
 import { useState, useEffect, useContext } from 'react';
 import api from '../api/axiosConfig';
@@ -5127,6 +6245,1703 @@ export default function DashboardPage() {
 
             {/* BOTÓN IMPORTAR MT5 CON BLOQUEO */}
             {userRole === 'ROLE_PRO' ? (
+              <button 
+                onClick={() => fileInputRef.current.click()} 
+                disabled={isImporting}
+                style={{ padding: '8px 15px', background: isImporting ? '#94a3b8' : '#3b82f6', color: 'white', border: 'none', borderRadius: '6px', cursor: isImporting ? 'not-allowed' : 'pointer', fontWeight: 'bold', fontSize: '0.85em', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                {isImporting ? '⏳ Importando...' : '⬆️ Importar MT5'}
+              </button>
+            ) : (
+              <button 
+                onClick={handleUpgradePro} 
+                style={{ padding: '8px 15px', background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', fontSize: '0.85em', display: 'flex', alignItems: 'center', gap: '5px', boxShadow: '0 2px 4px rgba(245, 158, 11, 0.2)' }}>
+                🔒 Importar MT5
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* FILTROS RESPONSIVOS (con base base min-width) */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '20px', padding: '15px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+          <div style={{ flex: '1 1 150px' }}>
+            <label style={{ display: 'block', fontSize: '0.8em', fontWeight: 'bold', color: '#64748b', marginBottom: '5px' }}>🔍 Activo</label>
+            <input type="text" placeholder="Ej. BTC, AAPL..." value={filtroActivo} onChange={(e) => setFiltroActivo(e.target.value)} style={{ width: '100%', padding: '8px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }} />
+          </div>
+          
+          <div style={{ flex: '1 1 150px' }}>
+            <label style={{ display: 'block', fontSize: '0.8em', fontWeight: 'bold', color: '#64748b', marginBottom: '5px' }}>📌 Estado</label>
+            <select value={filtroEstado} onChange={(e) => setFiltroEstado(e.target.value)} style={{ width: '100%', padding: '8px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }}>
+              <option value="ALL">Todas</option>
+              <option value="OPEN">🟢 Abiertas</option>
+              <option value="CLOSED">🔒 Cerradas</option>
+            </select>
+          </div>
+
+          <div style={{ flex: '1 1 150px' }}>
+            <label style={{ display: 'block', fontSize: '0.8em', fontWeight: 'bold', color: '#64748b', marginBottom: '5px' }}>💰 Resultado</label>
+            <select value={filtroResultado} onChange={(e) => setFiltroResultado(e.target.value)} style={{ width: '100%', padding: '8px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }}>
+              <option value="ALL">Todos</option>
+              <option value="WIN">📈 Ganadoras</option>
+              <option value="LOSS">📉 Perdedoras</option>
+            </select>
+          </div>
+          
+          {(filtroActivo !== '' || filtroEstado !== 'ALL' || filtroResultado !== 'ALL') && (
+            <div style={{ display: 'flex', alignItems: 'flex-end', flex: '1 1 100px' }}>
+              <button onClick={() => { setFiltroActivo(''); setFiltroEstado('ALL'); setFiltroResultado('ALL'); }} style={{ width: '100%', padding: '8px 12px', background: '#ef4444', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', fontSize: '0.85em' }}>
+                ✖ Limpiar
+              </button>
+            </div>
+          )}
+        </div>
+
+        {cargando && <p style={{ color: '#3b82f6', fontWeight: 'bold' }}>Sincronizando Bóveda...</p>}
+        {error && <p style={{ color: '#ef4444', fontWeight: 'bold' }}>{error}</p>}
+
+        {!cargando && !error && filteredTrades.length === 0 && (
+          <div style={{ padding: '40px', textAlign: 'center', background: '#f8fafc', borderRadius: '8px' }}>
+            <p style={{ color: '#64748b', fontSize: '1.1em' }}>No se encontraron operaciones en este portafolio.</p>
+          </div>
+        )}
+
+        {!cargando && !error && filteredTrades.length > 0 && (
+          <div style={{ width: '100%', overflowX: 'auto', paddingBottom: '10px' }}>
+            {/* Agregamos minWidth a la tabla para forzar el scroll en móviles */}
+            <table style={{ width: '100%', minWidth: '850px', textAlign: 'left', borderCollapse: 'collapse', marginTop: '10px' }}>
+              <thead>
+                <tr style={{ borderBottom: '2px solid #cbd5e1', color: '#475569', fontSize: '0.9em' }}>
+                  <th style={{ padding: '12px' }}>Fecha</th>
+                  <th style={{ padding: '12px' }}>Activo</th>
+                  <th style={{ padding: '12px' }}>Estrategia</th>
+                  <th style={{ padding: '12px' }}>Dirección</th>
+                  <th style={{ padding: '12px' }}>Entrada</th>
+                  <th style={{ padding: '12px' }}>Lotes</th>
+                  <th style={{ padding: '12px' }}>Estado</th>
+                  <th style={{ padding: '12px' }}>PnL Neto</th>
+                  <th style={{ padding: '12px', textAlign: 'center' }}>Acciones</th> 
+                </tr>
+              </thead>
+              <tbody>
+                {filteredTrades.map((trade) => (
+                  <tr key={trade.id} style={{ borderBottom: '1px solid #f1f5f9' }}>
+                    <td style={{ padding: '12px', fontSize: '0.9em', color: '#64748b' }}>{new Date(trade.entryDate).toLocaleDateString()}</td>
+                    <td style={{ padding: '12px', fontWeight: 'bold' }}>{trade.asset}</td>
+                    <td style={{ padding: '12px', color: '#3b82f6', fontWeight: 'bold', fontSize: '0.9em' }}>
+                      {trade.strategyId && strategyDictionary[trade.strategyId] ? strategyDictionary[trade.strategyId] : '-'}
+                    </td>
+                    <td style={{ padding: '12px', color: trade.direction === 'LONG' ? '#10b981' : '#ef4444', fontWeight: 'bold' }}>{trade.direction}</td>
+                    <td style={{ padding: '12px' }}>${trade.entryPrice}</td>
+                    <td style={{ padding: '12px' }}>{trade.positionSize}</td>
+                    <td style={{ padding: '12px' }}>
+                      <span style={{ padding: '4px 8px', borderRadius: '12px', fontSize: '0.8em', fontWeight: 'bold', background: trade.status === 'OPEN' ? '#dcfce7' : '#f1f5f9', color: trade.status === 'OPEN' ? '#166534' : '#475569' }}>
+                        {trade.status}
+                      </span>
+                    </td>
+                    <td style={{ padding: '12px', fontWeight: 'bold', color: trade.pnlNet > 0 ? '#10b981' : (trade.pnlNet < 0 ? '#ef4444' : 'inherit') }}>
+                      ${trade.pnlNet !== null ? trade.pnlNet : '0.00'}
+                    </td>
+                    
+                    <td style={{ padding: '12px', textAlign: 'center', display: 'flex', justifyContent: 'center', gap: '8px' }}>
+                      <button onClick={() => setTradeToEdit(trade)} style={{ padding: '6px', background: '#f1f5f9', color: '#475569', border: '1px solid #cbd5e1', borderRadius: '4px', cursor: 'pointer', fontSize: '0.9em' }} title="Editar Operación">
+                        ✏️
+                      </button>
+                      {trade.status === 'OPEN' ? (
+                        <button onClick={() => setTradeToClose(trade)} style={{ padding: '6px 12px', background: '#f87171', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '0.85em', fontWeight: 'bold' }}>Cerrar</button>
+                      ) : (
+                        <span title="Operación Finalizada" style={{ color: '#cbd5e1', fontSize: '1.2em' }}>🔒</span>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+</file>
+
+</files>
+</file>
+
+<file path="index.html">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AstroTrade</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+</file>
+
+<file path="src/components/DashboardMetrics.jsx">
+import { useEffect, useState, useContext } from 'react';
+import api from '../api/axiosConfig';
+import { AuthContext } from '../context/AuthContext';
+
+export default function DashboardMetrics({ refreshTrigger }) {
+  const { portfolioId } = useContext(AuthContext);
+  
+  const [metrics, setMetrics] = useState({
+    totalTrades: 0, winningTrades: 0, losingTrades: 0, winRate: 0, profitFactor: 0, totalPnl: 0
+  });
+  
+  const [portfolio, setPortfolio] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // <-- ESTADOS PARA EL MODAL DE CAPITAL -->
+  const [showCapitalModal, setShowCapitalModal] = useState(false);
+  const [capitalForm, setCapitalForm] = useState({ initial: 0, current: 0, target: 0 });
+  const [isSaving, setIsSaving] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!portfolioId) return;
+      try {
+        const [metricsResponse, portfoliosResponse] = await Promise.all([
+          api.get(`/analytics/portfolio/${portfolioId}`),
+          api.get('/portfolios')
+        ]);
+        
+        setMetrics(metricsResponse.data);
+        const currentPortfolio = portfoliosResponse.data.find(p => p.id === portfolioId);
+        setPortfolio(currentPortfolio);
+      } catch (error) {
+        console.error("Error al cargar los datos:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, [portfolioId, refreshTrigger]);
+
+  const handleOpenCapitalModal = () => {
+    setCapitalForm({
+      initial: portfolio.initialBalance,
+      current: portfolio.currentBalance,
+      target: portfolio.targetBalance
+    });
+    setShowCapitalModal(true);
+  };
+
+  const handleSaveCapital = async (e) => {
+    e.preventDefault();
+    setIsSaving(true);
+    try {
+      const payload = {
+        initialBalance: parseFloat(capitalForm.initial),
+        currentBalance: parseFloat(capitalForm.current),
+        targetBalance: parseFloat(capitalForm.target)
+      };
+      
+      await api.patch(`/portfolios/${portfolio.id}/balances`, payload);
+      
+      // Actualizamos UI al instante
+      setPortfolio({ ...portfolio, ...payload });
+      setShowCapitalModal(false);
+    } catch (error) {
+      console.error("Error al actualizar capital", error);
+      alert("Hubo un error al guardar los ajustes de capital.");
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  if (loading) return <div style={{ marginBottom: '20px', color: '#64748b', fontWeight: 'bold' }}>Calculando estadísticas financieras...</div>;
+
+  const colorPnL = metrics.totalPnl >= 0 ? '#22c55e' : '#ef4444';
+
+  let progress = 0;
+  if (portfolio && portfolio.targetBalance > portfolio.initialBalance) {
+    progress = ((portfolio.currentBalance - portfolio.initialBalance) / 
+                (portfolio.targetBalance - portfolio.initialBalance)) * 100;
+    progress = Math.max(0, Math.min(progress, 100));
+  }
+
+  return (
+    <div style={{ marginBottom: '30px' }}>
+      
+      {/* FILA SUPERIOR: BÓVEDA (Balance y Objetivo) */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginBottom: '20px' }}>
+        
+        {/* Tarjeta 1: Balance Oscuro */}
+        {portfolio && (
+          <div style={{ flex: '1 1 300px', background: '#0f172a', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+              <p style={{ margin: 0, color: '#94a3b8', fontSize: '0.9em', fontWeight: 'bold', textTransform: 'uppercase' }}>Balance Total Cuenta</p>
+              
+              {/* <-- NUEVO BOTÓN DE AJUSTES --> */}
+              <button onClick={handleOpenCapitalModal} style={{ background: '#334155', color: 'white', border: 'none', padding: '6px 10px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.8em', fontWeight: 'bold' }}>
+                ⚙️ Ajustar Capital
+              </button>
+            </div>
+            <h2 style={{ margin: '10px 0 0 0', color: '#f8fafc', fontSize: '2.5em' }}>
+              ${portfolio.currentBalance?.toFixed(2)}
+            </h2>
+          </div>
+        )}
+
+        {/* Tarjeta 2: Objetivo Visual */}
+        {portfolio && (
+          <div style={{ flex: '2 1 400px', background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0', borderTop: '4px solid #f59e0b', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '15px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div>
+                <p style={{ margin: 0, color: '#64748b', fontSize: '0.9em', fontWeight: 'bold', textTransform: 'uppercase' }}>Objetivo Financiero</p>
+                <h2 style={{ margin: '10px 0 0 0', color: '#1e293b', fontSize: '2em' }}>
+                  ${portfolio.targetBalance?.toFixed(2)}
+                </h2>
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                <span style={{ fontSize: '1.5em', fontWeight: 'bold', color: '#f59e0b' }}>{progress.toFixed(1)}%</span>
+              </div>
+            </div>
+            <div style={{ width: '100%', background: '#e2e8f0', borderRadius: '8px', height: '12px', overflow: 'hidden' }}>
+              <div style={{ height: '100%', width: `${progress}%`, background: 'linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%)', transition: 'width 1s ease-in-out' }}></div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* FILA INFERIOR: MÉTRICAS TÉCNICAS */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
+        <div style={{ background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0', borderTop: `4px solid ${colorPnL}` }}>
+          <p style={{ margin: 0, color: '#64748b', fontSize: '0.9em', fontWeight: 'bold', textTransform: 'uppercase' }}>PnL Neto Total</p>
+          <h2 style={{ margin: '10px 0 0 0', color: colorPnL, fontSize: '2em' }}>{metrics.totalPnl >= 0 ? '+' : ''}${metrics.totalPnl}</h2>
+        </div>
+        <div style={{ background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0', borderTop: '4px solid #3b82f6' }}>
+          <p style={{ margin: 0, color: '#64748b', fontSize: '0.9em', fontWeight: 'bold', textTransform: 'uppercase' }}>Win Rate</p>
+          <h2 style={{ margin: '10px 0 0 0', color: '#1e293b', fontSize: '2em' }}>{metrics.winRate}%</h2>
+          <p style={{ margin: '5px 0 0 0', fontSize: '0.85em', color: '#94a3b8' }}>{metrics.winningTrades} G / {metrics.losingTrades} P</p>
+        </div>
+        <div style={{ background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0', borderTop: '4px solid #8b5cf6' }}>
+          <p style={{ margin: 0, color: '#64748b', fontSize: '0.9em', fontWeight: 'bold', textTransform: 'uppercase' }}>Profit Factor</p>
+          <h2 style={{ margin: '10px 0 0 0', color: '#1e293b', fontSize: '2em' }}>{metrics.profitFactor}</h2>
+        </div>
+        <div style={{ background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0', borderTop: '4px solid #10b981' }}>
+          <p style={{ margin: 0, color: '#64748b', fontSize: '0.9em', fontWeight: 'bold', textTransform: 'uppercase' }}>Total Operaciones</p>
+          <h2 style={{ margin: '10px 0 0 0', color: '#1e293b', fontSize: '2em' }}>{metrics.totalTrades}</h2>
+        </div>
+      </div>
+
+      {/* <-- MODAL DE GESTIÓN DE CAPITAL --> */}
+      {showCapitalModal && (
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(15, 23, 42, 0.8)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 3000 }}>
+          <div style={{ background: 'white', padding: '30px', borderRadius: '12px', width: '100%', maxWidth: '400px', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)' }}>
+            <h3 style={{ margin: '0 0 20px 0', color: '#0f172a' }}>⚙️ Gestión de Capital</h3>
+            
+            <form onSubmit={handleSaveCapital}>
+              <div style={{ marginBottom: '15px' }}>
+                <label style={{ display: 'block', fontSize: '0.85em', fontWeight: 'bold', color: '#64748b', marginBottom: '5px' }}>
+                  Balance Actual (Depósitos/Retiros)
+                </label>
+                <input type="number" step="0.01" value={capitalForm.current} onChange={(e) => setCapitalForm({...capitalForm, current: e.target.value})} required style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box', fontSize: '1.1em', fontWeight: 'bold', color: '#0f172a' }} />
+              </div>
+
+              <div style={{ marginBottom: '15px' }}>
+                <label style={{ display: 'block', fontSize: '0.85em', fontWeight: 'bold', color: '#64748b', marginBottom: '5px' }}>
+                  Nuevo Objetivo / Meta
+                </label>
+                <input type="number" step="0.01" value={capitalForm.target} onChange={(e) => setCapitalForm({...capitalForm, target: e.target.value})} required style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box', fontSize: '1.1em', fontWeight: 'bold', color: '#0f172a' }} />
+              </div>
+
+              <div style={{ marginBottom: '25px', padding: '15px', background: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1' }}>
+                <label style={{ display: 'block', fontSize: '0.85em', fontWeight: 'bold', color: '#64748b', marginBottom: '5px' }}>
+                  Balance Inicial (Base del 0%)
+                </label>
+                <input type="number" step="0.01" value={capitalForm.initial} onChange={(e) => setCapitalForm({...capitalForm, initial: e.target.value})} required style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box', color: '#475569' }} />
+                <p style={{ margin: '5px 0 0 0', fontSize: '0.75em', color: '#94a3b8' }}>*Cámbialo igual a tu Balance Actual si quieres reiniciar el progreso de la meta a 0%.</p>
+              </div>
+
+              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px' }}>
+                <button type="button" onClick={() => setShowCapitalModal(false)} style={{ padding: '10px 15px', background: '#f1f5f9', color: '#475569', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>Cancelar</button>
+                <button type="submit" disabled={isSaving} style={{ padding: '10px 15px', background: '#3b82f6', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>
+                  {isSaving ? 'Guardando...' : 'Aplicar Cambios'}
+                </button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/EditTradeModal.jsx">
+import { useState, useContext, useEffect } from 'react';
+import api from '../api/axiosConfig';
+import { AuthContext } from '../context/AuthContext';
+import BlockEditor from './BlockEditor';
+
+export default function EditTradeModal({ trade, onClose, onGuardado }) {
+  const { portfolioId } = useContext(AuthContext);
+  const [strategies, setStrategies] = useState([]);
+  
+  const [formData, setFormData] = useState({
+    asset: trade.asset || '',
+    direction: trade.direction || 'LONG',
+    strategyId: trade.strategyId || '',
+    entryPrice: trade.entryPrice || '',
+    positionSize: trade.positionSize || '',
+    takeProfit: trade.takeProfit || '',
+    stopLoss: trade.stopLoss || '',
+    exitPrice: trade.exitPrice || '',
+    pnlNet: trade.pnlNet !== null ? trade.pnlNet : '',
+    maePrice: trade.maePrice || '', // <-- NUEVO ESTADO
+    mfePrice: trade.mfePrice || '', // <-- NUEVO ESTADO
+    notes: trade.notes || ''
+  });
+  
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchStrategies = async () => {
+      try {
+        const response = await api.get(`/strategies/portfolio/${portfolioId}`);
+        setStrategies(response.data);
+      } catch (err) {
+        console.error("Error al cargar estrategias", err);
+      }
+    };
+    if (portfolioId) fetchStrategies();
+  }, [portfolioId]);
+
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+    // Agregamos maePrice y mfePrice a los campos que aceptan decimales
+    if (['entryPrice', 'positionSize', 'takeProfit', 'stopLoss', 'exitPrice', 'pnlNet', 'maePrice', 'mfePrice'].includes(name)) {
+      value = value.replace(',', '.');
+      value = value.replace(/[^0-9.-]/g, ''); 
+    }
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+
+    try {
+      const requestData = {
+        strategyId: formData.strategyId ? formData.strategyId : null, 
+        asset: formData.asset.toUpperCase(),
+        direction: formData.direction,
+        entryPrice: parseFloat(formData.entryPrice),
+        positionSize: parseFloat(formData.positionSize),
+        takeProfit: formData.takeProfit ? parseFloat(formData.takeProfit) : null,
+        stopLoss: formData.stopLoss ? parseFloat(formData.stopLoss) : null,
+        exitPrice: formData.exitPrice ? parseFloat(formData.exitPrice) : null,
+        pnlNet: formData.pnlNet !== '' ? parseFloat(formData.pnlNet) : null,
+        maePrice: formData.maePrice ? parseFloat(formData.maePrice) : null, // <-- ENVIAMOS A JAVA
+        mfePrice: formData.mfePrice ? parseFloat(formData.mfePrice) : null, // <-- ENVIAMOS A JAVA
+        notes: formData.notes
+      };
+
+      await api.put(`/trades/${trade.id}`, requestData);
+      onGuardado(); 
+      onClose();   
+    } catch (err) {
+      setError('Error al actualizar la operación. Revisa los datos e intenta de nuevo.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(15, 23, 42, 0.7)', backdropFilter: 'blur(5px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 2000, padding: '20px', overflowY: 'auto' }}>
+      <div style={{ background: 'white', padding: '30px', borderRadius: '12px', width: '100%', maxWidth: '800px', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', maxHeight: '90vh', overflowY: 'auto' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', borderBottom: '1px solid #e2e8f0', paddingBottom: '15px' }}>
+          <h3 style={{ margin: 0, color: '#0f172a', fontSize: '1.4em' }}>✏️ Editar Operación</h3>
+          <button onClick={onClose} style={{ background: '#f1f5f9', border: 'none', cursor: 'pointer', fontSize: '1.2em', color: '#64748b', borderRadius: '50%', width: '35px', height: '35px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>✖</button>
+        </div>
+
+        <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+          <div>
+            <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Activo (Ticker)</label>
+            <input type="text" name="asset" value={formData.asset} onChange={handleChange} required style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }} />
+          </div>
+          <div>
+            <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Dirección</label>
+            <select name="direction" value={formData.direction} onChange={handleChange} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }}>
+              <option value="LONG">LONG (Compra)</option>
+              <option value="SHORT">SHORT (Venta)</option>
+            </select>
+          </div>
+
+          <div style={{ gridColumn: 'span 2' }}>
+            <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#3b82f6', marginBottom: '5px' }}>🧠 Playbook / Estrategia</label>
+            <select name="strategyId" value={formData.strategyId} onChange={handleChange} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '2px solid #bfdbfe', background: '#eff6ff', boxSizing: 'border-box', fontWeight: 'bold', color: '#1e293b' }}>
+              <option value="">-- Operación Libre --</option>
+              {strategies.map(strat => (
+                <option key={strat.id} value={strat.id}>{strat.name}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Precio de Entrada</label>
+            <input type="text" inputMode="decimal" name="entryPrice" value={formData.entryPrice} onChange={handleChange} required style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc', boxSizing: 'border-box' }} />
+          </div>
+          <div>
+            <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Tamaño (Lotes)</label>
+            <input type="text" inputMode="decimal" name="positionSize" value={formData.positionSize} onChange={handleChange} required style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc', boxSizing: 'border-box' }} />
+          </div>
+
+          <div>
+            <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Stop Loss (Opcional)</label>
+            <input type="text" inputMode="decimal" name="stopLoss" value={formData.stopLoss} onChange={handleChange} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc', boxSizing: 'border-box' }} />
+          </div>
+          <div>
+            <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Take Profit (Opcional)</label>
+            <input type="text" inputMode="decimal" name="takeProfit" value={formData.takeProfit} onChange={handleChange} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc', boxSizing: 'border-box' }} />
+          </div>
+
+          {/* <-- BLOQUE DE EXCURSIONES (MAE / MFE) --> */}
+          <div style={{ gridColumn: 'span 2', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', padding: '15px', background: '#fef2f2', borderRadius: '8px', border: '1px solid #fecdd3' }}>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#9f1239', marginBottom: '5px' }}>🔻 Precio MAE (Pico Negativo)</label>
+              <input type="text" inputMode="decimal" name="maePrice" placeholder="Ej. 4705.000" value={formData.maePrice} onChange={handleChange} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #fecaca', boxSizing: 'border-box' }} />
+            </div>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#166534', marginBottom: '5px' }}>🔺 Precio MFE (Pico Positivo)</label>
+              <input type="text" inputMode="decimal" name="mfePrice" placeholder="Ej. 4690.000" value={formData.mfePrice} onChange={handleChange} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #bbf7d0', boxSizing: 'border-box' }} />
+            </div>
+          </div>
+
+          {trade.status === 'CLOSED' && (
+            <div style={{ gridColumn: 'span 2', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', padding: '15px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+              <div>
+                <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#334155', marginBottom: '5px' }}>🔒 Precio Salida Exacto</label>
+                <input type="text" inputMode="decimal" name="exitPrice" value={formData.exitPrice} onChange={handleChange} required style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }} />
+              </div>
+              <div>
+                <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#334155', marginBottom: '5px' }}>💰 Ganancia / Pérdida (USD)</label>
+                <input type="text" inputMode="decimal" name="pnlNet" value={formData.pnlNet} onChange={handleChange} required style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box', fontWeight: 'bold', color: formData.pnlNet && formData.pnlNet.toString().startsWith('-') ? '#ef4444' : '#10b981' }} />
+              </div>
+            </div>
+          )}
+
+          <div style={{ gridColumn: 'span 2' }}>
+            <label style={{ display: 'block', fontSize: '1em', fontWeight: 'bold', color: '#475569', marginBottom: '8px' }}>📝 Bitácora del Trade</label>
+            <BlockEditor 
+              initialContent={formData.notes} 
+              onChange={(content) => setFormData({ ...formData, notes: content })} 
+            />
+          </div>
+
+          <div style={{ gridColumn: 'span 2', display: 'flex', justifyContent: 'flex-end', gap: '15px', marginTop: '10px' }}>
+            <button type="button" onClick={onClose} style={{ padding: '12px 20px', background: '#f1f5f9', color: '#475569', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>Cancelar</button>
+            <button type="submit" disabled={loading} style={{ padding: '12px 20px', background: '#3b82f6', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>
+              {loading ? 'Guardando...' : 'Actualizar Operación'}
+            </button>
+          </div>
+
+          {error && <div style={{ gridColumn: 'span 2', color: '#ef4444', fontWeight: 'bold', fontSize: '0.9em' }}>❌ {error}</div>}
+        </form>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/TradeForm.jsx">
+import { useState, useContext, useEffect } from 'react';
+import api from '../api/axiosConfig';
+import { AuthContext } from '../context/AuthContext';
+import BlockEditor from './BlockEditor'; // <-- NUEVA IMPORTACIÓN
+
+export default function TradeForm({ onCerrar, onGuardado }) {
+  const { portfolioId } = useContext(AuthContext);
+
+  const [strategies, setStrategies] = useState([]);
+  const [useCalculator, setUseCalculator] = useState(false);
+  const [accountBalance, setAccountBalance] = useState(10000);
+  const [riskPercentage, setRiskPercentage] = useState(1.0);
+
+  const [formData, setFormData] = useState({
+    asset: '',
+    direction: 'LONG',
+    strategyId: '',
+    entryPrice: '',
+    positionSize: '',
+    takeProfit: '',
+    stopLoss: '',
+    notes: ''
+  });
+  
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchStrategies = async () => {
+      try {
+        const response = await api.get(`/strategies/portfolio/${portfolioId}`);
+        setStrategies(response.data);
+      } catch (err) {
+        console.error("Error al cargar estrategias", err);
+      }
+    };
+    if (portfolioId) fetchStrategies();
+  }, [portfolioId]);
+
+  useEffect(() => {
+    if (useCalculator && formData.entryPrice && formData.stopLoss) {
+      const entry = parseFloat(formData.entryPrice);
+      const sl = parseFloat(formData.stopLoss);
+      
+      if (!isNaN(entry) && !isNaN(sl) && entry > 0 && sl > 0 && entry !== sl) {
+        const riskAmountInDollars = accountBalance * (riskPercentage / 100);
+        const riskPerUnit = Math.abs(entry - sl);
+        const calculatedSize = riskAmountInDollars / riskPerUnit;
+        setFormData(prev => ({ ...prev, positionSize: calculatedSize.toFixed(4) }));
+      }
+    }
+  }, [useCalculator, formData.entryPrice, formData.stopLoss, riskPercentage, accountBalance]);
+
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+    if (['entryPrice', 'positionSize', 'takeProfit', 'stopLoss'].includes(name)) {
+      value = value.replace(',', '.');
+      value = value.replace(/[^0-9.]/g, ''); 
+    }
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+
+    try {
+      const requestData = {
+        portfolioId: portfolioId, 
+        strategyId: formData.strategyId ? formData.strategyId : null, 
+        asset: formData.asset.toUpperCase(),
+        direction: formData.direction,
+        entryPrice: parseFloat(formData.entryPrice),
+        positionSize: parseFloat(formData.positionSize),
+        takeProfit: formData.takeProfit ? parseFloat(formData.takeProfit) : null,
+        stopLoss: formData.stopLoss ? parseFloat(formData.stopLoss) : null,
+        notes: formData.notes
+      };
+
+      await api.post('/trades', requestData);
+      onGuardado(); 
+      onCerrar();   
+    } catch (err) {
+      if (err.response && err.response.data) {
+        const mensajesError = err.response.data.details || [err.response.data.message];
+        setError(mensajesError.join(', '));
+      } else {
+        setError('Error al guardar la operación.');
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(15, 23, 42, 0.7)', backdropFilter: 'blur(5px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 2000, padding: '15px', overflowY: 'auto' }}>
+      
+      {/* Redujimos el padding a 20px para que ocupe menos espacio inútil en celular */}
+      <div style={{ background: 'white', padding: '20px', borderRadius: '12px', width: '100%', maxWidth: '800px', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', maxHeight: '90vh', overflowY: 'auto', boxSizing: 'border-box' }}>
+        
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', borderBottom: '1px solid #e2e8f0', paddingBottom: '15px' }}>
+          <h3 style={{ margin: 0, color: '#0f172a', fontSize: '1.2em' }}>⚡ Registrar Operación</h3>
+          <button onClick={onCerrar} style={{ background: '#f1f5f9', border: 'none', cursor: 'pointer', fontSize: '1.2em', color: '#64748b', borderRadius: '50%', width: '35px', height: '35px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>✖</button>
+        </div>
+
+        {/* Cambiamos a auto-fit minmax(250px) para que colapse a 1 columna automáticamente */}
+        <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '15px' }}>
+          
+          <div>
+            <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Activo (Ticker)</label>
+            <input type="text" name="asset" value={formData.asset} onChange={handleChange} required placeholder="Ej. XAUUSD" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }} />
+          </div>
+          
+          <div>
+            <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Dirección</label>
+            <select name="direction" value={formData.direction} onChange={handleChange} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }}>
+              <option value="LONG">LONG (Compra)</option>
+              <option value="SHORT">SHORT (Venta)</option>
+            </select>
+          </div>
+
+          {/* Cambiamos "span 2" por "1 / -1" para que ocupe todo el ancho de forma segura */}
+          <div style={{ gridColumn: '1 / -1' }}>
+            <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#3b82f6', marginBottom: '5px' }}>🧠 Playbook / Estrategia</label>
+            <select name="strategyId" value={formData.strategyId} onChange={handleChange} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '2px solid #bfdbfe', background: '#eff6ff', boxSizing: 'border-box', fontWeight: 'bold', color: '#1e293b' }}>
+              <option value="">-- Operación Libre --</option>
+              {strategies.map(strat => (
+                <option key={strat.id} value={strat.id}>{strat.name}</option>
+              ))}
+            </select>
+          </div>
+
+          <div style={{ gridColumn: '1 / -1', background: '#f0fdf4', padding: '15px', borderRadius: '8px', border: '1px solid #bbf7d0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <label style={{ fontWeight: 'bold', color: '#166534', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '0.9em' }}>
+              <input type="checkbox" checked={useCalculator} onChange={(e) => setUseCalculator(e.target.checked)} />
+              🧮 Calculadora de Riesgo Automática
+            </label>
+            {useCalculator && (
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: '15px', marginTop: '10px' }}>
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.85em', fontWeight: 'bold', color: '#166534', marginBottom: '5px' }}>Capital ($)</label>
+                  <input type="number" value={accountBalance} onChange={(e) => setAccountBalance(e.target.value)} style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #bbf7d0', boxSizing: 'border-box' }} />
+                </div>
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.85em', fontWeight: 'bold', color: '#166534', marginBottom: '5px' }}>Riesgo (%)</label>
+                  <input type="number" step="0.1" value={riskPercentage} onChange={(e) => setRiskPercentage(e.target.value)} style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #bbf7d0', boxSizing: 'border-box' }} />
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div>
+            <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Precio de Entrada</label>
+            <input type="text" inputMode="decimal" name="entryPrice" value={formData.entryPrice} onChange={handleChange} required placeholder="Ej. 2045,50" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc', boxSizing: 'border-box' }} />
+          </div>
+          
+          <div>
+            <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>
+              Tamaño (Lotes) {useCalculator && <span style={{ color: '#166534', fontSize: '0.8em' }}>(Auto)</span>}
+            </label>
+            <input type="text" inputMode="decimal" name="positionSize" value={formData.positionSize} onChange={handleChange} required readOnly={useCalculator} style={{ width: '100%', padding: '10px', borderRadius: '6px', boxSizing: 'border-box', border: useCalculator ? '2px solid #22c55e' : '1px solid #ccc', background: useCalculator ? '#f0fdf4' : 'white', fontWeight: useCalculator ? 'bold' : 'normal' }} />
+          </div>
+
+          <div>
+            <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Stop Loss (Opcional)</label>
+            <input type="text" inputMode="decimal" name="stopLoss" value={formData.stopLoss} onChange={handleChange} required={useCalculator} placeholder="Ej. 2040,00" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc', boxSizing: 'border-box' }} />
+          </div>
+          
+          <div>
+            <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Take Profit (Opcional)</label>
+            <input type="text" inputMode="decimal" name="takeProfit" value={formData.takeProfit} onChange={handleChange} placeholder="Ej. 2060,00" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc', boxSizing: 'border-box' }} />
+          </div>
+
+          <div style={{ gridColumn: '1 / -1' }}>
+            <label style={{ display: 'block', fontSize: '1em', fontWeight: 'bold', color: '#475569', marginBottom: '8px' }}>📝 Bitácora del Trade</label>
+            <BlockEditor 
+              initialContent={formData.notes} 
+              onChange={(content) => setFormData({ ...formData, notes: content })} 
+            />
+          </div>
+
+          {/* Botones flex-wrap para que se estiren bien en celular */}
+          <div style={{ gridColumn: '1 / -1', display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-end', gap: '15px', marginTop: '10px' }}>
+            <button type="button" onClick={onCerrar} style={{ flex: '1 1 auto', padding: '12px 20px', background: '#f1f5f9', color: '#475569', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', textAlign: 'center' }}>Cancelar</button>
+            <button type="submit" disabled={loading} style={{ flex: '1 1 auto', padding: '12px 20px', background: '#3b82f6', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', textAlign: 'center' }}>
+              {loading ? 'Guardando...' : 'Confirmar Operación'}
+            </button>
+          </div>
+
+          {error && <div style={{ gridColumn: '1 / -1', color: '#ef4444', fontWeight: 'bold', fontSize: '0.9em' }}>❌ {error}</div>}
+        </form>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/context/AuthContext.jsx">
+import { createContext, useState, useEffect, useCallback } from 'react';
+import api from '../api/axiosConfig';
+
+export const AuthContext = createContext();
+
+export const AuthProvider = ({ children }) => {
+  const [token, setToken] = useState(localStorage.getItem('token'));
+  const [portfolioId, setPortfolioId] = useState(localStorage.getItem('portfolioId'));
+  
+  // <-- NUEVO: Estado global para el rol real de la base de datos -->
+  const [userRole, setUserRole] = useState('ROLE_FREE');
+
+  // <-- NUEVA FUNCIÓN: Consulta a Java el rol actual -->
+  const fetchUserRole = useCallback(async () => {
+    if (!token) return;
+    try {
+      const response = await api.get('/users/me');
+      setUserRole(response.data.role); // Se actualiza globalmente en React
+    } catch (error) {
+      console.error("Error obteniendo el rol del usuario:", error);
+      setUserRole('ROLE_FREE');
+    }
+  }, [token]);
+
+  // Cada vez que inicias sesión o recargas, busca el rol actual
+  useEffect(() => {
+    fetchUserRole();
+  }, [fetchUserRole]);
+
+  const login = (newToken, newPortfolioId) => {
+    setToken(newToken);
+    setPortfolioId(newPortfolioId);
+    localStorage.setItem('token', newToken);
+    localStorage.setItem('portfolioId', newPortfolioId);
+  };
+
+  const logout = () => {
+    setToken(null);
+    setPortfolioId(null);
+    setUserRole('ROLE_FREE');
+    localStorage.removeItem('token');
+    localStorage.removeItem('portfolioId');
+  };
+
+  return (
+    // <-- Exportamos userRole y fetchUserRole para que el Dashboard los use
+    <AuthContext.Provider value={{ token, portfolioId, userRole, fetchUserRole, setPortfolioId, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+</file>
+
+<file path="src/pages/LoginPage.jsx">
+import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
+import api from '../api/axiosConfig';
+import { GoogleLogin } from '@react-oauth/google'; // <-- NUEVA IMPORTACIÓN
+
+export default function LoginPage() {
+  const [isRegister, setIsRegister] = useState(false);
+  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // <-- NUEVA FUNCIÓN: PROCESAR EL LOGIN CON GOOGLE -->
+  const handleGoogleSuccess = async (credentialResponse) => {
+    setError('');
+    setLoading(true);
+    try {
+      // Le enviamos el token seguro de Google a nuestro backend en Java
+      const res = await api.post('/auth/google', { token: credentialResponse.credential });
+      // Guardamos el JWT de AstroTrade y el ID del portafolio
+      login(res.data.token, res.data.portfolioId);
+      navigate('/dashboard');
+    } catch (err) {
+      console.error("Error en Google Login:", err);
+      setError('No se pudo iniciar sesión con Google. Intenta nuevamente.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+
+    try {
+      const endpoint = isRegister ? '/auth/register' : '/auth/login';
+      const res = await api.post(endpoint, formData);
+      login(res.data.token, res.data.portfolioId);
+      navigate('/dashboard');
+    } catch (err) {
+      setError(err.response?.data?.error || 'Error al autenticar');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div style={{ display: 'flex', height: '100vh', backgroundColor: '#f8fafc', fontFamily: 'sans-serif' }}>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '40px' }}>
+        <div style={{ width: '100%', maxWidth: '400px', background: 'white', padding: '40px', borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.05)' }}>
+          <h2 style={{ textAlign: 'center', color: '#0f172a', marginBottom: '10px' }}>
+            {isRegister ? 'Crear Cuenta' : 'Bienvenido de nuevo'}
+          </h2>
+          <p style={{ textAlign: 'center', color: '#64748b', marginBottom: '30px' }}>
+            AstroTrade
+          </p>
+
+          {/* <-- BOTÓN OFICIAL DE GOOGLE --> */}
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+            <GoogleLogin
+              onSuccess={handleGoogleSuccess}
+              onError={() => setError('El inicio de sesión con Google fue cancelado o falló.')}
+              useOneTap
+              shape="rectangular"
+              theme="outline"
+              size="large"
+              text={isRegister ? "signup_with" : "signin_with"}
+            />
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', margin: '20px 0' }}>
+            <hr style={{ flex: 1, border: 'none', borderTop: '1px solid #e2e8f0' }} />
+            <span style={{ padding: '0 10px', color: '#94a3b8', fontSize: '0.85em', fontWeight: 'bold' }}>O CONTINÚA CON EMAIL</span>
+            <hr style={{ flex: 1, border: 'none', borderTop: '1px solid #e2e8f0' }} />
+          </div>
+
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <div>
+              <label style={{ display: 'block', marginBottom: '5px', color: '#475569', fontWeight: 'bold', fontSize: '0.9em' }}>Correo Electrónico</label>
+              <input 
+                type="email" name="email" value={formData.email} onChange={handleChange} required 
+                style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }}
+              />
+            </div>
+            <div>
+              <label style={{ display: 'block', marginBottom: '5px', color: '#475569', fontWeight: 'bold', fontSize: '0.9em' }}>Contraseña</label>
+              <input 
+                type="password" name="password" value={formData.password} onChange={handleChange} required 
+                style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }}
+              />
+            </div>
+            
+            {error && <div style={{ color: '#ef4444', fontSize: '0.9em', textAlign: 'center', fontWeight: 'bold' }}>{error}</div>}
+
+            <button type="submit" disabled={loading} style={{ padding: '14px', background: '#0f172a', color: 'white', border: 'none', borderRadius: '6px', fontSize: '1em', fontWeight: 'bold', cursor: 'pointer', marginTop: '10px' }}>
+              {loading ? 'Procesando...' : (isRegister ? 'Registrarse' : 'Iniciar Sesión')}
+            </button>
+          </form>
+
+          <p style={{ textAlign: 'center', marginTop: '25px', color: '#64748b', fontSize: '0.9em' }}>
+            {isRegister ? '¿Ya tienes cuenta?' : '¿No tienes cuenta?'} 
+            <span 
+              onClick={() => setIsRegister(!isRegister)} 
+              style={{ color: '#3b82f6', fontWeight: 'bold', cursor: 'pointer', marginLeft: '5px' }}>
+              {isRegister ? 'Inicia sesión' : 'Regístrate'}
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/StatisticsPage.jsx">
+import { useEffect, useState, useContext } from 'react';
+import api from '../api/axiosConfig';
+import { AuthContext } from '../context/AuthContext';
+import AnnualHeatmap from '../components/AnnualHeatmap';
+import PremiumBanner from '../components/PremiumBanner'; // Importamos el banner
+
+export default function StatisticsPage() {
+  const { portfolioId, userRole } = useContext(AuthContext); // Extraemos userRole
+  const [stats, setStats] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  // BLOQUEO VISUAL: Si no es PRO, detenemos todo aquí y mostramos el diseño limpio
+  if (userRole !== 'ROLE_PRO' && userRole !== 'ROLE_ADMIN') {
+    return (
+      <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
+        <PremiumBanner 
+          title="Analítica Avanzada Institucional" 
+          description="Descubre métricas profundas como la Esperanza Matemática, el factor SQN, la Excursión Adversa (MAE) y tu Mapa de Calor Anual." 
+        />
+      </div>
+    );
+  }
+
+  useEffect(() => {
+    const fetchAnalytics = async () => {
+      if (!portfolioId) return;
+      try {
+        setLoading(true);
+        // Llamada al endpoint avanzado que creamos en Java
+        const response = await api.get(`/analytics/portfolio/${portfolioId}/advanced`);
+        setStats(response.data);
+      } catch (err) {
+        console.error("Error al cargar analíticas avanzadas:", err);
+        setError('Error al conectar con el servidor analítico.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchAnalytics();
+  }, [portfolioId]);
+
+  if (loading) return <div style={{ padding: '40px', color: '#64748b', fontWeight: 'bold', textAlign: 'center' }}>Calculando métricas institucionales...</div>;
+  if (error) return <div style={{ padding: '40px', color: '#ef4444', fontWeight: 'bold', textAlign: 'center' }}>{error}</div>;
+  if (!stats) return null;
+
+  // Componente interno para reutilizar el diseño de las mini-tarjetas
+  const StatCard = ({ title, value, subtitle, valueColor = '#1e293b' }) => (
+    <div style={{ background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0' }}>
+      <p style={{ margin: 0, color: '#64748b', fontSize: '0.85em', fontWeight: 'bold', textTransform: 'uppercase' }}>{title}</p>
+      <h2 style={{ margin: '8px 0 4px 0', color: valueColor, fontSize: '1.8em' }}>{value}</h2>
+      {subtitle && <p style={{ margin: 0, color: '#94a3b8', fontSize: '0.8em' }}>{subtitle}</p>}
+    </div>
+  );
+
+  const getSqnColor = (sqn) => {
+    if (sqn >= 3) return '#10b981'; // Excelente (Verde)
+    if (sqn >= 2) return '#3b82f6'; // Bueno (Azul)
+    if (sqn >= 1) return '#f59e0b'; // Regular (Naranja)
+    return '#ef4444'; // Pobre (Rojo)
+  };
+
+  return (
+    <div style={{ padding: '40px', fontFamily: 'sans-serif', maxWidth: '1200px', margin: '0 auto' }}>
+      
+      <div style={{ marginBottom: '30px', borderBottom: '2px solid #e2e8f0', paddingBottom: '20px' }}>
+        <h1 style={{ margin: 0, color: '#0f172a' }}>📊 Analítica Avanzada</h1>
+        <p style={{ margin: 0, color: '#64748b' }}>Basado en {stats.totalTrades} operaciones cerradas</p>
+      </div>
+
+      {/* REJILLA DE MÉTRICAS */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '20px', marginBottom: '40px' }}>
+        
+        <StatCard title="Win Rate" value={`${stats.winRate}%`} subtitle="Porcentaje de acierto" />
+        
+        <StatCard title="Profit Factor" value={stats.profitFactor} subtitle="Beneficio bruto / Pérdida bruta" valueColor={stats.profitFactor >= 1 ? '#10b981' : '#ef4444'} />
+        
+        <StatCard title="Expectancy ($)" value={`$${stats.expectancyUsd}`} subtitle="Esperanza matemática promedio" valueColor={stats.expectancyUsd > 0 ? '#10b981' : '#ef4444'} />
+        
+        <StatCard title="Risk / Reward ($)" value={`1 : ${stats.averageRewardToRiskUsd}`} subtitle="Ratio de Riesgo/Beneficio real" />
+
+        <StatCard title="Max Drawdown" value={`-$${stats.maxDrawdownUsd}`} subtitle={`${stats.maxDrawdownPct}% de caída máxima`} valueColor="#ef4444" />
+        
+        <StatCard title="Average Drawdown" value={`-$${stats.averageDrawdownUsd}`} subtitle="Promedio de caídas" valueColor="#f97316" />
+
+        <StatCard title="Mejor Racha Ganadora" value={`${stats.maxConsecutiveWins} Wins`} subtitle="Operaciones seguidas" valueColor="#10b981" />
+        
+        <StatCard title="Peor Racha Perdedora" value={`${stats.maxConsecutiveLosses} Loss`} subtitle="Operaciones seguidas" valueColor="#ef4444" />
+
+        <StatCard title="SQN (System Quality)" value={stats.sqn} subtitle="Puntuación del sistema (Van Tharp)" valueColor={getSqnColor(stats.sqn)} />
+        
+        <StatCard title="Holding Period" value={`${stats.avgHoldingPeriodHours} hrs`} subtitle="Tiempo promedio en operación" />
+
+        <StatCard title="MFE (Promedio)" value={`$${stats.averageMfe}`} subtitle="Maximum Favorable Excursion" valueColor="#3b82f6" />
+        
+        <StatCard title="MAE (Promedio)" value={`-$${stats.averageMae}`} subtitle="Maximum Adverse Excursion" valueColor="#f43f5e" />
+
+      </div>
+
+      {/* MAPA DE CALOR ANUAL */}
+      <div style={{ marginBottom: '40px' }}>
+        <AnnualHeatmap data={stats.heatmapData} />
+      </div>
+
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/StrategiesPage.jsx">
+import { useState, useEffect, useContext } from 'react';
+import api from '../api/axiosConfig'; 
+import { AuthContext } from '../context/AuthContext'; 
+
+export default function StrategiesPage() {
+  // <-- CAMBIO 1: Ahora usamos portfolioId
+  const { portfolioId } = useContext(AuthContext);
+
+  const [strategies, setStrategies] = useState([]);
+  const [cargando, setCargando] = useState(true);
+  const [error, setError] = useState('');
+
+  // Estados para el formulario
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [rules, setRules] = useState('');
+  const [guardando, setGuardando] = useState(false);
+
+  const fetchStrategies = async () => {
+    // <-- CAMBIO 2: Validamos portfolioId
+    if (!portfolioId) return;
+    setCargando(true);
+    try {
+      // <-- CAMBIO 3: Nueva ruta apuntando a /portfolio/
+      const response = await api.get(`/strategies/portfolio/${portfolioId}`);
+      // Ordenamos para que las más nuevas salgan arriba
+      const ordenadas = response.data.sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0));
+      setStrategies(ordenadas);
+      setError('');
+    } catch (err) {
+      console.error(err);
+      setError('No se pudieron cargar los playbooks desde la bóveda.');
+    } finally {
+      setCargando(false);
+    }
+  };
+
+  // Se ejecuta al entrar a la pantalla
+  useEffect(() => {
+    fetchStrategies();
+  // <-- CAMBIO 4: Reactionamos a cambios en el portfolioId
+  }, [portfolioId]);
+
+  const handleGuardar = async (e) => {
+    e.preventDefault();
+    setGuardando(true);
+
+    try {
+      await api.post('/strategies', {
+        // <-- CAMBIO 5: Enviamos portfolioId a Spring Boot
+        portfolioId: portfolioId,
+        name: name,
+        description: description,
+        rules: rules
+      });
+
+      // Limpiamos el formulario
+      setName('');
+      setDescription('');
+      setRules('');
+      
+      // Volvemos a pedir la lista a Java para ver la nueva estrategia aparecer
+      fetchStrategies(); 
+    } catch (err) {
+      console.error(err);
+      alert('Error al guardar la estrategia en la base de datos.');
+    } finally {
+      setGuardando(false);
+    }
+  };
+
+  return (
+    <div style={{ padding: '40px', fontFamily: 'sans-serif', maxWidth: '1200px', margin: '0 auto' }}>
+      
+      <div style={{ marginBottom: '30px' }}>
+        <h1 style={{ margin: 0, color: '#0f172a' }}>🧠 Centro de Estrategias</h1>
+        <p style={{ margin: 0, color: '#64748b' }}>Define tus playbooks institucionales para mantener la disciplina operativa.</p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
+        
+        {/* PANEL IZQUIERDO: Formulario de Creación */}
+        <div style={{ background: 'white', padding: '25px', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', height: 'fit-content' }}>
+          <h3 style={{ marginTop: 0, color: '#1e293b' }}>+ Nuevo Playbook</h3>
+          <form onSubmit={handleGuardar} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Nombre de la Estrategia</label>
+              <input type="text" value={name} onChange={(e) => setName(e.target.value)} required placeholder="Ej. Smart Money Reversal" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }} />
+            </div>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Descripción Breve</label>
+              <textarea value={description} onChange={(e) => setDescription(e.target.value)} required rows="2" placeholder="¿En qué consiste el setup?" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }}></textarea>
+            </div>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', color: '#475569', marginBottom: '5px' }}>Reglas Operativas (Checklist)</label>
+              <textarea value={rules} onChange={(e) => setRules(e.target.value)} required rows="5" placeholder="1. Condición A...&#10;2. Condición B..." style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }}></textarea>
+            </div>
+            <button type="submit" disabled={guardando} style={{ padding: '12px', background: '#0f172a', color: 'white', border: 'none', borderRadius: '6px', cursor: guardando ? 'not-allowed' : 'pointer', fontWeight: 'bold', marginTop: '10px' }}>
+              {guardando ? 'Guardando en Bóveda...' : 'Registrar Estrategia'}
+            </button>
+          </form>
+        </div>
+
+        {/* PANEL DERECHO: Tarjetas de Estrategias Reales */}
+        <div>
+          {cargando ? (
+            <p style={{ color: '#3b82f6', fontWeight: 'bold' }}>Sincronizando playbooks con PostgreSQL...</p>
+          ) : error ? (
+            <p style={{ color: '#ef4444', fontWeight: 'bold' }}>{error}</p>
+          ) : strategies.length === 0 ? (
+            <div style={{ padding: '40px', textAlign: 'center', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+              <p style={{ color: '#64748b', fontSize: '1.1em' }}>No tienes estrategias registradas. Crea tu primer playbook a la izquierda.</p>
+            </div>
+          ) : (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              {strategies.map((strat) => (
+                <div key={strat.id} style={{ background: 'white', padding: '25px', borderRadius: '12px', border: '1px solid #e2e8f0', borderLeft: '5px solid #3b82f6', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
+                  <h3 style={{ margin: '0 0 10px 0', color: '#0f172a', fontSize: '1.4em' }}>{strat.name}</h3>
+                  <p style={{ margin: '0 0 15px 0', color: '#64748b', fontSize: '1.05em' }}>{strat.description}</p>
+                  
+                  <div style={{ background: '#f8fafc', padding: '15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                    <h4 style={{ margin: '0 0 10px 0', color: '#475569', fontSize: '0.9em', textTransform: 'uppercase' }}>Checklist de Confirmación</h4>
+                    <pre style={{ margin: 0, whiteSpace: 'pre-wrap', fontFamily: 'inherit', color: '#334155', lineHeight: '1.6' }}>
+                      {strat.rules}
+                    </pre>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/App.jsx">
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ProtectedRoute from './routes/ProtectedRoute';
+
+import LoginPage from './pages/LoginPage';
+import DashboardPage from './pages/DashboardPage';
+import StrategiesPage from './pages/StrategiesPage';
+import StatisticsPage from './pages/StatisticsPage'; 
+import AdminDashboard from './pages/AdminDashboard';
+import Navbar from './components/Navbar'; 
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Navbar /> 
+      
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+
+        <Route 
+          path="/dashboard" 
+          element={
+            <ProtectedRoute>
+              <DashboardPage />
+            </ProtectedRoute>
+          } 
+        />
+
+        <Route 
+          path="/admin" 
+          element={
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
+          } 
+        />
+        
+        <Route 
+          path="/strategies" 
+          element={
+            <ProtectedRoute>
+              <StrategiesPage />
+            </ProtectedRoute>
+          } 
+        />
+
+        <Route 
+          path="/statistics" 
+          element={
+            <ProtectedRoute>
+              <StatisticsPage />
+            </ProtectedRoute>
+          } 
+        />
+        
+        <Route path="*" element={<LoginPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+</file>
+
+<file path="package.json">
+{
+  "name": "AstroTrade-web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@editorjs/editorjs": "^2.31.6",
+    "@editorjs/header": "^2.8.8",
+    "@editorjs/image": "^2.10.3",
+    "@editorjs/list": "^2.0.9",
+    "@react-oauth/google": "^0.13.5",
+    "axios": "^1.14.0",
+    "jwt-decode": "^4.0.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-router-dom": "^7.14.0",
+    "recharts": "^3.8.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.4.0",
+    "vite": "^8.0.1"
+  }
+}
+</file>
+
+<file path="src/components/Navbar.jsx">
+import { useState, useEffect, useContext, useRef } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import api from '../api/axiosConfig';
+import { AuthContext } from '../context/AuthContext';
+
+export default function Navbar() {
+  const { portfolioId, setPortfolioId, token, userRole } = useContext(AuthContext);
+  const [portfolios, setPortfolios] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false); 
+  
+  const [newPortData, setNewPortData] = useState({ 
+    name: '', 
+    initialBalance: 10000, 
+    targetBalance: 20000, 
+    currency: 'USD' 
+  });
+  
+  const navigate = useNavigate();
+  const location = useLocation();
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const fetchPortfolios = async () => {
+      try {
+        const res = await api.get('/portfolios');
+        setPortfolios(res.data);
+        
+        if (res.data.length > 0 && !portfolioId) {
+          setPortfolioId(res.data[0].id);
+          localStorage.setItem('portfolioId', res.data[0].id);
+        }
+      } catch (error) {
+        console.error('Error cargando portafolios', error);
+      }
+    };
+    
+    if (token && location.pathname !== '/') fetchPortfolios();
+  }, [token, location.pathname, portfolioId, setPortfolioId]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleSelectPortfolio = (newId) => {
+    setDropdownOpen(false);
+    
+    if (newId === "NEW") {
+        if (userRole !== 'ROLE_PRO' && userRole !== 'ROLE_ADMIN' && portfolios.length >= 1) {
+            alert("Límite alcanzado: Las cuentas gratuitas solo pueden tener 1 portafolio. ¡Mejora a PRO para crear cuentas ilimitadas!");
+            return; 
+        }
+        
+        setShowModal(true);
+        return;
+    }
+    
+    setPortfolioId(newId);
+    localStorage.setItem('portfolioId', newId);
+    navigate('/dashboard');
+    window.location.reload(); 
+  };
+
+  const handleCreatePortfolio = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await api.post('/portfolios', newPortData);
+      setPortfolios([...portfolios, res.data]);
+      setPortfolioId(res.data.id);
+      localStorage.setItem('portfolioId', res.data.id);
+      setShowModal(false);
+      window.location.reload();
+    } catch (error) {
+      console.error("Error al crear portafolio", error);
+      alert("Error al crear la cuenta. Revisa tu conexión.");
+    }
+  };
+
+  if (!token || location.pathname === '/') return null;
+
+  const currentPortfolio = portfolios.find(p => p.id === portfolioId);
+
+  return (
+    <nav style={{ background: '#0f172a', padding: '15px', display: 'flex', flexWrap: 'wrap', gap: '15px', justifyContent: 'space-between', alignItems: 'center', color: 'white', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
+      
+      {/* SECCIÓN IZQUIERDA: Logo y Selector de Cuenta */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '15px', flex: '1 1 auto' }}>
+        <Link to="/dashboard" style={{ color: 'white', textDecoration: 'none', fontSize: '1.2em', fontWeight: 'bold', minWidth: 'max-content' }}>
+          ⚡ AstroTrade
+        </Link>
+        
+        <div ref={dropdownRef} style={{ position: 'relative', background: '#1e293b', padding: '6px 12px', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '8px', flex: '1 1 auto', maxWidth: 'fit-content' }}>
+          <span style={{ fontSize: '0.8em', color: '#94a3b8', fontWeight: 'bold' }}>CUENTA:</span>
+          
+          <div 
+            onClick={() => setDropdownOpen(!dropdownOpen)}
+            style={{ color: 'white', fontWeight: 'bold', cursor: 'pointer', fontSize: '0.95em', display: 'flex', alignItems: 'center', gap: '5px' }}
+          >
+            <span style={{ maxWidth: '130px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+              {currentPortfolio ? currentPortfolio.name : 'Cargando...'}
+            </span>
+            <span style={{ fontSize: '0.8em' }}>▼</span>
+          </div>
+
+          {dropdownOpen && (
+            <div style={{ position: 'absolute', top: '100%', left: 0, marginTop: '8px', background: 'white', borderRadius: '8px', boxShadow: '0 10px 25px rgba(0,0,0,0.2)', overflow: 'hidden', minWidth: '220px', zIndex: 4000 }}>
+              {portfolios.map(p => (
+                <div 
+                  key={p.id} 
+                  onClick={() => handleSelectPortfolio(p.id)}
+                  style={{ padding: '12px 15px', color: '#0f172a', cursor: 'pointer', borderBottom: '1px solid #f1f5f9', fontWeight: p.id === portfolioId ? 'bold' : 'normal', background: p.id === portfolioId ? '#f8fafc' : 'white' }}
+                >
+                  {p.name} {p.id === portfolioId && '✓'}
+                </div>
+              ))}
+              <div 
+                onClick={() => handleSelectPortfolio('NEW')}
+                style={{ padding: '12px 15px', color: '#3b82f6', cursor: 'pointer', fontWeight: 'bold', background: '#eff6ff' }}
+              >
+                + Crear Nueva Cuenta
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* SECCIÓN DERECHA: Enlaces tipo Pestaña */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', alignItems: 'center', flex: '1 1 auto', justifyContent: 'flex-end' }}>
+        
+        {/* BOTÓN SECRETO DE ADMINISTRADOR */}
+        {userRole === 'ROLE_ADMIN' && (
+            <button 
+              onClick={() => navigate('/admin')} 
+              style={{ padding: '8px 15px', background: '#0f172a', color: '#22c55e', border: '1px solid #22c55e', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>
+              🛡️ Modo Admin
+            </button>
+        )}
+
+        <Link to="/dashboard" style={{ color: location.pathname === '/dashboard' ? '#ffffff' : '#94a3b8', background: location.pathname === '/dashboard' ? '#1e293b' : 'transparent', textDecoration: 'none', fontWeight: 'bold', padding: '8px 12px', borderRadius: '6px', fontSize: '0.9em', transition: 'background 0.2s' }}>
+          Dashboard
+        </Link>
+        <Link to="/strategies" style={{ color: location.pathname === '/strategies' ? '#ffffff' : '#94a3b8', background: location.pathname === '/strategies' ? '#1e293b' : 'transparent', textDecoration: 'none', fontWeight: 'bold', padding: '8px 12px', borderRadius: '6px', fontSize: '0.9em', transition: 'background 0.2s' }}>
+          Estrategias
+        </Link>
+        <Link to="/statistics" style={{ color: location.pathname === '/statistics' ? '#ffffff' : '#94a3b8', background: location.pathname === '/statistics' ? '#1e293b' : 'transparent', textDecoration: 'none', fontWeight: 'bold', padding: '8px 12px', borderRadius: '6px', fontSize: '0.9em', transition: 'background 0.2s' }}>
+          Estadísticas
+        </Link>
+      </div>
+
+      {/* MODAL DE CREACIÓN DE CUENTA */}
+      {showModal && (
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(15, 23, 42, 0.8)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 5000, padding: '20px' }}>
+          <div style={{ background: 'white', padding: '30px', borderRadius: '12px', width: '100%', maxWidth: '400px', color: '#0f172a', boxSizing: 'border-box' }}>
+            <h3 style={{ marginTop: 0 }}>Crear Nueva Cuenta</h3>
+            <form onSubmit={handleCreatePortfolio}>
+              <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', marginBottom: '5px' }}>Nombre de la Cuenta</label>
+              <input type="text" placeholder="Ej. Reto FTMO 100k" required onChange={e => setNewPortData({...newPortData, name: e.target.value})} style={{ width: '100%', marginBottom: '15px', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }} />
+              
+              <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', marginBottom: '5px' }}>Capital Inicial (Balance)</label>
+              <input type="number" placeholder="10000" required onChange={e => setNewPortData({...newPortData, initialBalance: parseFloat(e.target.value)})} style={{ width: '100%', marginBottom: '15px', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }} />
+              
+              <label style={{ display: 'block', fontSize: '0.9em', fontWeight: 'bold', marginBottom: '5px' }}>Objetivo Financiero (Meta)</label>
+              <input type="number" placeholder="20000" required onChange={e => setNewPortData({...newPortData, targetBalance: parseFloat(e.target.value)})} style={{ width: '100%', marginBottom: '25px', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', boxSizing: 'border-box' }} />
+
+              <div style={{ display:'flex', gap: '10px', justifyContent: 'flex-end' }}>
+                <button type="button" onClick={() => setShowModal(false)} style={{ padding: '10px 15px', border: 'none', background: '#f1f5f9', color: '#475569', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>Cancelar</button>
+                <button type="submit" style={{ padding: '10px 15px', border: 'none', background: '#3b82f6', color: 'white', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>Crear Cuenta</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+}
+</file>
+
+<file path="src/pages/DashboardPage.jsx">
+import { useEffect, useState, useContext, useCallback, useRef } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import api from '../api/axiosConfig';
+import { AuthContext } from '../context/AuthContext';
+import TradeForm from '../components/TradeForm';
+import CloseTradeModal from '../components/CloseTradeModal';
+import EditTradeModal from '../components/EditTradeModal';
+import DashboardMetrics from '../components/DashboardMetrics';
+import PerformanceChart from '../components/PerformanceChart';
+import CalendarWidget from '../components/CalendarWidget';
+
+export default function DashboardPage() {
+  const [trades, setTrades] = useState([]);
+  const [cargando, setCargando] = useState(true);
+  const [error, setError] = useState('');
+  
+  const [mostrarFormulario, setMostrarFormulario] = useState(false);
+  const [tradeToClose, setTradeToClose] = useState(null);
+  const [tradeToEdit, setTradeToEdit] = useState(null);
+  const [refreshCount, setRefreshCount] = useState(0); 
+  const [strategyDictionary, setStrategyDictionary] = useState({});
+
+  const [filtroActivo, setFiltroActivo] = useState('');
+  const [filtroEstado, setFiltroEstado] = useState('ALL'); 
+  const [filtroResultado, setFiltroResultado] = useState('ALL'); 
+
+  // ESTADO PARA IMPORTACIÓN
+  const [isImporting, setIsImporting] = useState(false);
+  const fileInputRef = useRef(null);
+
+  // ESTADOS PARA STRIPE
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [paymentMessage, setPaymentMessage] = useState(null);
+
+  const navigate = useNavigate();
+  
+  // <-- EXTRAEMOS EL ROL REAL Y LA FUNCIÓN DE ACTUALIZACIÓN DEL CONTEXTO -->
+  const { portfolioId, userRole, fetchUserRole, logout } = useContext(AuthContext);
+
+  // <-- EFECTO PARA DETECTAR CUANDO REGRESAN DE PAGO EN STRIPE -->
+  useEffect(() => {
+    if (searchParams.get('session_id')) {
+      setPaymentMessage({ type: 'success', text: '¡Suscripción PRO activada con éxito! Disfruta de tu Trading Journal sin límites.' });
+      setSearchParams({}); 
+      
+      // ¡AQUÍ ESTÁ LA MAGIA! Le decimos a Java que revise si ya somos PRO
+      fetchUserRole(); 
+    }
+    if (searchParams.get('payment') === 'cancelled') {
+      setPaymentMessage({ type: 'error', text: 'El proceso de pago fue cancelado.' });
+      setSearchParams({});
+    }
+  }, [searchParams, setSearchParams, fetchUserRole]);
+
+  const fetchTrades = useCallback(async () => {
+    setCargando(true);
+    try {
+      const [tradesResponse, strategiesResponse] = await Promise.all([
+        api.get(`/trades/portfolio/${portfolioId}`),
+        api.get(`/strategies/portfolio/${portfolioId}`)
+      ]);
+
+      const dictionary = {};
+      strategiesResponse.data.forEach(strat => {
+        dictionary[strat.id] = strat.name;
+      });
+      setStrategyDictionary(dictionary);
+
+      const sortedTrades = tradesResponse.data.sort((a, b) => new Date(b.entryDate) - new Date(a.entryDate));
+      setTrades(sortedTrades);
+      setError('');
+      setRefreshCount(prev => prev + 1); 
+    } catch (err) {
+      setError('Error al sincronizar con la base de datos.');
+    } finally {
+      setCargando(false);
+    }
+  }, [portfolioId]);
+
+  useEffect(() => {
+    if (portfolioId) fetchTrades();
+  }, [portfolioId, fetchTrades]);
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
+
+  const handleExportCSV = async () => {
+    try {
+      const response = await api.get(`/trades/portfolio/${portfolioId}/export/csv`, {
+        responseType: 'blob', 
+      });
+      
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', `Portfolio_Historial_${portfolioId.substring(0,6)}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      link.parentNode.removeChild(link);
+    } catch (err) {
+      alert('Error al exportar los datos. Verifica tu conexión.');
+      console.error(err);
+    }
+  };
+
+  const handleImportCSV = async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    setIsImporting(true);
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+      const response = await api.post(`/trades/portfolio/${portfolioId}/import/csv`, formData, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
+      alert(response.data.message); 
+      fetchTrades(); 
+    } catch (err) {
+      alert(err.response?.data?.error || 'Error al importar el archivo CSV.');
+      console.error(err);
+    } finally {
+      setIsImporting(false);
+      event.target.value = null; 
+    }
+  };
+
+  const handleUpgradePro = async () => {
+    try {
+      const response = await api.post('/checkout/create-session');
+      window.location.href = response.data.url; 
+    } catch (error) {
+      console.error("Error al iniciar el pago", error);
+      alert("Hubo un error al conectar con el servidor de pagos.");
+    }
+  };
+
+  const handleManageSubscription = async () => {
+    try {
+      const response = await api.post('/checkout/portal');
+      window.location.href = response.data.url; 
+    } catch (error) {
+      console.error("Error al abrir el portal", error);
+      alert("Hubo un error al intentar abrir tu configuración de facturación.");
+    }
+  };
+
+  const filteredTrades = trades.filter(trade => {
+    const coincideActivo = trade.asset.toLowerCase().includes(filtroActivo.toLowerCase());
+    const coincideEstado = filtroEstado === 'ALL' || trade.status === filtroEstado;
+    let coincideResultado = true;
+    if (filtroResultado === 'WIN') coincideResultado = trade.pnlNet > 0;
+    if (filtroResultado === 'LOSS') coincideResultado = trade.pnlNet < 0;
+    return coincideActivo && coincideEstado && coincideResultado;
+  });
+
+  return (
+    <div style={{ padding: '40px', fontFamily: 'sans-serif', maxWidth: '1100px', margin: '0 auto' }}>
+      
+      {/* <-- ALERTA DE PAGO STRIPE --> */}
+      {paymentMessage && (
+        <div style={{ 
+          padding: '15px', marginBottom: '20px', borderRadius: '8px', fontWeight: 'bold',
+          backgroundColor: paymentMessage.type === 'success' ? '#dcfce7' : '#fee2e2',
+          color: paymentMessage.type === 'success' ? '#166534' : '#991b1b',
+          border: `1px solid ${paymentMessage.type === 'success' ? '#bbf7d0' : '#fecaca'}`
+        }}>
+          {paymentMessage.type === 'success' ? '🎉 ' : '❌ '} {paymentMessage.text}
+          <button onClick={() => setPaymentMessage(null)} style={{ float: 'right', background: 'none', border: 'none', cursor: 'pointer', color: 'inherit' }}>✖</button>
+        </div>
+      )}
+
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid #eee', paddingBottom: '20px', marginBottom: '30px' }}>
+        <div>
+          <h1 style={{ margin: 0, color: '#0f172a' }}>🏦 Centro de Mando</h1>
+          <p style={{ margin: 0, color: 'gray' }}>Portafolio Principal</p>
+        </div>
+        
+        <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
+          
+          {/* <-- LA MAGIA VISUAL EMPIEZA AQUÍ --> */}
+          
+          {/* SI EL USUARIO ES FREE, MOSTRAMOS EL BOTÓN DORADO */}
+          {userRole !== 'ROLE_PRO' && userRole !== 'ROLE_ADMIN' && (
+            <button 
+              onClick={handleUpgradePro}
+              style={{ 
+                padding: '10px 20px', background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)', 
+                color: '#fff', border: 'none', borderRadius: '6px', fontWeight: 'bold', 
+                cursor: 'pointer', boxShadow: '0 4px 6px rgba(245, 158, 11, 0.2)'
+              }}>
+              ⭐ Mejorar a PRO
+            </button>
+          )}
+
+          {/* SI EL USUARIO ES PRO O ADMIN, MOSTRAMOS LA INSIGNIA */}
+          {(userRole === 'ROLE_PRO' || userRole === 'ROLE_ADMIN') && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ 
+                padding: '8px 12px', background: userRole === 'ROLE_ADMIN' ? '#0f172a' : '#dcfce7', 
+                color: userRole === 'ROLE_ADMIN' ? '#22c55e' : '#166534', 
+                borderRadius: '20px', fontWeight: 'bold', fontSize: '13px',
+                border: `1px solid ${userRole === 'ROLE_ADMIN' ? '#22c55e' : '#bbf7d0'}`, 
+                display: 'flex', alignItems: 'center', gap: '5px'
+              }}>
+                {userRole === 'ROLE_ADMIN' ? '🛡️ ADMIN' : '✅ PRO'}
+              </span>
+              
+              {userRole === 'ROLE_PRO' && (
+                <button 
+                  onClick={handleManageSubscription}
+                  style={{ 
+                    padding: '10px 20px', background: '#e2e8f0', 
+                    color: '#475569', border: 'none', borderRadius: '6px', fontWeight: 'bold', 
+                    cursor: 'pointer', transition: 'all 0.2s'
+                  }}>
+                  ⚙️ Gestionar Suscripción
+                </button>
+              )}
+            </div>
+          )}
+          {/* <-- FIN DE LA MAGIA VISUAL --> */}
+
+          {/* BOTÓN NUEVA OPERACIÓN CON LÍMITE */}
+          {!mostrarFormulario && (
+            userRole !== 'ROLE_PRO' && userRole !== 'ROLE_ADMIN' && trades.length >= 50 ? (
+              <button onClick={handleUpgradePro} style={{ padding: '10px 20px', background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', boxShadow: '0 4px 6px rgba(245, 158, 11, 0.2)' }}>
+                🔒 Límite Alcanzado (50/50)
+              </button>
+            ) : (
+              <button onClick={() => setMostrarFormulario(true)} style={{ padding: '10px 20px', background: '#3b82f6', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>
+                + Nueva Operación
+              </button>
+            )
+          )}
+        </div>
+      </div>
+
+      <DashboardMetrics refreshTrigger={refreshCount} />
+      <CalendarWidget refreshTrigger={refreshCount} />
+
+      <div style={{ marginBottom: '30px' }}>
+        <PerformanceChart trades={trades} />
+      </div>
+
+      {mostrarFormulario && <TradeForm onCerrar={() => setMostrarFormulario(false)} onGuardado={fetchTrades} />}
+      {tradeToClose && <CloseTradeModal trade={tradeToClose} onClose={() => setTradeToClose(null)} onGuardado={fetchTrades} />}
+      {tradeToEdit && <EditTradeModal trade={tradeToEdit} onClose={() => setTradeToEdit(null)} onGuardado={fetchTrades} />}
+
+      <div style={{ padding: '25px', background: '#ffffff', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0' }}>
+        
+        {/* CABECERA RESPONSIVA */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+          <h3 style={{ margin: 0, color: '#1e293b' }}>Registro de Operaciones</h3>
+          
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '10px' }}>
+            <span style={{ fontSize: '0.9em', color: '#64748b', fontWeight: 'bold' }}>
+              {filteredTrades.length} de {trades.length}
+            </span>
+            
+            <input 
+              type="file" 
+              accept=".csv" 
+              style={{ display: 'none' }} 
+              ref={fileInputRef} 
+              onChange={handleImportCSV} 
+            />
+
+            {/* BOTÓN IMPORTAR MT5 CON BLOQUEO */}
+            {(userRole === 'ROLE_PRO' || userRole === 'ROLE_ADMIN') ? (
               <button 
                 onClick={() => fileInputRef.current.click()} 
                 disabled={isImporting}
