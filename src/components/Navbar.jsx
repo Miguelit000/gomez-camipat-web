@@ -8,6 +8,7 @@ export default function Navbar() {
   const [portfolios, setPortfolios] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false); 
+  const [showDeleteModal, setShowDeleteModal] = useState(false); // Estado del modal de borrado
   
   const [newPortData, setNewPortData] = useState({ 
     name: '', 
@@ -61,13 +62,10 @@ export default function Navbar() {
         return;
     }
     
-    // Cambiamos el ID globalmente. Al cambiar este ID, el useEffect del DashboardPage 
-    // se disparará automáticamente porque lo pusiste como dependencia [portfolioId]
     setPortfolioId(newId);
     localStorage.setItem('portfolioId', newId);
-    
-    // Navegamos al dashboard de manera limpia sin recargar la ventana
     navigate('/dashboard');
+    window.location.reload(); 
   };
 
   const handleCreatePortfolio = async (e) => {
@@ -75,17 +73,28 @@ export default function Navbar() {
     try {
       const res = await api.post('/portfolios', newPortData);
       setPortfolios([...portfolios, res.data]);
-      
-      // Establecemos el nuevo portafolio creado como activo inmediatamente
       setPortfolioId(res.data.id);
       localStorage.setItem('portfolioId', res.data.id);
       setShowModal(false);
-      
-      // Navegamos fluidamente
-      navigate('/dashboard');
+      window.location.reload();
     } catch (error) {
       console.error("Error al crear portafolio", error);
       alert("Error al crear la cuenta. Revisa tu conexión.");
+    }
+  };
+
+  // Función para eliminar el portafolio ACTIVO
+  const handleDeletePortfolio = async () => {
+    if (!portfolioId) return;
+    try {
+      await api.delete(`/portfolios/${portfolioId}`);
+      setShowDeleteModal(false);
+      setPortfolioId(null);
+      localStorage.removeItem('portfolioId');
+      window.location.href = '/dashboard'; 
+    } catch (error) {
+      console.error("Error al eliminar portafolio", error);
+      alert("Error al eliminar la cuenta. Verifica que no tenga operaciones activas.");
     }
   };
 
@@ -115,6 +124,20 @@ export default function Navbar() {
             <span style={{ fontSize: '0.8em' }}>▼</span>
           </div>
 
+          {/* 🟢 BOTÓN DE ELIMINAR CUENTA (Solo aparece si hay una cuenta seleccionada) */}
+          {portfolioId && (
+            <button 
+              onClick={(e) => {
+                e.stopPropagation(); // Evita que se abra el menú desplegable al hacer clic aquí
+                setShowDeleteModal(true);
+              }}
+              style={{ background: 'transparent', border: 'none', color: '#ef4444', cursor: 'pointer', fontSize: '1.1em', padding: '0 0 0 5px', display: 'flex', alignItems: 'center' }}
+              title="Eliminar Bóveda Actual"
+            >
+              🗑️
+            </button>
+          )}
+
           {dropdownOpen && (
             <div style={{ position: 'absolute', top: '100%', left: 0, marginTop: '8px', background: 'white', borderRadius: '8px', boxShadow: '0 10px 25px rgba(0,0,0,0.2)', overflow: 'hidden', minWidth: '220px', zIndex: 4000 }}>
               {portfolios.map(p => (
@@ -134,6 +157,7 @@ export default function Navbar() {
               </div>
             </div>
           )}
+          
         </div>
       </div>
 
@@ -183,6 +207,23 @@ export default function Navbar() {
           </div>
         </div>
       )}
+
+      {/* 🟢 MODAL DE ELIMINACIÓN DE PORTAFOLIO */}
+      {showDeleteModal && (
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(15, 23, 42, 0.8)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 6000, padding: '20px' }}>
+          <div style={{ background: 'white', padding: '30px', borderRadius: '12px', width: '100%', maxWidth: '400px', color: '#0f172a', boxSizing: 'border-box', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)' }}>
+            <h3 style={{ marginTop: 0, color: '#ef4444' }}>⚠️ Eliminar Bóveda</h3>
+            <p style={{ color: '#475569', lineHeight: '1.5', marginBottom: '25px' }}>
+              ¿Estás seguro de que deseas destruir el portafolio <strong>{currentPortfolio?.name}</strong> y todo su historial de operaciones? <strong>Esta acción es irreversible y eliminará los datos de la base de datos permanentemente.</strong>
+            </p>
+            <div style={{ display:'flex', gap: '10px', justifyContent: 'flex-end' }}>
+              <button type="button" onClick={() => setShowDeleteModal(false)} style={{ padding: '10px 15px', border: 'none', background: '#f1f5f9', color: '#475569', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>Cancelar</button>
+              <button type="button" onClick={handleDeletePortfolio} style={{ padding: '10px 15px', border: 'none', background: '#ef4444', color: 'white', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>Sí, Eliminar Todo</button>
+            </div>
+          </div>
+        </div>
+      )}
+
     </nav>
   );
 }

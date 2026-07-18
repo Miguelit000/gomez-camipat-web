@@ -9,6 +9,7 @@ export default function StrategiesPage() {
   const [strategies, setStrategies] = useState([]);
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState('');
+  const [strategyToDelete, setStrategyToDelete] = useState(null);
 
   // Estados para el formulario
   const [name, setName] = useState('');
@@ -69,6 +70,18 @@ export default function StrategiesPage() {
     }
   };
 
+  const handleEliminarEstrategia = async () => {
+    if (!strategyToDelete) return;
+    try {
+      await api.delete(`/strategies/${strategyToDelete.id}`);
+      setStrategyToDelete(null);
+      fetchStrategies(); 
+    } catch (err) {
+      console.error(err);
+      alert('Error al eliminar la estrategia de la base de datos.');
+    }
+  };
+
   return (
     <div style={{ padding: '40px', fontFamily: 'sans-serif', maxWidth: '1200px', margin: '0 auto' }}>
       
@@ -114,8 +127,18 @@ export default function StrategiesPage() {
           ) : (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               {strategies.map((strat) => (
-                <div key={strat.id} style={{ background: 'white', padding: '25px', borderRadius: '12px', border: '1px solid #e2e8f0', borderLeft: '5px solid #3b82f6', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
-                  <h3 style={{ margin: '0 0 10px 0', color: '#0f172a', fontSize: '1.4em' }}>{strat.name}</h3>
+                <div key={strat.id} style={{ background: 'white', padding: '25px', borderRadius: '12px', border: '1px solid #e2e8f0', borderLeft: '5px solid #3b82f6', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', position: 'relative' }}>
+                  
+                  {/* Botón de Borrar Minimalista */}
+                  <button 
+                    onClick={() => setStrategyToDelete(strat)}
+                    style={{ position: 'absolute', top: '20px', right: '20px', background: 'transparent', border: 'none', color: '#ef4444', cursor: 'pointer', fontSize: '1.2em' }}
+                    title="Eliminar Estrategia"
+                  >
+                    🗑️
+                  </button>
+
+                  <h3 style={{ margin: '0 0 10px 0', color: '#0f172a', fontSize: '1.4em', paddingRight: '30px' }}>{strat.name}</h3>
                   <p style={{ margin: '0 0 15px 0', color: '#64748b', fontSize: '1.05em' }}>{strat.description}</p>
                   
                   <div style={{ background: '#f8fafc', padding: '15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
@@ -126,6 +149,21 @@ export default function StrategiesPage() {
                   </div>
                 </div>
               ))}
+              {/* MODAL DE CONFIRMACIÓN - ESTRATEGIA */}
+      {strategyToDelete && (
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(15, 23, 42, 0.8)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 3000 }}>
+          <div style={{ background: 'white', padding: '30px', borderRadius: '12px', width: '100%', maxWidth: '400px', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)' }}>
+            <h3 style={{ margin: '0 0 15px 0', color: '#0f172a' }}>⚠️ Confirmar Eliminación</h3>
+            <p style={{ color: '#64748b', marginBottom: '25px', lineHeight: '1.5' }}>
+              ¿Estás seguro de que deseas eliminar permanentemente la estrategia <strong>{strategyToDelete.name}</strong>? Esta acción no se puede deshacer.
+            </p>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px' }}>
+              <button onClick={() => setStrategyToDelete(null)} style={{ padding: '10px 15px', background: '#f1f5f9', color: '#475569', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>Cancelar</button>
+              <button onClick={handleEliminarEstrategia} style={{ padding: '10px 15px', background: '#ef4444', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>Eliminar</button>
+            </div>
+          </div>
+        </div>
+      )}
             </div>
           )}
         </div>
