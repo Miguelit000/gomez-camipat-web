@@ -61,10 +61,13 @@ export default function Navbar() {
         return;
     }
     
+    // Cambiamos el ID globalmente. Al cambiar este ID, el useEffect del DashboardPage 
+    // se disparará automáticamente porque lo pusiste como dependencia [portfolioId]
     setPortfolioId(newId);
     localStorage.setItem('portfolioId', newId);
+    
+    // Navegamos al dashboard de manera limpia sin recargar la ventana
     navigate('/dashboard');
-    window.location.reload(); 
   };
 
   const handleCreatePortfolio = async (e) => {
@@ -72,10 +75,14 @@ export default function Navbar() {
     try {
       const res = await api.post('/portfolios', newPortData);
       setPortfolios([...portfolios, res.data]);
+      
+      // Establecemos el nuevo portafolio creado como activo inmediatamente
       setPortfolioId(res.data.id);
       localStorage.setItem('portfolioId', res.data.id);
       setShowModal(false);
-      window.location.reload();
+      
+      // Navegamos fluidamente
+      navigate('/dashboard');
     } catch (error) {
       console.error("Error al crear portafolio", error);
       alert("Error al crear la cuenta. Revisa tu conexión.");
