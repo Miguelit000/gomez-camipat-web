@@ -2,7 +2,8 @@ import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import api from '../api/axiosConfig';
-import { GoogleLogin } from '@react-oauth/google'; // <-- NUEVA IMPORTACIÓN
+import { GoogleLogin } from '@react-oauth/google'; 
+import bgImage from '../assets/AstroTrade-Logo.png'; 
 
 export default function LoginPage() {
   const [isRegister, setIsRegister] = useState(false);
@@ -17,14 +18,11 @@ export default function LoginPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // <-- NUEVA FUNCIÓN: PROCESAR EL LOGIN CON GOOGLE -->
   const handleGoogleSuccess = async (credentialResponse) => {
     setError('');
     setLoading(true);
     try {
-      // Le enviamos el token seguro de Google a nuestro backend en Java
       const res = await api.post('/auth/google', { token: credentialResponse.credential });
-      // Guardamos el JWT de AstroTrade y el ID del portafolio
       login(res.data.token, res.data.portfolioId);
       navigate('/dashboard');
     } catch (err) {
@@ -53,9 +51,24 @@ export default function LoginPage() {
   };
 
   return (
-    <div style={{ display: 'flex', height: '100vh', backgroundColor: '#f8fafc', fontFamily: 'sans-serif' }}>
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '40px' }}>
-        <div style={{ width: '100%', maxWidth: '400px', background: 'white', padding: '40px', borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.05)' }}>
+    // <-- Color de fondo oscuro y contenedor relativo para alojar la imagen -->
+    <div style={{ display: 'flex', height: '100vh', backgroundColor: '#0f172a', fontFamily: 'sans-serif', position: 'relative' }}>
+      
+      {/* CAPA DE FONDO GIGANTE Y TRASLÚCIDA */}
+      <div style={{
+        position: 'absolute',
+        top: 0, left: 0, right: 0, bottom: 0,
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        opacity: 0.1, // Un toque más de opacidad en el Login
+        zIndex: 0,
+        pointerEvents: 'none'
+      }}></div>
+
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '40px', position: 'relative', zIndex: 1 }}>
+        <div style={{ width: '100%', maxWidth: '400px', background: 'rgba(255, 255, 255, 0.95)', padding: '40px', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.3)', backdropFilter: 'blur(10px)' }}>
           <h2 style={{ textAlign: 'center', color: '#0f172a', marginBottom: '10px' }}>
             {isRegister ? 'Crear Cuenta' : 'Bienvenido de nuevo'}
           </h2>
@@ -63,7 +76,6 @@ export default function LoginPage() {
             AstroTrade
           </p>
 
-          {/* <-- BOTÓN OFICIAL DE GOOGLE --> */}
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
             <GoogleLogin
               onSuccess={handleGoogleSuccess}
