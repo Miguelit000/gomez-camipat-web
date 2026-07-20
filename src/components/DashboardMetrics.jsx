@@ -12,7 +12,6 @@ export default function DashboardMetrics({ refreshTrigger }) {
   const [portfolio, setPortfolio] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // <-- ESTADOS PARA EL MODAL DE CAPITAL -->
   const [showCapitalModal, setShowCapitalModal] = useState(false);
   const [capitalForm, setCapitalForm] = useState({ initial: 0, current: 0, target: 0 });
   const [isSaving, setIsSaving] = useState(false);
@@ -59,7 +58,6 @@ export default function DashboardMetrics({ refreshTrigger }) {
       
       await api.patch(`/portfolios/${portfolio.id}/balances`, payload);
       
-      // Actualizamos UI al instante
       setPortfolio({ ...portfolio, ...payload });
       setShowCapitalModal(false);
     } catch (error) {
@@ -81,37 +79,43 @@ export default function DashboardMetrics({ refreshTrigger }) {
     progress = Math.max(0, Math.min(progress, 100));
   }
 
+  // <-- FUNCIÓN MÁGICA PARA FORMATEAR DINERO -->
+  const formatMoney = (amount) => {
+    return Number(amount || 0).toLocaleString('en-US', { 
+      minimumFractionDigits: 2, 
+      maximumFractionDigits: 2 
+    });
+  };
+
   return (
     <div style={{ marginBottom: '30px' }}>
       
-      {/* FILA SUPERIOR: BÓVEDA (Balance y Objetivo) */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginBottom: '20px' }}>
         
-        {/* Tarjeta 1: Balance Oscuro */}
         {portfolio && (
           <div style={{ flex: '1 1 300px', background: '#0f172a', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
               <p style={{ margin: 0, color: '#94a3b8', fontSize: '0.9em', fontWeight: 'bold', textTransform: 'uppercase' }}>Balance Total Cuenta</p>
               
-              {/* <-- NUEVO BOTÓN DE AJUSTES --> */}
               <button onClick={handleOpenCapitalModal} style={{ background: '#334155', color: 'white', border: 'none', padding: '6px 10px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.8em', fontWeight: 'bold' }}>
                 ⚙️ Ajustar Capital
               </button>
             </div>
+            {/* <-- APLICAMOS FORMATO AL BALANCE --> */}
             <h2 style={{ margin: '10px 0 0 0', color: '#f8fafc', fontSize: '2.5em' }}>
-              ${portfolio.currentBalance?.toFixed(2)}
+              ${formatMoney(portfolio.currentBalance)}
             </h2>
           </div>
         )}
 
-        {/* Tarjeta 2: Objetivo Visual */}
         {portfolio && (
           <div style={{ flex: '2 1 400px', background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0', borderTop: '4px solid #f59e0b', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '15px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div>
                 <p style={{ margin: 0, color: '#64748b', fontSize: '0.9em', fontWeight: 'bold', textTransform: 'uppercase' }}>Objetivo Financiero</p>
+                {/* <-- APLICAMOS FORMATO A LA META --> */}
                 <h2 style={{ margin: '10px 0 0 0', color: '#1e293b', fontSize: '2em' }}>
-                  ${portfolio.targetBalance?.toFixed(2)}
+                  ${formatMoney(portfolio.targetBalance)}
                 </h2>
               </div>
               <div style={{ textAlign: 'right' }}>
@@ -125,11 +129,13 @@ export default function DashboardMetrics({ refreshTrigger }) {
         )}
       </div>
 
-      {/* FILA INFERIOR: MÉTRICAS TÉCNICAS */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
         <div style={{ background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0', borderTop: `4px solid ${colorPnL}` }}>
           <p style={{ margin: 0, color: '#64748b', fontSize: '0.9em', fontWeight: 'bold', textTransform: 'uppercase' }}>PnL Neto Total</p>
-          <h2 style={{ margin: '10px 0 0 0', color: colorPnL, fontSize: '2em' }}>{metrics.totalPnl >= 0 ? '+' : ''}${metrics.totalPnl}</h2>
+          {/* <-- APLICAMOS FORMATO AL PNL --> */}
+          <h2 style={{ margin: '10px 0 0 0', color: colorPnL, fontSize: '2em' }}>
+            {metrics.totalPnl >= 0 ? '+' : ''}${formatMoney(metrics.totalPnl)}
+          </h2>
         </div>
         <div style={{ background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0', borderTop: '4px solid #3b82f6' }}>
           <p style={{ margin: 0, color: '#64748b', fontSize: '0.9em', fontWeight: 'bold', textTransform: 'uppercase' }}>Win Rate</p>
@@ -146,7 +152,6 @@ export default function DashboardMetrics({ refreshTrigger }) {
         </div>
       </div>
 
-      {/* <-- MODAL DE GESTIÓN DE CAPITAL --> */}
       {showCapitalModal && (
         <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(15, 23, 42, 0.8)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 3000 }}>
           <div style={{ background: 'white', padding: '30px', borderRadius: '12px', width: '100%', maxWidth: '400px', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)' }}>
