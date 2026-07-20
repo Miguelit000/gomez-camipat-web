@@ -4,47 +4,43 @@ import api from '../api/axiosConfig';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [token, setToken] = useState(localStorage.getItem('token'));
+  // 1. Ya no usamos token. Usamos portfolioId como indicador de sesión activa.
   const [portfolioId, setPortfolioId] = useState(localStorage.getItem('portfolioId'));
-  
-  // <-- NUEVO: Estado global para el rol real de la base de datos -->
   const [userRole, setUserRole] = useState('ROLE_FREE');
+  
+  // 2. Esta es la nueva llave maestra para mostrar el menú
+  const isAuthenticated = !!portfolioId;
 
-  // <-- NUEVA FUNCIÓN: Consulta a Java el rol actual -->
   const fetchUserRole = useCallback(async () => {
-    if (!token) return;
+    if (!portfolioId) return; 
     try {
       const response = await api.get('/users/me');
-      setUserRole(response.data.role); // Se actualiza globalmente en React
+      setUserRole(response.data.role); 
     } catch (error) {
       console.error("Error obteniendo el rol del usuario:", error);
       setUserRole('ROLE_FREE');
     }
-  }, [token]);
+  }, [portfolioId]);
 
-  // Cada vez que inicias sesión o recargas, busca el rol actual
   useEffect(() => {
     fetchUserRole();
   }, [fetchUserRole]);
 
-  const login = (newToken, newPortfolioId) => {
-    setToken(newToken);
+  // 3. El login ya solo recibe el portfolioId
+  const login = (newPortfolioId) => {
     setPortfolioId(newPortfolioId);
-    localStorage.setItem('token', newToken);
     localStorage.setItem('portfolioId', newPortfolioId);
   };
 
   const logout = () => {
-    setToken(null);
     setPortfolioId(null);
     setUserRole('ROLE_FREE');
-    localStorage.removeItem('token');
     localStorage.removeItem('portfolioId');
   };
 
   return (
-    // <-- Exportamos userRole y fetchUserRole para que el Dashboard los use
-    <AuthContext.Provider value={{ token, portfolioId, userRole, fetchUserRole, setPortfolioId, login, logout }}>
+    // 4. Exportamos isAuthenticated para que el Navbar sepa si mostrar los botones
+    <AuthContext.Provider value={{ isAuthenticated, portfolioId, userRole, fetchUserRole, setPortfolioId, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

@@ -46,10 +46,10 @@ export default function BlockEditor({ initialContent, onChange }) {
               endpoints: {
                 byFile: 'http://localhost:8080/api/v1/trades/editor/image',
               },
-              // <-- SOLUCIÓN: Le decimos al editor que Java espera que el campo se llame "file"
               field: 'file', 
-              additionalRequestHeaders: {
-                'Authorization': `Bearer ${localStorage.getItem('token')}`
+              // ELIMINAMOS additionalRequestHeaders Y USAMOS ESTO:
+              additionalRequestConfig: {
+                credentials: 'include' // <-- Le dice a Editor.js que envíe la Cookie segura
               }
             }
           }

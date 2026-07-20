@@ -4,11 +4,12 @@ import api from '../api/axiosConfig';
 import { AuthContext } from '../context/AuthContext';
 
 export default function Navbar() {
-  const { portfolioId, setPortfolioId, token, userRole } = useContext(AuthContext);
+  // 1. Cambiamos 'token' por 'isAuthenticated'
+  const { portfolioId, setPortfolioId, isAuthenticated, userRole } = useContext(AuthContext);
   const [portfolios, setPortfolios] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false); 
-  const [showDeleteModal, setShowDeleteModal] = useState(false); // Estado del modal de borrado
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
   
   const [newPortData, setNewPortData] = useState({ 
     name: '', 
@@ -36,8 +37,9 @@ export default function Navbar() {
       }
     };
     
-    if (token && location.pathname !== '/') fetchPortfolios();
-  }, [token, location.pathname, portfolioId, setPortfolioId]);
+    // 2. Evaluamos la nueva variable aquí
+    if (isAuthenticated && location.pathname !== '/') fetchPortfolios();
+  }, [isAuthenticated, location.pathname, portfolioId, setPortfolioId]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -83,14 +85,26 @@ export default function Navbar() {
     }
   };
 
-  // Función para eliminar el portafolio ACTIVO
   const handleDeletePortfolio = async () => {
     if (!portfolioId) return;
     try {
       await api.delete(`/portfolios/${portfolioId}`);
       setShowDeleteModal(false);
-      setPortfolioId(null);
-      localStorage.removeItem('portfolioId');
+      
+      // 1. Buscamos cualquier otro portafolio que el usuario tenga (ej. el Portafolio Principal)
+      const portafolioRestante = portfolios.find(p => p.id !== portfolioId);
+      
+      // 2. Si tiene otro, lo seleccionamos automáticamente para no cerrar la sesión
+      if (portafolioRestante) {
+        setPortfolioId(portafolioRestante.id);
+        localStorage.setItem('portfolioId', portafolioRestante.id);
+      } else {
+        // (Esto es por pura precaución, aunque el backend ya impide borrar el principal)
+        setPortfolioId(null);
+        localStorage.removeItem('portfolioId');
+      }
+      
+      // 3. Recargamos el dashboard con el nuevo portafolio seleccionado
       window.location.href = '/dashboard'; 
     } catch (error) {
       console.error("Error al eliminar portafolio", error);
@@ -98,7 +112,8 @@ export default function Navbar() {
     }
   };
 
-  if (!token || location.pathname === '/') return null;
+  // 3. ¡EL CAUSANTE DEL ERROR! Ahora usamos isAuthenticated para decidir si ocultar el Navbar
+  if (!isAuthenticated || location.pathname === '/') return null;
 
   const currentPortfolio = portfolios.find(p => p.id === portfolioId);
 
@@ -124,11 +139,11 @@ export default function Navbar() {
             <span style={{ fontSize: '0.8em' }}>▼</span>
           </div>
 
-          {/* 🟢 BOTÓN DE ELIMINAR CUENTA (Solo aparece si hay una cuenta seleccionada) */}
+          {/* 🟢 BOTÓN DE ELIMINAR CUENTA */}
           {portfolioId && (
             <button 
               onClick={(e) => {
-                e.stopPropagation(); // Evita que se abra el menú desplegable al hacer clic aquí
+                e.stopPropagation(); 
                 setShowDeleteModal(true);
               }}
               style={{ background: 'transparent', border: 'none', color: '#ef4444', cursor: 'pointer', fontSize: '1.1em', padding: '0 0 0 5px', display: 'flex', alignItems: 'center' }}

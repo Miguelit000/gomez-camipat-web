@@ -23,7 +23,7 @@ export default function LoginPage() {
     setLoading(true);
     try {
       const res = await api.post('/auth/google', { token: credentialResponse.credential });
-      login(res.data.token, res.data.portfolioId);
+      login(res.data.portfolioId); // <-- CAMBIO AQUÍ
       navigate('/dashboard');
     } catch (err) {
       console.error("Error en Google Login:", err);
@@ -41,7 +41,7 @@ export default function LoginPage() {
     try {
       const endpoint = isRegister ? '/auth/register' : '/auth/login';
       const res = await api.post(endpoint, formData);
-      login(res.data.token, res.data.portfolioId);
+      login(res.data.portfolioId); // <-- CAMBIO AQUÍ
       navigate('/dashboard');
     } catch (err) {
       setError(err.response?.data?.error || 'Error al autenticar');
