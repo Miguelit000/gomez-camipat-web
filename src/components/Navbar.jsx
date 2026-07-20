@@ -4,8 +4,8 @@ import api from '../api/axiosConfig';
 import { AuthContext } from '../context/AuthContext';
 
 export default function Navbar() {
-  // 1. Cambiamos 'token' por 'isAuthenticated'
-  const { portfolioId, setPortfolioId, isAuthenticated, userRole } = useContext(AuthContext);
+  // Extraemos 'logout' de nuestro contexto
+  const { portfolioId, setPortfolioId, isAuthenticated, userRole, logout } = useContext(AuthContext);
   const [portfolios, setPortfolios] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false); 
@@ -37,7 +37,6 @@ export default function Navbar() {
       }
     };
     
-    // 2. Evaluamos la nueva variable aquí
     if (isAuthenticated && location.pathname !== '/') fetchPortfolios();
   }, [isAuthenticated, location.pathname, portfolioId, setPortfolioId]);
 
@@ -91,20 +90,16 @@ export default function Navbar() {
       await api.delete(`/portfolios/${portfolioId}`);
       setShowDeleteModal(false);
       
-      // 1. Buscamos cualquier otro portafolio que el usuario tenga (ej. el Portafolio Principal)
       const portafolioRestante = portfolios.find(p => p.id !== portfolioId);
       
-      // 2. Si tiene otro, lo seleccionamos automáticamente para no cerrar la sesión
       if (portafolioRestante) {
         setPortfolioId(portafolioRestante.id);
         localStorage.setItem('portfolioId', portafolioRestante.id);
       } else {
-        // (Esto es por pura precaución, aunque el backend ya impide borrar el principal)
         setPortfolioId(null);
         localStorage.removeItem('portfolioId');
       }
       
-      // 3. Recargamos el dashboard con el nuevo portafolio seleccionado
       window.location.href = '/dashboard'; 
     } catch (error) {
       console.error("Error al eliminar portafolio", error);
@@ -112,7 +107,6 @@ export default function Navbar() {
     }
   };
 
-  // 3. ¡EL CAUSANTE DEL ERROR! Ahora usamos isAuthenticated para decidir si ocultar el Navbar
   if (!isAuthenticated || location.pathname === '/') return null;
 
   const currentPortfolio = portfolios.find(p => p.id === portfolioId);
@@ -139,7 +133,6 @@ export default function Navbar() {
             <span style={{ fontSize: '0.8em' }}>▼</span>
           </div>
 
-          {/* 🟢 BOTÓN DE ELIMINAR CUENTA */}
           {portfolioId && (
             <button 
               onClick={(e) => {
@@ -179,7 +172,6 @@ export default function Navbar() {
       {/* SECCIÓN DERECHA: Enlaces tipo Pestaña */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', alignItems: 'center', flex: '1 1 auto', justifyContent: 'flex-end' }}>
         
-        {/* BOTÓN SECRETO DE ADMINISTRADOR */}
         {userRole === 'ROLE_ADMIN' && (
             <button 
               onClick={() => navigate('/admin')} 
@@ -197,6 +189,38 @@ export default function Navbar() {
         <Link to="/statistics" style={{ color: location.pathname === '/statistics' ? '#ffffff' : '#94a3b8', background: location.pathname === '/statistics' ? '#1e293b' : 'transparent', textDecoration: 'none', fontWeight: 'bold', padding: '8px 12px', borderRadius: '6px', fontSize: '0.9em', transition: 'background 0.2s' }}>
           Estadísticas
         </Link>
+
+        {/* 🔴 NUEVO BOTÓN DE CERRAR SESIÓN */}
+        <button 
+          onClick={logout}
+          style={{ 
+            background: 'transparent', 
+            color: '#ef4444', 
+            border: '1px solid rgba(239, 68, 68, 0.5)', 
+            padding: '8px 15px', 
+            borderRadius: '6px', 
+            cursor: 'pointer', 
+            fontWeight: 'bold', 
+            fontSize: '0.9em',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            marginLeft: '5px',
+            transition: 'all 0.2s ease-in-out'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.background = '#ef4444';
+            e.target.style.color = 'white';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.background = 'transparent';
+            e.target.style.color = '#ef4444';
+          }}
+          title="Cerrar Sesión"
+        >
+          🚪 Salir
+        </button>
+
       </div>
 
       {/* MODAL DE CREACIÓN DE CUENTA */}

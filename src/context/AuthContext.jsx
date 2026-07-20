@@ -32,10 +32,17 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem('portfolioId', newPortfolioId);
   };
 
-  const logout = () => {
-    setPortfolioId(null);
-    setUserRole('ROLE_FREE');
-    localStorage.removeItem('portfolioId');
+  const logout = async () => {
+    try {
+      await api.post('/auth/logout'); // <-- Destruye la cookie en el backend
+    } catch (error) {
+      console.error("Error al cerrar sesión", error);
+    } finally {
+      setPortfolioId(null);
+      setUserRole('ROLE_FREE');
+      localStorage.removeItem('portfolioId');
+      window.location.href = '/login'; // Forzamos redirección limpia
+    }
   };
 
   return (
