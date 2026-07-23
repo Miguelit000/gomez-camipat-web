@@ -96,9 +96,19 @@ export default function StatisticsPage() {
         
         <StatCard title="Holding Period" value={`${stats.avgHoldingPeriodHours} hrs`} subtitle="Tiempo promedio en operación" />
 
-        <StatCard title="MFE (Promedio)" value={`$${formatMoney(stats.averageMfe)}`} subtitle="Maximum Favorable Excursion" valueColor="#3b82f6" />
+        <StatCard 
+          title="MFE (Promedio)" 
+          value={`${formatMoney(stats.averageMfe)} pts`} 
+          subtitle="Excursión Favorable (Puntos)" 
+          valueColor="#3b82f6" 
+        />
         
-        <StatCard title="MAE (Promedio)" value={`-$${formatMoney(stats.averageMae)}`} subtitle="Maximum Adverse Excursion" valueColor="#f43f5e" />
+        <StatCard 
+          title="MAE (Promedio)" 
+          value={`${formatMoney(stats.averageMae)} pts`} 
+          subtitle="Excursión Adversa (Puntos)" 
+          valueColor="#f43f5e" 
+        />
 
       </div>
 

@@ -176,7 +176,7 @@ export default function TradeForm({ onCerrar, onGuardado }) {
             <label style={{ display: 'block', fontSize: '1em', fontWeight: 'bold', color: '#475569', marginBottom: '8px' }}>📝 Bitácora del Trade</label>
             <BlockEditor 
               initialContent={formData.notes} 
-              onChange={(content) => setFormData({ ...formData, notes: content })} 
+              onChange={(content) => setFormData(prev => ({ ...prev, notes: content }))} 
             />
           </div>
 
